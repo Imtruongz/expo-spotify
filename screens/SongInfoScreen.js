@@ -5,6 +5,9 @@ const SongInfoScreen = () => {
   return (
     <View>
       <Text>SongInfoScreen</Text>
+      <View>
+        <Text>SongInfoScreen</Text>
+      </View>
     </View>
   );
 };
