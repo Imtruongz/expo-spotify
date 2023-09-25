@@ -7,6 +7,7 @@ const SongInfoScreen = () => {
       <Text>SongInfoScreen</Text>
       <View>
         <Text>SongInfoScreen</Text>
+        <Text>SongInfoScreen2</Text>
       </View>
     </View>
   );
