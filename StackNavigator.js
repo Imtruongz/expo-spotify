@@ -44,7 +44,7 @@ function BottomTabs() {
         options={{
           tabBarLabel: "Home",
           headerShown: false,
-          tabBarLabelStyle: { color: "white" },
+          tabBarLabelStyle: { color: "white", marginBottom: 3 },
           tabBarIcon: ({ focused }) =>
             focused ? (
               <Entypo name="home" size={24} color="white" />
@@ -59,7 +59,7 @@ function BottomTabs() {
         options={{
           tabBarLabel: "Search",
           headerShown: false,
-          tabBarLabelStyle: { color: "white" },
+          tabBarLabelStyle: { color: "white", marginBottom: 3 },
           tabBarIcon: ({ focused }) =>
             focused ? (
               <Ionicons name="search-circle" size={32} color="white" />
@@ -74,7 +74,7 @@ function BottomTabs() {
         options={{
           tabBarLabel: "Library",
           headerShown: false,
-          tabBarLabelStyle: { color: "white" },
+          tabBarLabelStyle: { color: "white", marginBottom: 3 },
           tabBarIcon: ({ focused }) =>
             focused ? (
               <MaterialIcons name="my-library-music" size={24} color="white" />
@@ -89,7 +89,7 @@ function BottomTabs() {
         options={{
           tabBarLabel: "Profile",
           headerShown: false,
-          tabBarLabelStyle: { color: "white" },
+          tabBarLabelStyle: { color: "white", marginBottom: 3 },
           tabBarIcon: ({ focused }) =>
             focused ? (
               <Ionicons name="person" size={24} color="white" />

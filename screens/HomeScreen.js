@@ -1,6 +1,5 @@
 import {
   StyleSheet,
-  Text,
   View,
   ScrollView,
   Image,
@@ -8,16 +7,18 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
-// import icon
+
 import { AntDesign } from "@expo/vector-icons";
-// import data
+
 import songsData from "../data-json/songs.json";
 import ArtistsData from "../data-json/artists.json";
 import albumData from "../data-json/album.json";
 import trendingData from "../data-json/trending.json";
+
+import TextWhite from "../components/TextWhite";
 
 const HomeScreen = () => {
   const [songs, setSongs] = useState(songsData);
@@ -43,36 +44,27 @@ const HomeScreen = () => {
       <ScrollView style={{ marginTop: 50 }}>
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.messageDay}>{message}</Text>
+          <TextWhite style={styles.messageDay}>{message}</TextWhite>
           <View style={styles.Avatar}>
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
-                padding: 10,
-              }}
-            >
-              <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-                <Image
-                  style={styles.imgAvatar}
-                  source={{
-                    uri: "https://lh3.googleusercontent.com/pw/AIL4fc-4-8q0Xr00RbnPmbWoXmxT5e9RITrznM3-w0ZZ4Kfzx7RXsJxa9PxcZF5qU6RRT4-WA_ltzm5aQgkcUq59OHuqAPTBtLTdlGUBTtUka6bUMq45cyaR0TMX0jOoy5DqMimzyNaeHL0q4pwfBwfhjDH2QAV8s5fYjR1dT3PrZsfeu4_TQWkn5ywSI8hxMMO3pBJBU6N6BUD4wk-GX7Q4E8EER9o9Y9GxPHpYoLajdvqeWpVbWrTEnQC6N7M_BxC5n5Lm95H_OBkBJ7O4MQKT5QWRo4SDaXhMJsQRl0J9h6RAFPYpB_UmMzHCiHf0qOalJf7FbRgMLM41X4gIRTrhD7h2relq0Ld8x01qzukwiw-Ot7dM8-_TUw08iFZfJ4L5dAkEw-8ZJf9SvL7V5NWpF_Iu_dhCHxJQyzPaNtDJciYielQFmeiCI-eES3GLvt_-V1Uf1AKUG1FDD5KcbvxNqF-RgMMFugI-3D0RYBoiIz2zZDwDy96cgV_9JCqthbDxuf42zjcWe3ZJtg37oaUN2Av4zBFYNoF_p7zka8XxJ3eomgmdPd0_15RoBLgD7crjtBM2GP5iir5YdTAb_qzisKOxO1BxnZ3wUaJMzwY0zJ9w7kOUHlJ5Dt78uL4GGCqnUZKGTX-jlUXMb4N_SU0mCt8SPFys8lpsNBr1uGymCKQWGdKhQ8dVxGd9CgtQZTpyLfy-B6B8mnemcabDyWrlD8b62v-bAy5E_x__EkCMZ0kmPcWQ33sSUkPfyWrMMF5y_OX2J3IM0gmsr7zfLO6V6APVWcTI0BsGDcM720RucJQmhvEzGZh0tz25XIaEPThUUacN8zcJw7h2Abhk0oV--8goqxbdM9xZZhJ8m0rVIU4TLYlVZYS2dbyzUwzD54G7l7g1OahW9a1cIF6x=w65-h73-s-no?authuser=0",
-                  }}
-                />
-              </TouchableOpacity>
-            </View>
+            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+              <Image
+                style={styles.imgAvatar}
+                source={{
+                  uri: "https://lh3.googleusercontent.com/pw/AIL4fc-4-8q0Xr00RbnPmbWoXmxT5e9RITrznM3-w0ZZ4Kfzx7RXsJxa9PxcZF5qU6RRT4-WA_ltzm5aQgkcUq59OHuqAPTBtLTdlGUBTtUka6bUMq45cyaR0TMX0jOoy5DqMimzyNaeHL0q4pwfBwfhjDH2QAV8s5fYjR1dT3PrZsfeu4_TQWkn5ywSI8hxMMO3pBJBU6N6BUD4wk-GX7Q4E8EER9o9Y9GxPHpYoLajdvqeWpVbWrTEnQC6N7M_BxC5n5Lm95H_OBkBJ7O4MQKT5QWRo4SDaXhMJsQRl0J9h6RAFPYpB_UmMzHCiHf0qOalJf7FbRgMLM41X4gIRTrhD7h2relq0Ld8x01qzukwiw-Ot7dM8-_TUw08iFZfJ4L5dAkEw-8ZJf9SvL7V5NWpF_Iu_dhCHxJQyzPaNtDJciYielQFmeiCI-eES3GLvt_-V1Uf1AKUG1FDD5KcbvxNqF-RgMMFugI-3D0RYBoiIz2zZDwDy96cgV_9JCqthbDxuf42zjcWe3ZJtg37oaUN2Av4zBFYNoF_p7zka8XxJ3eomgmdPd0_15RoBLgD7crjtBM2GP5iir5YdTAb_qzisKOxO1BxnZ3wUaJMzwY0zJ9w7kOUHlJ5Dt78uL4GGCqnUZKGTX-jlUXMb4N_SU0mCt8SPFys8lpsNBr1uGymCKQWGdKhQ8dVxGd9CgtQZTpyLfy-B6B8mnemcabDyWrlD8b62v-bAy5E_x__EkCMZ0kmPcWQ33sSUkPfyWrMMF5y_OX2J3IM0gmsr7zfLO6V6APVWcTI0BsGDcM720RucJQmhvEzGZh0tz25XIaEPThUUacN8zcJw7h2Abhk0oV--8goqxbdM9xZZhJ8m0rVIU4TLYlVZYS2dbyzUwzD54G7l7g1OahW9a1cIF6x=w65-h73-s-no?authuser=0",
+                }}
+              />
+            </TouchableOpacity>
           </View>
         </View>
 
         {/* navbar */}
         <View style={styles.navbarContainer}>
           <Pressable style={styles.musicButton}>
-            <Text style={styles.musicTitle}>Music</Text>
+            <TextWhite style={styles.musicTitle}>Music</TextWhite>
           </Pressable>
 
           <Pressable style={styles.podcastsButton}>
-            <Text style={styles.podcastsTitle}>Podcasts & Shows</Text>
+            <TextWhite style={styles.podcastsTitle}>Podcasts & Shows</TextWhite>
           </Pressable>
         </View>
 
@@ -90,7 +82,7 @@ const HomeScreen = () => {
               </Pressable>
             </LinearGradient>
 
-            <Text style={styles.albumLikedTitle}>Liked Songs</Text>
+            <TextWhite style={styles.albumLikedTitle}>Liked Songs</TextWhite>
           </TouchableOpacity>
           {/* hiphop */}
           <TouchableOpacity style={styles.albumLikedButton}>
@@ -101,11 +93,9 @@ const HomeScreen = () => {
               }}
             />
             <View style={styles.randomArtist}>
-              <Text
-                style={{ color: "white", fontSize: 13, fontWeight: "bold" }}
-              >
+              <TextWhite style={{ fontSize: 13, fontWeight: "bold" }}>
                 Hiphop
-              </Text>
+              </TextWhite>
             </View>
           </TouchableOpacity>
           {/* Pop */}
@@ -117,11 +107,7 @@ const HomeScreen = () => {
               }}
             />
             <View style={styles.randomArtist}>
-              <Text
-                style={{ color: "white", fontSize: 13, fontWeight: "bold" }}
-              >
-                Pop
-              </Text>
+              <TextWhite style={{ fontSize: 13, fontWeight: "bold" }}>Pop</TextWhite>
             </View>
           </TouchableOpacity>
           {/* Rap */}
@@ -133,11 +119,7 @@ const HomeScreen = () => {
               }}
             />
             <View style={styles.randomArtist}>
-              <Text
-                style={{ color: "white", fontSize: 13, fontWeight: "bold" }}
-              >
-                Rap
-              </Text>
+              <TextWhite style={{ fontSize: 13, fontWeight: "bold" }}>Rap</TextWhite>
             </View>
           </TouchableOpacity>
           {/* EDM */}
@@ -149,17 +131,13 @@ const HomeScreen = () => {
               }}
             />
             <View style={styles.randomArtist}>
-              <Text
-                style={{ color: "white", fontSize: 13, fontWeight: "bold" }}
-              >
-                EDM
-              </Text>
+              <TextWhite style={{ fontSize: 13, fontWeight: "bold" }}>EDM</TextWhite>
             </View>
           </TouchableOpacity>
         </View>
 
         {/* Top artists */}
-        <Text style={styles.topArtistsTitle}>Popular Artists</Text>
+        <TextWhite style={styles.topArtistsTitle}>Popular Artists</TextWhite>
         <FlatList
           data={artists}
           horizontal
@@ -170,14 +148,14 @@ const HomeScreen = () => {
                 style={{ width: 140, height: 140, borderRadius: 70 }}
                 source={{ uri: item.image }}
               />
-              <Text style={styles.blockRenderItem}>{item.artist}</Text>
+              <TextWhite style={styles.blockRenderItem}>{item.artist}</TextWhite>
             </View>
           )}
           keyExtractor={(item) => item.id.toString()}
         />
 
         {/* Top songs */}
-        <Text style={styles.recentlyplayedTitle}>Popular songs</Text>
+        <TextWhite style={styles.recentlyplayedTitle}>Popular songs</TextWhite>
         <FlatList
           data={songs}
           horizontal
@@ -188,13 +166,13 @@ const HomeScreen = () => {
                 style={{ width: 130, height: 130, borderRadius: 5 }}
                 source={{ uri: item.image }}
               />
-              <Text style={styles.blockRenderItem}>{item.name}</Text>
+              <TextWhite style={styles.blockRenderItem}>{item.name}</TextWhite>
             </View>
           )}
           keyExtractor={(item) => item.id.toString()}
         />
         {/* Top albums */}
-        <Text style={styles.recentlyplayedTitle}>Popular Album</Text>
+        <TextWhite style={styles.recentlyplayedTitle}>Popular Album</TextWhite>
         <FlatList
           data={albums}
           horizontal
@@ -205,13 +183,13 @@ const HomeScreen = () => {
                 style={{ width: 130, height: 130, borderRadius: 5 }}
                 source={{ uri: item.image }}
               />
-              <Text style={styles.blockRenderItem}>{item.name}</Text>
+              <TextWhite style={styles.blockRenderItem}>{item.name}</TextWhite>
             </View>
           )}
           keyExtractor={(item) => item.id.toString()}
         />
         {/* Trending now */}
-        <Text style={styles.recentlyplayedTitle}>Trending now</Text>
+        <TextWhite style={styles.recentlyplayedTitle}>Trending now</TextWhite>
         <FlatList
           data={trend}
           horizontal
@@ -222,7 +200,7 @@ const HomeScreen = () => {
                 style={{ width: 130, height: 130, borderRadius: 5 }}
                 source={{ uri: item.image }}
               />
-              <Text style={styles.blockRenderItem}>{item.name}</Text>
+              <TextWhite style={styles.blockRenderItem}>{item.name}</TextWhite>
             </View>
           )}
           keyExtractor={(item) => item.id.toString()}
@@ -253,13 +231,12 @@ const styles = StyleSheet.create({
     borderColor: "green",
     borderWidth: 2,
     resizeMode: "cover",
+    marginRight: 10,
   },
   messageDay: {
     marginLeft: 10,
-    marginRight: 90,
     fontSize: 25,
     fontWeight: "bold",
-    color: "white",
   },
   navbarContainer: {
     marginHorizontal: 12,
@@ -275,7 +252,6 @@ const styles = StyleSheet.create({
   },
   musicTitle: {
     fontSize: 15,
-    color: "white",
   },
   podcastsButton: {
     backgroundColor: "#282828",
@@ -284,7 +260,6 @@ const styles = StyleSheet.create({
   },
   podcastsTitle: {
     fontSize: 15,
-    color: "white",
   },
   albumContainer: {
     flexDirection: "row",
@@ -312,19 +287,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   albumLikedTitle: {
-    color: "white",
     fontSize: 13,
     fontWeight: "bold",
   },
   topArtistsTitle: {
-    color: "white",
     fontSize: 22,
     fontWeight: "bold",
     marginHorizontal: 10,
     marginVertical: 13,
   },
   recentlyplayedTitle: {
-    color: "white",
     fontSize: 22,
     fontWeight: "bold",
     marginHorizontal: 10,
@@ -334,7 +306,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 13,
     fontWeight: "500",
-    color: "white",
     marginTop: 10,
   },
 });

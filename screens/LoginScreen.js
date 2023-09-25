@@ -1,25 +1,19 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  Pressable,
-} from "react-native";
-import React, { useEffect } from "react";
+import { StyleSheet, View, SafeAreaView, Pressable } from "react-native";
+import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
-import { Entypo } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+
+import TextWhite from "../components/TextWhite";
+
 import { MaterialIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
-// import * as AppAuth from "expo-app-auth";
-// import AsyncStorage from "@react-native-async-storage/async-storage";
-// import { useNavigation } from "@react-navigation/native";
-import { useNavigation } from '@react-navigation/native';
+import { Entypo } from "@expo/vector-icons";
 
 const LoginScreen = () => {
   const navigation = useNavigation();
 
   const authenticate = () => {
-    navigation.navigate('Main'); // Điều hướng đến màn hình mới
+    navigation.navigate("Main"); // Điều hướng đến màn hình mới
   };
 
   return (
@@ -32,17 +26,9 @@ const LoginScreen = () => {
           size={80}
           color="white"
         />
-        <Text
-          style={{
-            color: "white",
-            fontSize: 40,
-            fontWeight: "bold",
-            textAlign: "center",
-            marginTop: 40,
-          }}
-        >
+        <TextWhite style={styles.textTitle}>
           Millions of Songs Free on spotify!
-        </Text>
+        </TextWhite>
 
         <View style={{ height: 80 }} />
         <Pressable
@@ -62,7 +48,7 @@ const LoginScreen = () => {
             },
           ]}
         >
-          <Text>Sign In with Spotify</Text>
+          <TextWhite>Sign In with Spotify</TextWhite>
         </Pressable>
 
         <Pressable
@@ -87,16 +73,9 @@ const LoginScreen = () => {
           ]}
         >
           <MaterialIcons name="phone-android" size={24} color="white" />
-          <Text
-            style={{
-              fontWeight: "500",
-              color: "white",
-              textAlign: "center",
-              flex: 1,
-            }}
-          >
+          <TextWhite style={styles.buttonLogin}>
             Continue with phone number
-          </Text>
+          </TextWhite>
         </Pressable>
 
         <Pressable
@@ -121,16 +100,7 @@ const LoginScreen = () => {
           ]}
         >
           <AntDesign name="google" size={24} color="white" />
-          <Text
-            style={{
-              fontWeight: "500",
-              color: "white",
-              textAlign: "center",
-              flex: 1,
-            }}
-          >
-            Continue with Google
-          </Text>
+          <TextWhite style={styles.buttonLogin}>Continue with Google</TextWhite>
         </Pressable>
 
         <Pressable
@@ -155,16 +125,7 @@ const LoginScreen = () => {
           ]}
         >
           <Entypo name="facebook" size={24} color="white" />
-          <Text
-            style={{
-              fontWeight: "500",
-              color: "white",
-              textAlign: "center",
-              flex: 1,
-            }}
-          >
-            Sign In with Facebook
-          </Text>
+          <TextWhite style={styles.buttonLogin}>Sign In with Facebook</TextWhite>
         </Pressable>
       </SafeAreaView>
     </LinearGradient>
@@ -172,3 +133,17 @@ const LoginScreen = () => {
 };
 
 export default LoginScreen;
+
+const styles = StyleSheet.create({
+  textTitle: {
+    fontSize: 40,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginTop: 40,
+  },
+  buttonLogin: {
+    fontWeight: "500",
+    textAlign: "center",
+    flex: 1,
+  },
+});

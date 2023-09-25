@@ -1,6 +1,4 @@
 import {
-  ActivityIndicator,
-  FlatList,
   Image,
   Pressable,
   ScrollView,
@@ -9,7 +7,7 @@ import {
   TextInput,
   View,
 } from "react-native";
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 
@@ -19,6 +17,8 @@ import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 
 import songsData from "../data-json/songs.json";
+
+import TextWhite from "../components/TextWhite";
 
 const LikedSongsScreen = () => {
   const navigation = useNavigation();
@@ -34,16 +34,9 @@ const LikedSongsScreen = () => {
     setSearchResult(filteredItems);
   };
 
-  useEffect(() => {
-    // getSavedTracks();
-  }, []);
+  useEffect(() => {}, []);
 
-  const playTrack = async () => {
-    // if (savedTracks.length > 0) {
-    //   setCurrentTrack(savedTracks[0]);
-    // }
-    // await play(savedTracks[0]);
-  };
+  const playTrack = async () => {};
 
   return (
     <LinearGradient colors={["#614385", "#516395"]} style={{ flex: 1 }}>
@@ -55,27 +48,8 @@ const LikedSongsScreen = () => {
           <Ionicons name="arrow-back" size={24} color="white" />
         </Pressable>
 
-        <Pressable
-          style={{
-            marginHorizontal: 10,
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginTop: 9,
-          }}
-        >
-          <Pressable
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              gap: 10,
-              backgroundColor: "#42275a",
-              padding: 9,
-              flex: 1,
-              borderRadius: 3,
-              height: 38,
-            }}
-          >
+        <Pressable style={styles.searchContainer}>
+          <Pressable style={styles.searchInput}>
             <AntDesign name="search1" size={20} color="white" />
             <TextInput
               onChangeText={(text) => handleSearch(text)}
@@ -85,48 +59,21 @@ const LikedSongsScreen = () => {
             />
           </Pressable>
 
-          <Pressable
-            style={{
-              marginHorizontal: 10,
-              backgroundColor: "#42275a",
-              padding: 10,
-              borderRadius: 3,
-              height: 38,
-            }}
-          >
-            <Text style={{ color: "white" }}>Sort</Text>
+          <Pressable style={styles.searchButton}>
+            <TextWhite>Sort</TextWhite>
           </Pressable>
         </Pressable>
 
         <View style={{ height: 20 }} />
         <View style={{ marginHorizontal: 10 }}>
-          <Text style={{ fontSize: 18, fontWeight: "bold", color: "white" }}>
+          <TextWhite style={{ fontSize: 18, fontWeight: "bold" }}>
             Liked Songs
-          </Text>
-          <Text style={{ color: "white", fontSize: 13, marginTop: 5 }}>
-            430 songs
-          </Text>
+          </TextWhite>
+          <TextWhite style={{ fontSize: 13, marginTop: 5 }}>18 songs</TextWhite>
         </View>
 
-        <Pressable
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginHorizontal: 10,
-            marginBottom: 20,
-          }}
-        >
-          <Pressable
-            style={{
-              width: 30,
-              height: 30,
-              borderRadius: 15,
-              backgroundColor: "#1DB954",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+        <Pressable style={styles.handleButton}>
+          <Pressable style={styles.ArrowDownIcon}>
             <AntDesign name="arrowdown" size={20} color="white" />
           </Pressable>
 
@@ -136,17 +83,7 @@ const LikedSongsScreen = () => {
               size={24}
               color="#1DB954"
             />
-            <Pressable
-              onPress={playTrack}
-              style={{
-                width: 60,
-                height: 60,
-                borderRadius: 30,
-                justifyContent: "center",
-                alignItems: "center",
-                backgroundColor: "#1DB954",
-              }}
-            >
+            <Pressable onPress={playTrack} style={styles.controlPlayIcon}>
               <Entypo name="controller-play" size={24} color="white" />
             </Pressable>
           </View>
@@ -154,29 +91,14 @@ const LikedSongsScreen = () => {
 
         <ScrollView>
           {searchResult.map((item) => (
-            <View
-              key={item.id}
-              style={{
-                padding: 10,
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "space-between",
-                gap: 12,
-              }}
-            >
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: 12,
-                }}
-              >
+            <View key={item.id} style={styles.songsItemsContainer}>
+              <View style={styles.songsItemsContent}>
                 <Image
                   style={{ width: 60, height: 60, borderRadius: 5 }}
                   source={{ uri: item.image }}
                 />
                 <View>
-                  <Text style={styles.nameSong}>{item.name}</Text>
+                  <TextWhite style={styles.nameSong}>{item.name}</TextWhite>
                   <Text style={styles.nameArtists}>{item.artist}</Text>
                 </View>
               </View>
@@ -192,10 +114,69 @@ const LikedSongsScreen = () => {
 export default LikedSongsScreen;
 
 const styles = StyleSheet.create({
+  searchContainer: {
+    marginHorizontal: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginTop: 9,
+  },
+  searchInput: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    backgroundColor: "#42275a",
+    padding: 9,
+    flex: 1,
+    borderRadius: 3,
+    height: 38,
+  },
+  searchButton: {
+    marginHorizontal: 10,
+    backgroundColor: "#42275a",
+    padding: 10,
+    borderRadius: 3,
+    height: 38,
+  },
+  handleButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginHorizontal: 10,
+    marginBottom: 20,
+  },
+  ArrowDownIcon: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: "#1DB954",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  controlPlayIcon: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#1DB954",
+  },
+  songsItemsContainer: {
+    padding: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 12,
+  },
+  songsItemsContent: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+  },
+
   nameSong: {
     fontSize: 13,
     fontWeight: "bold",
-    color: "white",
     marginTop: 7,
   },
   nameArtists: {

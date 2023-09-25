@@ -3,7 +3,6 @@ import {
   Pressable,
   ScrollView,
   StyleSheet,
-  Text,
   TextInput,
   View,
   TouchableOpacity,
@@ -13,8 +12,9 @@ import { LinearGradient } from "expo-linear-gradient";
 import { AntDesign } from "@expo/vector-icons";
 import SearchItem from "../data-json/searchItem.json";
 
+import TextWhite from "../components/TextWhite";
+
 const LikedSongsScreen = () => {
-  
   const [searchItem, setsearchItem] = useState(SearchItem);
   const [searchResult, setSearchResult] = useState(SearchItem);
 
@@ -29,57 +29,24 @@ const LikedSongsScreen = () => {
   return (
     <LinearGradient colors={["#614385", "#516395"]} style={{ flex: 1 }}>
       <ScrollView style={{ flex: 1, marginTop: 50 }}>
-        <Text
-          style={{
-            marginHorizontal: 10,
-            color: "white",
-            fontWeight: "bold",
-            fontSize: 26,
-          }}
-        >
-          Search
-        </Text>
+        <TextWhite style={styles.titleText1}>Search</TextWhite>
 
-        <Pressable
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginHorizontal: 10,
-            marginVertical: 20,
-          }}
-        >
-          <Pressable
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              gap: 10,
-              backgroundColor: "#42275a",
-              padding: 9,
-              flex: 1,
-              borderRadius: 3,
-              height: 50,
-            }}
-          >
+        <Pressable style={styles.headerContainer}>
+          <Pressable style={styles.inputContainer}>
             <AntDesign name="search1" size={25} color="white" />
             <TextInput
               onChangeText={(text) => handleSearch(text)}
               placeholder="Artists, songs, albums or podcast"
               placeholderTextColor={"#979593"}
-              style={{
-                fontSize: 16,
-                width: "100%",
-                fontWeight: "500",
-                color: "white",
-              }}
+              style={styles.inputTitle}
             />
           </Pressable>
         </Pressable>
 
         <View style={{ marginHorizontal: 10 }}>
-          <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
+          <TextWhite style={styles.titleText2}>
             What do you want to listen to ?
-          </Text>
+          </TextWhite>
         </View>
 
         <View style={styles.albumContainer}>
@@ -88,21 +55,8 @@ const LikedSongsScreen = () => {
               key={item.id}
               style={[styles.albumLikedButton, { backgroundColor: item.color }]}
             >
-              <Text
-                style={{ color: "white", fontSize: 16, fontWeight: "bold" }}
-              >
-                {item.name}
-              </Text>
-              <Image
-                style={{
-                  width: 60,
-                  height: 60,
-                  transform: [{ rotate: "15deg" }],
-                  margin: 4,
-                  borderRadius: 6,
-                }}
-                source={{ uri: item.image }}
-              />
+              <TextWhite style={styles.nameSong}>{item.name}</TextWhite>
+              <Image style={styles.imageSong} source={{ uri: item.image }} />
             </TouchableOpacity>
           ))}
         </View>
@@ -134,5 +88,47 @@ const styles = StyleSheet.create({
     width: 160,
     height: 95,
     opacity: 1, // Giá trị opacity mặc định
+  },
+  titleText1: {
+    marginHorizontal: 10,
+    fontWeight: "bold",
+    fontSize: 26,
+  },
+  headerContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginHorizontal: 10,
+    marginVertical: 20,
+  },
+  inputContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    backgroundColor: "#42275a",
+    padding: 9,
+    flex: 1,
+    borderRadius: 3,
+    height: 50,
+  },
+  inputTitle: {
+    fontSize: 16,
+    width: "100%",
+    fontWeight: "500",
+  },
+  titleText2: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  nameSong: {
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  imageSong: {
+    width: 60,
+    height: 60,
+    transform: [{ rotate: "15deg" }],
+    margin: 4,
+    borderRadius: 6,
   },
 });

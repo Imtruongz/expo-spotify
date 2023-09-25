@@ -1,23 +1,37 @@
 import {
   StyleSheet,
   Text,
-  Pressable,
   View,
   Image,
   FlatList,
-  ScrollView,
   TouchableOpacity,
+  Pressable,
+  Alert,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
+import { useNavigation } from "@react-navigation/native";
+
 import songsData from "../data-json/songs.json";
+import TextWhite from "../components/TextWhite";
+import { Ionicons } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
   const [songs, setSongs] = useState(songsData);
 
+  const handleEdit = () => {
+    Alert.alert("Thằng nào bấm vào nút này ngu vcl");
+  };
+
   return (
     <>
       <LinearGradient colors={["#00cc00", "#000000"]} style={styles.header}>
+        <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
+          <Pressable style={{ marginRight: 15 }}>
+            <Ionicons name="settings-outline" size={24} color="white" />
+          </Pressable>
+        </View>
+
         <View style={{ flexDirection: "row", width: "50%" }}>
           <Image
             style={styles.imgAvatar}
@@ -26,87 +40,43 @@ const ProfileScreen = () => {
             }}
           />
           <View>
-            <Text
-              style={{
-                fontWeight: "bold",
-                fontSize: 25,
-                color: "white",
-                marginLeft: 20,
-              }}
-            >
-              Nguyễn Việt Trường
-            </Text>
-            <View
-              style={{
-                flexDirection: "row",
-                marginTop: 10,
-                marginLeft: 20,
-                gap: 5,
-              }}
-            >
-              <Text style={{ fontWeight: "bold", color: "white" }}>0</Text>
+            <TextWhite style={styles.nameUser}>Nguyễn Việt Trường</TextWhite>
+            <View style={styles.infoFollower}>
+              <TextWhite style={{ fontWeight: "bold" }}>0</TextWhite>
               <Text style={{ color: "#E0E0E0" }}>follower</Text>
-              <Text style={{ fontWeight: "bold", color: "white" }}>0</Text>
+              <TextWhite style={{ fontWeight: "bold" }}>0</TextWhite>
               <Text style={{ color: "#E0E0E0" }}>following</Text>
             </View>
           </View>
         </View>
-        <TouchableOpacity>
-          <Text
-            style={{
-              width: 60, // Điều chỉnh độ rộng cho phù hợp
-              marginTop: 15,
-              marginLeft: 55, // Điều chỉnh khoảng cách bên trái
-              borderRadius: 40, // Để làm cho nút có hình dạng tròn
-              borderColor: "white",
-              borderWidth: 1,
-              color: "white",
-              paddingHorizontal: 17, // Điều chỉnh padding ngang
-              paddingVertical: 6, // Điều chỉnh padding dọc
-              fontWeight: "bold",
-            }}
-          >
-            Edit
-          </Text>
+        <TouchableOpacity onPress={handleEdit}>
+          <TextWhite style={styles.editButton}>Edit</TextWhite>
         </TouchableOpacity>
       </LinearGradient>
       <View style={styles.bottom}>
-        <Text
-          style={{
-            color: "white",
-            textAlign: "center",
-            fontSize: 22,
-            fontWeight: "bold",
-            marginBottom: 15,
-          }}
-        >
-          Your playlist
-        </Text>
+        <TextWhite style={styles.textTitle}>Your playlist</TextWhite>
         <FlatList
           data={songs}
           Vertical
           showsVerticalScrollIndicator={false}
           renderItem={({ item }) => (
-            <View
-              style={{
-                padding: 10,
-                flexDirection: "row",
-                alignItems: "center",
-                gap: 10,
-              }}
-            >
-              <Image
-                style={{ width: 60, height: 60, borderRadius: 5 }}
-                source={{ uri: item.image }}
-              />
-              <View style={{ alignItems: "flex-start" }}>
-                <Text style={styles.nameSong}>{item.name}</Text>
-                <Text style={styles.nameArtists}>{item.artist}</Text>
+            <View style={styles.itemContainer}>
+              <View style={styles.itemContainer}>
+                <Image
+                  style={{ width: 60, height: 60, borderRadius: 5 }}
+                  source={{ uri: item.image }}
+                />
+                <View style={{ alignItems: "flex-start" }}>
+                  <TextWhite style={styles.nameSong}>{item.name}</TextWhite>
+                  <Text style={styles.nameArtists}>{item.artist}</Text>
+                </View>
               </View>
+              <Ionicons name="md-ellipsis-vertical" size={24} color="white" />
             </View>
           )}
           keyExtractor={(item) => item.id.toString()}
         />
+        <View style={{ height: 50 }} />
       </View>
     </>
   );
@@ -122,7 +92,6 @@ const styles = StyleSheet.create({
   bottom: {
     flex: 1,
     backgroundColor: "black",
-    color: "white",
   },
   imgAvatar: {
     width: 120,
@@ -136,7 +105,6 @@ const styles = StyleSheet.create({
   nameSong: {
     fontSize: 13,
     fontWeight: "bold",
-    color: "white",
     marginTop: 7,
   },
   nameArtists: {
@@ -144,5 +112,40 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     color: "#E0E0E0",
     marginTop: 7,
+  },
+  nameUser: {
+    fontWeight: "bold",
+    fontSize: 25,
+    marginLeft: 20,
+  },
+  infoFollower: {
+    flexDirection: "row",
+    marginTop: 10,
+    marginLeft: 20,
+    gap: 5,
+  },
+  editButton: {
+    width: 60, // Điều chỉnh độ rộng cho phù hợp
+    marginTop: 15,
+    marginLeft: 55, // Điều chỉnh khoảng cách bên trái
+    borderRadius: 40, // Để làm cho nút có hình dạng tròn
+    borderColor: "white",
+    borderWidth: 1,
+    paddingHorizontal: 17, // Điều chỉnh padding ngang
+    paddingVertical: 6, // Điều chỉnh padding dọc
+    fontWeight: "bold",
+  },
+  textTitle: {
+    textAlign: "center",
+    fontSize: 22,
+    fontWeight: "bold",
+    marginBottom: 15,
+  },
+  itemContainer: {
+    padding: 7,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 12,
   },
 });
