@@ -14,6 +14,7 @@ import LoginScreen from "./screens/LoginScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import SearchScreen from "./screens/SearchScreen";
 import SongInfoScreen from "./screens/SongInfoScreen";
+import ScreenDetail from "./screens/ScreenDetail";
 
 const Tab = createBottomTabNavigator();
 
@@ -125,6 +126,11 @@ function Navigation() {
         <Stack.Screen
           name="Info"
           component={SongInfoScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Detail"
+          component={ScreenDetail}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

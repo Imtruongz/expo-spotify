@@ -5,11 +5,13 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  TouchableOpacity,
   View,
 } from "react-native";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
+import * as Animatable from "react-native-animatable"; // Thêm import này
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
@@ -26,6 +28,15 @@ const LikedSongsScreen = () => {
   const [songs, setSongs] = useState(songsData);
   const [searchResult, setSearchResult] = useState(songsData);
 
+  const [menuVisibility, setMenuVisibility] = useState({});
+
+  const toggleMenu = (itemId) => {
+    setMenuVisibility({
+      ...menuVisibility,
+      [itemId]: !menuVisibility[itemId],
+    });
+  };
+
   const handleSearch = (text) => {
     const searchText = text.toLowerCase();
     const filteredItems = songs.filter((item) => {
@@ -33,8 +44,6 @@ const LikedSongsScreen = () => {
     });
     setSearchResult(filteredItems);
   };
-
-  useEffect(() => {}, []);
 
   const playTrack = async () => {};
 
@@ -102,7 +111,28 @@ const LikedSongsScreen = () => {
                   <Text style={styles.nameArtists}>{item.artist}</Text>
                 </View>
               </View>
-              <Ionicons name="md-ellipsis-vertical" size={24} color="white" />
+              <TouchableOpacity onPress={() => toggleMenu(item.id)}>
+                <Ionicons name="md-ellipsis-vertical" size={24} color="white" />
+              </TouchableOpacity>
+              {menuVisibility[item.id] && (
+                <Animatable.View // Sử dụng Animated.View từ thư viện react-native-animatable
+                  animation="slideInRight" // Hiệu ứng xuất hiện khi menu mở
+                  duration={400} // Thời gian xuất hiện (milliseconds)
+                  style={styles.menuContainer}
+                >
+                  <TouchableOpacity>
+                    <TextWhite style={styles.menuItem}>
+                      Add to playlist
+                    </TextWhite>
+                  </TouchableOpacity>
+                  <TouchableOpacity>
+                    <TextWhite style={styles.menuItem}>
+                      Remove to playlist
+                    </TextWhite>
+                  </TouchableOpacity>
+                  {/* Thêm các mục menu khác ở đây */}
+                </Animatable.View>
+              )}
             </View>
           ))}
         </ScrollView>
@@ -184,5 +214,8 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     color: "#E0E0E0",
     marginTop: 7,
+  },
+  menuItem: {
+    fontWeight: "bold",
   },
 });

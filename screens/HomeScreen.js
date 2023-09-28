@@ -107,7 +107,9 @@ const HomeScreen = () => {
               }}
             />
             <View style={styles.randomArtist}>
-              <TextWhite style={{ fontSize: 13, fontWeight: "bold" }}>Pop</TextWhite>
+              <TextWhite style={{ fontSize: 13, fontWeight: "bold" }}>
+                Pop
+              </TextWhite>
             </View>
           </TouchableOpacity>
           {/* Rap */}
@@ -119,7 +121,9 @@ const HomeScreen = () => {
               }}
             />
             <View style={styles.randomArtist}>
-              <TextWhite style={{ fontSize: 13, fontWeight: "bold" }}>Rap</TextWhite>
+              <TextWhite style={{ fontSize: 13, fontWeight: "bold" }}>
+                Rap
+              </TextWhite>
             </View>
           </TouchableOpacity>
           {/* EDM */}
@@ -131,28 +135,12 @@ const HomeScreen = () => {
               }}
             />
             <View style={styles.randomArtist}>
-              <TextWhite style={{ fontSize: 13, fontWeight: "bold" }}>EDM</TextWhite>
+              <TextWhite style={{ fontSize: 13, fontWeight: "bold" }}>
+                EDM
+              </TextWhite>
             </View>
           </TouchableOpacity>
         </View>
-
-        {/* Top artists */}
-        <TextWhite style={styles.topArtistsTitle}>Popular Artists</TextWhite>
-        <FlatList
-          data={artists}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          renderItem={({ item }) => (
-            <View style={{ padding: 10 }}>
-              <Image
-                style={{ width: 140, height: 140, borderRadius: 70 }}
-                source={{ uri: item.image }}
-              />
-              <TextWhite style={styles.blockRenderItem}>{item.artist}</TextWhite>
-            </View>
-          )}
-          keyExtractor={(item) => item.id.toString()}
-        />
 
         {/* Top songs */}
         <TextWhite style={styles.recentlyplayedTitle}>Popular songs</TextWhite>
@@ -171,6 +159,26 @@ const HomeScreen = () => {
           )}
           keyExtractor={(item) => item.id.toString()}
         />
+        {/* Top artists */}
+        <TextWhite style={styles.topArtistsTitle}>Popular Artists</TextWhite>
+        <FlatList
+          data={artists}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item }) => (
+            <View style={{ padding: 10 }}>
+              <Image
+                style={{ width: 140, height: 140, borderRadius: 70 }}
+                source={{ uri: item.image }}
+              />
+              <TextWhite style={styles.blockRenderItem}>
+                {item.artist}
+              </TextWhite>
+            </View>
+          )}
+          keyExtractor={(item) => item.id.toString()}
+        />
+
         {/* Top albums */}
         <TextWhite style={styles.recentlyplayedTitle}>Popular Album</TextWhite>
         <FlatList
@@ -178,13 +186,16 @@ const HomeScreen = () => {
           horizontal
           showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => (
-            <View style={{ padding: 10 }}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Detail", { album: item })}
+              style={{ padding: 10 }}
+            >
               <Image
                 style={{ width: 130, height: 130, borderRadius: 5 }}
                 source={{ uri: item.image }}
               />
               <TextWhite style={styles.blockRenderItem}>{item.name}</TextWhite>
-            </View>
+            </TouchableOpacity>
           )}
           keyExtractor={(item) => item.id.toString()}
         />
