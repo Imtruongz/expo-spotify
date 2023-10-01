@@ -125,7 +125,9 @@ const LoginScreen = () => {
           ]}
         >
           <Entypo name="facebook" size={24} color="white" />
-          <TextWhite style={styles.buttonLogin}>Sign In with Facebook</TextWhite>
+          <TextWhite style={styles.buttonLogin}>
+            Sign In with Facebook
+          </TextWhite>
         </Pressable>
       </SafeAreaView>
     </LinearGradient>

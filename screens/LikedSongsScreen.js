@@ -86,7 +86,7 @@ const LikedSongsScreen = () => {
           </Pressable>
 
           <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
-          <Entypo name="shuffle" size={24} color="#1DB954" />
+            <Entypo name="shuffle" size={24} color="#1DB954" />
             <Pressable onPress={playTrack} style={styles.controlPlayIcon}>
               <Entypo name="controller-play" size={24} color="white" />
             </Pressable>

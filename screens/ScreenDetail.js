@@ -26,12 +26,12 @@ const DetailScreen = ({ route }) => {
         >
           <Ionicons name="arrow-back" size={24} color="white" />
         </Pressable>
-        <View style={{justifyContent: "center" , alignItems: "center"}}>
-        <Image
-          style={{ width: 200, height: 200, borderRadius: 5 }}
-          source={{ uri: album.image }}
-        />
-        <TextWhite>{album.name}</TextWhite>
+        <View style={{ justifyContent: "center", alignItems: "center" }}>
+          <Image
+            style={{ width: 200, height: 200, borderRadius: 5 }}
+            source={{ uri: album.image }}
+          />
+          <TextWhite>{album.name}</TextWhite>
         </View>
       </LinearGradient>
       <View style={styles.bottom}></View>

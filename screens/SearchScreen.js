@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     width: "100%",
     fontWeight: "500",
+    color: "#fff",
   },
   titleText2: {
     fontSize: 20,
