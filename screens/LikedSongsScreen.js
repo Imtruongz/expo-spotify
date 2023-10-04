@@ -23,7 +23,6 @@ import TextWhite from "../components/TextWhite";
 
 const LikedSongsScreen = () => {
   const navigation = useNavigation();
-  const [input, setInput] = useState("");
   const [songs, setSongs] = useState(songsData);
   const [searchResult, setSearchResult] = useState(songsData);
 
@@ -45,6 +44,8 @@ const LikedSongsScreen = () => {
   };
 
   const playTrack = async () => {};
+
+  const songCount = songs.length;
 
   return (
     <LinearGradient colors={["#614385", "#516395"]} style={{ flex: 1 }}>
@@ -77,7 +78,9 @@ const LikedSongsScreen = () => {
           <TextWhite style={{ fontSize: 18, fontWeight: "bold" }}>
             Liked Songs
           </TextWhite>
-          <TextWhite style={{ fontSize: 13, marginTop: 5 }}>18 songs</TextWhite>
+          <TextWhite style={{ fontSize: 13, marginTop: 5 }}>
+            {songCount} songs
+          </TextWhite>
         </View>
 
         <Pressable style={styles.handleButton}>

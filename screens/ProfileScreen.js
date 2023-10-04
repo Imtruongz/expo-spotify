@@ -10,13 +10,15 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
-import * as Animatable from "react-native-animatable"; // Thêm import này
+import * as Animatable from "react-native-animatable";
 
 import songsData from "../data-json/songs.json";
 import TextWhite from "../components/TextWhite";
 import { Ionicons } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
+  const AvtImg = require('../assets/avatar.png');
+
   const [songs, setSongs] = useState(songsData);
 
   const [menuVisibility, setMenuVisibility] = useState({});
@@ -28,25 +30,26 @@ const ProfileScreen = () => {
     });
   };
 
-  const handleEdit = () => {
-    Alert.alert("Thằng nào bấm vào nút này ngu vcl");
-  };
+  function UpdatingButton() {
+    Alert.alert("Updating");
+  }
 
   return (
     <>
       <LinearGradient colors={["#00cc00", "#000000"]} style={styles.header}>
         <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
-          <Pressable style={{ marginRight: 15 }}>
+          <TouchableOpacity
+            onPress={UpdatingButton}
+            style={{ marginRight: 15 }}
+          >
             <Ionicons name="settings-outline" size={24} color="white" />
-          </Pressable>
+          </TouchableOpacity>
         </View>
 
         <View style={{ flexDirection: "row", width: "50%" }}>
           <Image
             style={styles.imgAvatar}
-            source={{
-              uri: "https://lh3.googleusercontent.com/pw/AIL4fc-4-8q0Xr00RbnPmbWoXmxT5e9RITrznM3-w0ZZ4Kfzx7RXsJxa9PxcZF5qU6RRT4-WA_ltzm5aQgkcUq59OHuqAPTBtLTdlGUBTtUka6bUMq45cyaR0TMX0jOoy5DqMimzyNaeHL0q4pwfBwfhjDH2QAV8s5fYjR1dT3PrZsfeu4_TQWkn5ywSI8hxMMO3pBJBU6N6BUD4wk-GX7Q4E8EER9o9Y9GxPHpYoLajdvqeWpVbWrTEnQC6N7M_BxC5n5Lm95H_OBkBJ7O4MQKT5QWRo4SDaXhMJsQRl0J9h6RAFPYpB_UmMzHCiHf0qOalJf7FbRgMLM41X4gIRTrhD7h2relq0Ld8x01qzukwiw-Ot7dM8-_TUw08iFZfJ4L5dAkEw-8ZJf9SvL7V5NWpF_Iu_dhCHxJQyzPaNtDJciYielQFmeiCI-eES3GLvt_-V1Uf1AKUG1FDD5KcbvxNqF-RgMMFugI-3D0RYBoiIz2zZDwDy96cgV_9JCqthbDxuf42zjcWe3ZJtg37oaUN2Av4zBFYNoF_p7zka8XxJ3eomgmdPd0_15RoBLgD7crjtBM2GP5iir5YdTAb_qzisKOxO1BxnZ3wUaJMzwY0zJ9w7kOUHlJ5Dt78uL4GGCqnUZKGTX-jlUXMb4N_SU0mCt8SPFys8lpsNBr1uGymCKQWGdKhQ8dVxGd9CgtQZTpyLfy-B6B8mnemcabDyWrlD8b62v-bAy5E_x__EkCMZ0kmPcWQ33sSUkPfyWrMMF5y_OX2J3IM0gmsr7zfLO6V6APVWcTI0BsGDcM720RucJQmhvEzGZh0tz25XIaEPThUUacN8zcJw7h2Abhk0oV--8goqxbdM9xZZhJ8m0rVIU4TLYlVZYS2dbyzUwzD54G7l7g1OahW9a1cIF6x=w65-h73-s-no?authuser=0",
-            }}
+            source={AvtImg}
           />
           <View>
             <TextWhite style={styles.nameUser}>Nguyễn Việt Trường</TextWhite>
@@ -58,7 +61,7 @@ const ProfileScreen = () => {
             </View>
           </View>
         </View>
-        <TouchableOpacity onPress={handleEdit}>
+        <TouchableOpacity onPress={UpdatingButton}>
           <TextWhite style={styles.editButton}>Edit</TextWhite>
         </TouchableOpacity>
       </LinearGradient>
@@ -84,9 +87,9 @@ const ProfileScreen = () => {
                 <Ionicons name="md-ellipsis-vertical" size={24} color="white" />
               </TouchableOpacity>
               {menuVisibility[item.id] && (
-                <Animatable.View // Sử dụng Animated.View từ thư viện react-native-animatable
-                  animation="slideInRight" // Hiệu ứng xuất hiện khi menu mở
-                  duration={400} // Thời gian xuất hiện (milliseconds)
+                <Animatable.View
+                  animation="slideInRight"
+                  duration={400}
                   style={styles.menuContainer}
                 >
                   <TouchableOpacity>
@@ -99,7 +102,6 @@ const ProfileScreen = () => {
                       Remove to playlist
                     </TextWhite>
                   </TouchableOpacity>
-                  {/* Thêm các mục menu khác ở đây */}
                 </Animatable.View>
               )}
             </View>
@@ -155,14 +157,14 @@ const styles = StyleSheet.create({
     gap: 5,
   },
   editButton: {
-    width: 60, // Điều chỉnh độ rộng cho phù hợp
+    width: 60,
     marginTop: 15,
-    marginLeft: 55, // Điều chỉnh khoảng cách bên trái
-    borderRadius: 40, // Để làm cho nút có hình dạng tròn
+    marginLeft: 55,
+    borderRadius: 40,
     borderColor: "white",
     borderWidth: 1,
-    paddingHorizontal: 17, // Điều chỉnh padding ngang
-    paddingVertical: 6, // Điều chỉnh padding dọc
+    paddingHorizontal: 17,
+    paddingVertical: 6,
     fontWeight: "bold",
   },
   textTitle: {
