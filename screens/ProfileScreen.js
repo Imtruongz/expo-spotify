@@ -17,7 +17,7 @@ import TextWhite from "../components/TextWhite";
 import { Ionicons } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
-  const AvtImg = require('../assets/avatar.png');
+  const AvtImg = require("../assets/avatar.png");
 
   const [songs, setSongs] = useState(songsData);
 
@@ -47,10 +47,7 @@ const ProfileScreen = () => {
         </View>
 
         <View style={{ flexDirection: "row", width: "50%" }}>
-          <Image
-            style={styles.imgAvatar}
-            source={AvtImg}
-          />
+          <Image style={styles.imgAvatar} source={AvtImg} />
           <View>
             <TextWhite style={styles.nameUser}>Nguyễn Việt Trường</TextWhite>
             <View style={styles.infoFollower}>

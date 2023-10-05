@@ -48,7 +48,7 @@ const LoginScreen = () => {
             },
           ]}
         >
-          <TextWhite>Sign In with Spotify</TextWhite>
+          <TextWhite style={{fontWeight: 'bold'}}>Sign In with Spotify</TextWhite>
         </Pressable>
 
         <Pressable

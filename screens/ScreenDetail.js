@@ -7,15 +7,16 @@ import {
   Image,
   Pressable,
   TouchableOpacity,
-  Alert, // Thêm import này
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
-import { Ionicons } from "@expo/vector-icons";
-import TextWhite from "../components/TextWhite";
-import albumData from "../data-json/album.json";
 import * as Animatable from "react-native-animatable";
 
+import { AntDesign } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
+
+import TextWhite from "../components/TextWhite";
 
 const DetailScreen = ({ route }) => {
   const { album } = route.params;
@@ -31,26 +32,45 @@ const DetailScreen = ({ route }) => {
     });
   };
 
+  const playTrack = async () => {};
+
   return (
     <>
       <LinearGradient colors={["#00cc00", "#000000"]} style={styles.header}>
         <Pressable
           onPress={() => navigation.goBack()}
-          style={{ marginHorizontal: 10 }}
+          style={{ marginHorizontal: 14 }}
         >
           <Ionicons name="arrow-back" size={24} color="white" />
         </Pressable>
         <View style={{ justifyContent: "center", alignItems: "center" }}>
           <Image
-            style={{ width: 200, height: 200, borderRadius: 5 }}
+            style={{ width: 180, height: 180, borderRadius: 5 }}
             source={{ uri: album.image }}
           />
           <TextWhite style={styles.textTitle}>{album.name}</TextWhite>
         </View>
+        <View style={{ marginHorizontal: 14 }}>
+          <TextWhite style={{ fontSize: 18, fontWeight: "bold" }}>
+            {album.artist}
+          </TextWhite>
+        </View>
+
+        <Pressable style={styles.handleButton}>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 28 }}>
+            <AntDesign name="hearto" size={24} color="white" />
+            <AntDesign name="download" size={24} color="white" />
+          </View>
+
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+            <Entypo name="shuffle" size={24} color="white" />
+            <Pressable onPress={playTrack} style={styles.controlPlayIcon}>
+              <Entypo name="controller-play" size={24} color="white" />
+            </Pressable>
+          </View>
+        </Pressable>
       </LinearGradient>
       <View style={styles.bottom}>
-        
-
         <FlatList
           data={album.songs}
           Vertical
@@ -101,11 +121,9 @@ const DetailScreen = ({ route }) => {
 
 export default DetailScreen;
 
-// Các phần còn lại không thay đổi
-
 const styles = StyleSheet.create({
   header: {
-    flex: 0.7,
+    flex: 1,
     paddingTop: 60,
   },
   bottom: {
@@ -122,7 +140,7 @@ const styles = StyleSheet.create({
     marginLeft: 25,
   },
   nameSong: {
-    fontSize: 13,
+    fontSize: 17,
     fontWeight: "bold",
     marginTop: 7,
   },
@@ -158,7 +176,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 22,
     fontWeight: "bold",
-    marginBottom: 15,
+    marginVertical: 12,
   },
   itemContainer: {
     padding: 7,
@@ -166,5 +184,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     gap: 12,
+  },
+  handleButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginHorizontal: 14,
+  },
+  controlPlayIcon: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#1DB954",
   },
 });
