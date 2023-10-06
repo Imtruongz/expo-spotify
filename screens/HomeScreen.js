@@ -10,7 +10,6 @@ import {
 import React, { useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
-
 import { AntDesign } from "@expo/vector-icons";
 
 import songsData from "../data-json/songs.json";
@@ -26,8 +25,7 @@ const HomeScreen = () => {
   const [albums, setAlbums] = useState(albumData);
   const [trend, setTrend] = useState(trendingData);
 
-  const AvtImg = require('../assets/avatar.png');
-
+  const AvtImg = require("../assets/avatar.png");
 
   const greetingMessage = () => {
     const currentTime = new Date().getHours();
@@ -50,10 +48,7 @@ const HomeScreen = () => {
           <TextWhite style={styles.messageDay}>{message}</TextWhite>
           <View style={styles.Avatar}>
             <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-              <Image
-                style={styles.imgAvatar}
-                source={AvtImg}
-              />
+              <Image style={styles.imgAvatar} source={AvtImg} />
             </TouchableOpacity>
           </View>
         </View>
@@ -88,7 +83,7 @@ const HomeScreen = () => {
           {/* hiphop */}
           <TouchableOpacity style={styles.albumLikedButton}>
             <Image
-              style={{ width: 55, height: 55 }}
+              style={{ width: 55, height: 55, borderRadius: 5 }}
               source={{
                 uri: "https://lh3.googleusercontent.com/pw/AIL4fc9_fD783sz9IzpN_De5lGMaB44s9yHxdXtv0tmoWrY6EFb-qrp0J86e6wQ4yiNkuyKsfO2mKcrOarlapUtBSSdhX1pcBZm0m4Yk4jXhk4ivJOD-kkJ-t62W39fpgzexw9xoUl7eWPI4yTmhb3jxN_d9toHAdSL5ljVPXmbnII_vRXznn5ELUwKRotThCDFRczhvR9EmnGoyAA20AxPfcz6iaW0KvVMCWo9pnR8EVqYTFzubNNGTzngfeFbijhu0G4fwZA_bh25CU3IHZr8TpS-Z9FkXRbvbWZeQNCB0eX0FdfwTI8x0uNTs64lzZAzG116ohXFyLR-PChZ5hc4_apXgNh4rXylpwJkDeWfHjYXz9aHOrFpQJk2Tln-L232bviLsLhm74DLFuD3VCbtODGafIu3knrWwUUvChsksku1zQTr6oTbMv5JPuxfMPlEysbQqXURCJbYeWlteeIcdg2RjS-2I1i14Jy60Q07jt7jNFoxTi54vizTmq4lGyouU9xwRrsd7GDvTEwR6C-2_Cv9QHEiowCFzAeIFRj_KI8clVlC6Udeg_0nt88V5fb4t9qSrp8wTU5W3ZyRtFUqdaI8vCVHxDjD_5IkkGtorwhgYg13kLOthz5a-YOZGFxJyE40XpS4xcYWkF58HgsalRECXhWUTkl2nNr1PPcOjbTAYOpULQfc6bk0gEZx4hUndcQNJNfUc5JMtfKrZ1Or5iGdWzV4SFJ5t3c6hmin-c4tLsLZETmZT1CVPJiFZsQbGPloDORJdc84qIiyp63FmsjbpJBxquLiS4N4mzqVyHf70BJ9JBSNi0Y3HQ2Tc6RGD3AzC_8yadt9zchhrkyxgkYeiwlFxItBFTTdGYHme-o5qrXDiiGUXAOVET2hURblxOZN245meglXWMMsU=w700-h613-s-no?authuser=0",
               }}
@@ -102,7 +97,7 @@ const HomeScreen = () => {
           {/* Pop */}
           <TouchableOpacity style={styles.albumLikedButton}>
             <Image
-              style={{ width: 55, height: 55 }}
+              style={{ width: 55, height: 55, borderRadius: 5 }}
               source={{
                 uri: "https://lh3.googleusercontent.com/pw/AIL4fc-I_DEjLFkg5Wm8OfslQjySPK1pSDHEZHnIhsO3Sqb6A8BGJQpTmo2NPdcCNQrs08SWBPixXnESWPwEg4OTf9wlV88VIxEP2V8VW_HceURZ7VKcFW-1B83BAvYvWKNALfAuDSTpEMYUmXCawOMCJbDw8383i3Zyt8FYovBZ8OOA_kjmZCC0Sbk3IOlSEs88t6Lb9FesFMpIE3hCaflPhaKgJu3T5hiKz6V-Zuf5goyJZtYkdPOOjAd4Dvywc1OmD3w7iHRZUkL00J9yiTzNTGruRl26-1SbUxvWpNzFa_-u_kutppBFQ74D1E96Fm3m1ePCM0Tod29eQXGHuGaXjxj-f-hd8rd59xNh-TZn71q5pZUl-MSGHqrhOrhX7AfnYERizMe6GTFHNSjnQPbQyFDLzP7xs0w5UEzTevWSMDX8RAx4H0eAMGYCpzsRphuuxOcUGslPT0DS2xZq-VLDDpIydCMDQkkqUNIKRZ8jcai9jK6XXwieWUv6-IN5nenznj4hMf2PImuBMou81C0B_4zqPFdf0fW-BGdBLUTOm1HqJdckq2MtbTdLGg9CQoJ_1tNCx7VLjqqDpzttFSiS0IfIf4D0i0uUOgZPSt4N3HROpXVj0EhubArN2-9N-hVKp9LfWDrScvMKKsV2XdSlV4Ijz5uFAfo5Y4OsXVysnLok_RXvXvzu3KrJATt9XsQFqPWBZH8Exg3hRdDCAh05r-1ix7zwXPg7mp15Zn10henG8IPW5PPYvj-8mM77RzeYnUoRA17fMGG-_C7cQfabKMBlPDFVlP-HCaaAdoULpkLbaIuDl2jFVdtdYj5O-5Bx5kv6xDSHdc80gM6ST8Zl8Op0Lsz5USFe0qF6zJmYHJJw9K5oGfEIyf2gHRsN-zTedHSCoW4x5QmoM-CT=w412-h367-no?authuser=0",
               }}
@@ -116,7 +111,7 @@ const HomeScreen = () => {
           {/* Rap */}
           <TouchableOpacity style={styles.albumLikedButton}>
             <Image
-              style={{ width: 55, height: 55 }}
+              style={{ width: 55, height: 55, borderRadius: 5 }}
               source={{
                 uri: "https://lh3.googleusercontent.com/pw/AIL4fc9Zx92n4xNiNXWB8FzIpjnJk1dP07YbBTGnCX2sR9hJ7RHAlOwxPGq3iHfqclkjzP9QaXKb8GyY4yWcXHkilQrjuD4GiokHVLPkGE0rYgdjVSeUe_3KlXky_-yvD4Xp5NF_rIXO5nxpxleX7Pit2cCJduT4bff5I8MQTONFBbD19sUhVx9SxviTipbWC2HSwhSpUPeAFre7GolMgjYRZBVwa09oEIRN6xPtCVbU3aFo8Xqe3Ig2ISibV3LGaEbZFLjjeDWSsk0chnJmNaQS05hxW9v2Y5RpqXfBm5wMSzO87-U7HCDuHHxW3eNwO594kcXzzbD435tfCbw7y6JxJEnr0NX8uXV1A3mdOEJuTgippS3DgBBYU_3FS_W4LrhmwLLEJDXTjdnEC4FvG5kjEZMhag6kdtvedRFMlty_I_GZ4gulvQqsRy_5LstQ1bo4dUIBiFIYM_1cPv_ASqoK1zVytmW0R3esk1f1nj8TmjsivBeec3roQttPj3IjyEXW1XWYR4SQZrPStKZsCmp2K__fhQEspnSBPNbeCG-pwrsq5FT8pblMmZha1wL76TWxiu5u9ZFXRm8HWMN6kmzz6w4Mk5v3E4epfB3Z89QlXr7AmWt0uYTrgZwEg9vAR_qwPpfp8HaPM80FKtlqzVq-r04vwgtzTQmCiH_RcrAHFGVQrLswJPpLe-Q0GrREXgF2JSk2VcKmbLl4jJNIIRdM6wDdS5M-28wAQaodFPMq_BBLH2sCzLVrxZrRxRCnbbykGwDko8ATDWWvHiMCl3ZtPRsVTSIDtAJeUGlOZAJFtObUUuxA8zSdkzt2YgB2QHVY0qvEEYzEDQDKxf8jfInHI-P7xIbQQO1xrS63GFoahnW_PZ4heP2FsCNC9kP1vr0EkYreI8NtvicPClGB=w800-h800-s-no?authuser=0",
               }}
@@ -130,7 +125,7 @@ const HomeScreen = () => {
           {/* EDM */}
           <TouchableOpacity style={styles.albumLikedButton}>
             <Image
-              style={{ width: 55, height: 55 }}
+              style={{ width: 55, height: 55, borderRadius: 5 }}
               source={{
                 uri: "https://lh3.googleusercontent.com/pw/AIL4fc-fgKO0af-_0xvKWy7019RNU5yBw6O6CmnGGWTUEQSa6G8gfcJLxfSeQmkAjD-UMBpaZsm6yTTyMp8RFFQBysjIZLrjwHRFVz0R728Cx-Ivn7lKyhTliO27iNPigOArG_UJYRuqMEGanXbFOB6hhVJlAUISWjvPq0B7DIEEDpoohsZlnMEjpVTumuSxN2yFQn9kTPrWZaAOLbEJC-wCmgPHwV3V3zqCM0oSvL3iOfl6X2NIbxOC2bkoxTJ1DgJYqfBaGyNxY3ojrFbu84CTFQWpykYNVlv70ees_TIAf8w-O9A83bk9uf0ZuiQhL1UPo5jUl2fwvdUK53dN-7x7iXG2tcAZBu44xpF2Uxlm-Z7TfAO9tbnR6DzAqzMrwiMMLIj2j7XlZ2Xw-b_vdVgVZ8Y1RyxnhNiRYrbyVzi1t862rBZ8awZibCgmYKKQsUjWXE8s5QQngRw4JKS1MLyRkU793kwsx3nuQod6hoGmfxQQuM94x4OLQNiEP1I84UbUZI_nLDqnDCCIq8UWFGkJS7Pl4yEzxdo0OxWwtRSv9b9KauNxpRbuHlK5ZLCU4bBZQ5z1xfqVK1tJcZelZimDD-XmJZqC9u9K8FWLhzuACSclpBUVo2xU_JKdWGk8UmJkd5FTVp1L-I85a1hFiSzpkUSZ7orJIl4LzfjIUOzdbrWsuwPuzan5AoyFZUm7kWokiVNzawmbZr4GLOhKLt9GJAO7vc0TPjO_Q4vI28OcJ1C2j8ZOSvvm8-yk5x8l-BUedfjxBm0zopLxBIdhC_8EzdljVUHqkmdFd3r0UlbdNURN8u6nBq9Un63o7uVkTXPC4rhyDCtrhs233mpcduV7EWC8Uz4YhbIt_vJbaKlOXcJTXwX3UQiKSLsQJIjp6YHXytYFVtQQuCynXBVJ=w1280-h720-s-no?authuser=0",
               }}
@@ -280,7 +275,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   albumLikedButton: {
-    marginBottom: 10,
+    marginBottom: 0,
     flexDirection: "row",
     alignItems: "center",
     gap: 10,
@@ -288,9 +283,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     backgroundColor: "#202020",
     borderRadius: 5,
-    elevation: 3,
-    width: "43%",
-    opacity: 1, // Giá trị opacity mặc định
+    width: "44%",
   },
   heartIcon: {
     width: 55,

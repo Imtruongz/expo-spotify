@@ -41,7 +41,7 @@ const DetailScreen = ({ route }) => {
           onPress={() => navigation.goBack()}
           style={{ marginHorizontal: 14 }}
         >
-          <Ionicons name="arrow-back" size={24} color="white" />
+          <AntDesign name="left" size={22} color="white" />
         </Pressable>
         <View style={{ justifyContent: "center", alignItems: "center" }}>
           <Image
@@ -63,9 +63,9 @@ const DetailScreen = ({ route }) => {
           </View>
 
           <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
-            <Entypo name="shuffle" size={24} color="white" />
+            <Entypo name="shuffle" size={24} color="#1DB954" />
             <Pressable onPress={playTrack} style={styles.controlPlayIcon}>
-              <Entypo name="controller-play" size={24} color="white" />
+              <Entypo name="controller-play" size={24} color="black" />
             </Pressable>
           </View>
         </Pressable>

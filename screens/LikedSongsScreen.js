@@ -54,7 +54,7 @@ const LikedSongsScreen = () => {
           onPress={() => navigation.goBack()}
           style={{ marginHorizontal: 10 }}
         >
-          <Ionicons name="arrow-back" size={24} color="white" />
+          <AntDesign name="left" size={22} color="white" />
         </Pressable>
 
         <Pressable style={styles.searchContainer}>
@@ -85,13 +85,13 @@ const LikedSongsScreen = () => {
 
         <Pressable style={styles.handleButton}>
           <Pressable style={styles.ArrowDownIcon}>
-            <AntDesign name="arrowdown" size={20} color="white" />
+            <AntDesign name="arrowdown" size={20} color="#614385" />
           </Pressable>
 
           <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
             <Entypo name="shuffle" size={24} color="#1DB954" />
             <Pressable onPress={playTrack} style={styles.controlPlayIcon}>
-              <Entypo name="controller-play" size={24} color="white" />
+              <Entypo name="controller-play" size={24} color="#614385" />
             </Pressable>
           </View>
         </Pressable>
