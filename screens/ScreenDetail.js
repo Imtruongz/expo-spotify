@@ -60,6 +60,7 @@ const DetailScreen = ({ route }) => {
           <View style={{ flexDirection: "row", alignItems: "center", gap: 28 }}>
             <AntDesign name="hearto" size={24} color="white" />
             <AntDesign name="download" size={24} color="white" />
+            <Ionicons name="md-ellipsis-vertical" size={24} color="white" />
           </View>
 
           <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
@@ -77,43 +78,42 @@ const DetailScreen = ({ route }) => {
           showsVerticalScrollIndicator={false}
           renderItem={({ item }) => (
             <View style={styles.itemContainer}>
-              <View style={styles.itemContainer}>
-                <Image
-                  style={{ width: 60, height: 60, borderRadius: 5 }}
-                  source={{ uri: item.image }}
-                />
-                <View style={{ alignItems: "flex-start" }}>
-                  <TextWhite style={styles.nameSong}>{item.nameSong}</TextWhite>
-                  <Text style={styles.nameArtists}>{item.artist}</Text>
-                </View>
+              <View style={{ alignItems: "flex-start" }}>
+                <TextWhite style={styles.nameSong}>{item.nameSong}</TextWhite>
+                <Text style={styles.nameArtists}>{item.artist}</Text>
               </View>
-              <TouchableOpacity onPress={() => toggleMenu(item.id)}>
-                <Ionicons name="md-ellipsis-vertical" size={24} color="white" />
-              </TouchableOpacity>
-              {menuVisibility[item.id] && (
-                <Animatable.View
-                  animation="slideInRight"
-                  duration={400}
-                  style={styles.menuContainer}
-                >
-                  <TouchableOpacity>
-                    <TextWhite style={styles.menuItem}>
-                      Add to playlist
-                    </TextWhite>
-                  </TouchableOpacity>
-                  <TouchableOpacity>
-                    <TextWhite style={styles.menuItem}>
-                      Remove to playlist
-                    </TextWhite>
-                  </TouchableOpacity>
-                </Animatable.View>
-              )}
+              <View
+                style={{ flexDirection: "row", alignItems: "center", gap: 12 }}
+              >
+                <TouchableOpacity onPress={() => toggleMenu(item.idSong)}>
+                  <Ionicons
+                    name="md-ellipsis-vertical"
+                    size={24}
+                    color="white"
+                  />
+                </TouchableOpacity>
+                {menuVisibility[item.idSong] && (
+                  <Animatable.View
+                    animation="slideInRight"
+                    duration={400}
+                  >
+                    <TouchableOpacity>
+                      <TextWhite style={styles.menuItem}>
+                        Add to playlist
+                      </TextWhite>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                      <TextWhite style={styles.menuItem}>
+                        Remove to playlist
+                      </TextWhite>
+                    </TouchableOpacity>
+                  </Animatable.View>
+                )}
+              </View>
             </View>
           )}
           keyExtractor={(item) => item.idSong.toString()}
         />
-
-        <View style={{ height: 50 }} />
       </View>
     </>
   );
@@ -123,21 +123,12 @@ export default DetailScreen;
 
 const styles = StyleSheet.create({
   header: {
-    flex: 1,
+    flex: 0.9,
     paddingTop: 60,
   },
   bottom: {
     flex: 1,
     backgroundColor: "black",
-  },
-  imgAvatar: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    borderColor: "white",
-    borderWidth: 2,
-    resizeMode: "cover",
-    marginLeft: 25,
   },
   nameSong: {
     fontSize: 17,
@@ -150,28 +141,6 @@ const styles = StyleSheet.create({
     color: "#E0E0E0",
     marginTop: 7,
   },
-  nameUser: {
-    fontWeight: "bold",
-    fontSize: 25,
-    marginLeft: 20,
-  },
-  infoFollower: {
-    flexDirection: "row",
-    marginTop: 10,
-    marginLeft: 20,
-    gap: 5,
-  },
-  editButton: {
-    width: 60,
-    marginTop: 15,
-    marginLeft: 55,
-    borderRadius: 40,
-    borderColor: "white",
-    borderWidth: 1,
-    paddingHorizontal: 17,
-    paddingVertical: 6,
-    fontWeight: "bold",
-  },
   textTitle: {
     textAlign: "center",
     fontSize: 22,
@@ -179,11 +148,10 @@ const styles = StyleSheet.create({
     marginVertical: 12,
   },
   itemContainer: {
-    padding: 7,
+    padding: 14,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    gap: 12,
   },
   handleButton: {
     flexDirection: "row",
@@ -198,5 +166,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#1DB954",
+  },
+  menuItem: {
+    fontWeight: "bold",
   },
 });

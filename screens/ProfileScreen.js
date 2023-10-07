@@ -5,13 +5,11 @@ import {
   Image,
   FlatList,
   TouchableOpacity,
-  Pressable,
   Alert,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from "react-native-animatable";
-
 import songsData from "../data-json/songs.json";
 import TextWhite from "../components/TextWhite";
 import { Ionicons } from "@expo/vector-icons";
@@ -20,7 +18,6 @@ const ProfileScreen = () => {
   const AvtImg = require("../assets/avatar.png");
 
   const [songs, setSongs] = useState(songsData);
-
   const [menuVisibility, setMenuVisibility] = useState({});
 
   const toggleMenu = (itemId) => {
@@ -80,27 +77,34 @@ const ProfileScreen = () => {
                   <Text style={styles.nameArtists}>{item.artist}</Text>
                 </View>
               </View>
-              <TouchableOpacity onPress={() => toggleMenu(item.id)}>
-                <Ionicons name="md-ellipsis-vertical" size={24} color="white" />
-              </TouchableOpacity>
-              {menuVisibility[item.id] && (
-                <Animatable.View
-                  animation="slideInRight"
-                  duration={400}
-                  style={styles.menuContainer}
-                >
-                  <TouchableOpacity>
-                    <TextWhite style={styles.menuItem}>
-                      Add to playlist
-                    </TextWhite>
-                  </TouchableOpacity>
-                  <TouchableOpacity>
-                    <TextWhite style={styles.menuItem}>
-                      Remove to playlist
-                    </TextWhite>
-                  </TouchableOpacity>
-                </Animatable.View>
-              )}
+              <View
+                style={{ flexDirection: "row", alignItems: "center", gap: 12 }}
+              >
+                <TouchableOpacity onPress={() => toggleMenu(item.id)}>
+                  <Ionicons
+                    name="md-ellipsis-vertical"
+                    size={24}
+                    color="white"
+                  />
+                </TouchableOpacity>
+                {menuVisibility[item.id] && (
+                  <Animatable.View
+                    animation="slideInRight"
+                    duration={400}
+                  >
+                    <TouchableOpacity>
+                      <TextWhite style={styles.menuItem}>
+                        Add to playlist
+                      </TextWhite>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                      <TextWhite style={styles.menuItem}>
+                        Remove to playlist
+                      </TextWhite>
+                    </TouchableOpacity>
+                  </Animatable.View>
+                )}
+              </View>
             </View>
           )}
           keyExtractor={(item) => item.id.toString()}
@@ -176,5 +180,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     gap: 12,
+  },
+  menuItem: {
+    fontWeight: "bold",
   },
 });

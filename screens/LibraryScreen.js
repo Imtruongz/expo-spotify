@@ -5,6 +5,7 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  Alert
 } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
@@ -15,6 +16,10 @@ import TextWhite from "../components/TextWhite";
 const LibraryScreen = () => {
   const navigation = useNavigation();
   const AvtImg = require('../assets/avatar.png');
+
+  function UpdatingButton() {
+    Alert.alert("Updating");
+  }
 
   return (
     <LinearGradient colors={["#040306", "#131624"]} style={{ flex: 1 }}>
@@ -38,7 +43,7 @@ const LibraryScreen = () => {
           </View>
           <TextWhite style={styles.title}>Create your first playlist</TextWhite>
           <TextWhite>It's easy, we will help you</TextWhite>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity onPress={UpdatingButton} style={styles.button}>
             <Text>Create playlist</Text>
           </TouchableOpacity>
         </View>
@@ -51,7 +56,7 @@ const LibraryScreen = () => {
             Let's find some podcasts to follow
           </TextWhite>
           <TextWhite>We'll keep you updated on new episodes</TextWhite>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity onPress={UpdatingButton} style={styles.button}>
             <Text>Browse podcasts</Text>
           </TouchableOpacity>
         </View>
@@ -109,7 +114,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "white",
     width: "50%",
-    borderRadius: 50, // Đặt giá trị borderRadius lớn hơn
+    borderRadius: 50,
     padding: 9,
     justifyContent: "center",
     alignItems: "center",

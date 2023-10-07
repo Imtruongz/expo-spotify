@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Hiphop",
+        "image": "https://lh3.googleusercontent.com/pw/ADCreHeKN0-TXz5ZutHUReXGl48OElqRpZfrozjPwDz4r9d9Wl5MKzR7ml3IecBKxzONd4BopsG_Tys14z8UPkYvHHzMgy2HDb-Ua-u5KFg61ISmH6sPsslIV_oaFp7WmfsJ6PNJmFs_v9dZNR33nvVZkl0=w700-h613-s-no?authuser=0"
+    },
+    {
+        "id": 2,
+        "name": "Pop",
+        "image": "https://lh3.googleusercontent.com/pw/ADCreHcU6QDMRdC1l4MA0jfMijEhxlBAqJDAkZMgUpG_FwA6zAP6iFRIKNBL9UxvfX_lg56dwEnhIS67poIdkF2tWQgCyOxXZf2cDY1ollpQLxpq5npPOl-j2sBrOO0PPiJx7RPshuoecDgc4th9wMhyusM=w552-h492-s-no?authuser=0"
+    },
+    {
+        "id": 3,
+        "name": "Rap",
+        "image": "https://lh3.googleusercontent.com/pw/ADCreHdBUZNxCzrZjdTXUXgyxp8ddL2x8pVpYFjKl3E6Z3cFJIT0bsA5bG5KrVhvJeamn2Un_kNQtyrbjYdzFnlHfaYfdds1P0iy8Zy7GbkZRxdyWbXoijeKOzJgx_UPV-aumV0itsYlLoUcCY132YiDiDI=w800-h800-s-no?authuser=0"
+    },
+    {
+        "id": 4,
+        "name": "EDM",
+        "image": "https://lh3.googleusercontent.com/pw/ADCreHcWl3q2P-ZJSrpQzTHUvaokrOHR7wxBXSSQv4gdl9pb6yuPejgu6N_AIw8x-0ewRhwxI1galo18Q2XB9q66TKwPKAYwE6uBpEpjQH_hByKqTUbv5IgPuYCSZrGoPs_d5kQoKm08Zq-4eqJVMCdPiwk=w1280-h720-s-no?authuser=0"
+    }
+]

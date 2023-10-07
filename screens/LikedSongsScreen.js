@@ -109,28 +109,35 @@ const LikedSongsScreen = () => {
                   <Text style={styles.nameArtists}>{item.artist}</Text>
                 </View>
               </View>
-              <TouchableOpacity onPress={() => toggleMenu(item.id)}>
-                <Ionicons name="md-ellipsis-vertical" size={24} color="white" />
-              </TouchableOpacity>
-              {menuVisibility[item.id] && (
-                <Animatable.View // Sử dụng Animated.View từ thư viện react-native-animatable
-                  animation="slideInRight" // Hiệu ứng xuất hiện khi menu mở
-                  duration={400} // Thời gian xuất hiện (milliseconds)
-                  style={styles.menuContainer}
-                >
-                  <TouchableOpacity>
-                    <TextWhite style={styles.menuItem}>
-                      Add to playlist
-                    </TextWhite>
-                  </TouchableOpacity>
-                  <TouchableOpacity>
-                    <TextWhite style={styles.menuItem}>
-                      Remove to playlist
-                    </TextWhite>
-                  </TouchableOpacity>
-                  {/* Thêm các mục menu khác ở đây */}
-                </Animatable.View>
-              )}
+              <View
+                style={{ flexDirection: "row", alignItems: "center", gap: 12 }}
+              >
+                <TouchableOpacity onPress={() => toggleMenu(item.id)}>
+                  <Ionicons
+                    name="md-ellipsis-vertical"
+                    size={24}
+                    color="white"
+                  />
+                </TouchableOpacity>
+                {menuVisibility[item.id] && (
+                  <Animatable.View // Sử dụng Animated.View từ thư viện react-native-animatable
+                    animation="slideInRight" // Hiệu ứng xuất hiện khi menu mở
+                    duration={400} // Thời gian xuất hiện (milliseconds)
+                  >
+                    <TouchableOpacity>
+                      <TextWhite style={styles.menuItem}>
+                        Add to playlist
+                      </TextWhite>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                      <TextWhite style={styles.menuItem}>
+                        Remove to playlist
+                      </TextWhite>
+                    </TouchableOpacity>
+                    {/* Thêm các mục menu khác ở đây */}
+                  </Animatable.View>
+                )}
+              </View>
             </View>
           ))}
         </ScrollView>

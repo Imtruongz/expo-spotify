@@ -2,43 +2,38 @@
   {
     "id": 1,
     "name": "Bandaids",
-    "artist": "keshi",
+    "artist": "Keshi",
     "image": "https://lh3.googleusercontent.com/pw/AIL4fc_veFmg-OcJfDGVrEGPVGk3tQQYteSGmQEq53uoEtY4bPgUkF1AVLNz1pOaelk60o9HXxWxneRRdL0NyCyXCJi7bpEGpMVNpQcWdVob2pc_yYwux47EnOs1J83bRLz0sxNUWHCjxlqyvAv55z8n2pMy-Viu_2ShqYEARpmNLFT9DS_EK4sKapCTAJ1Amgo-MRJ-bZmzNFea3Zam9iNHvhieAsPL7jm5wlDV7QkS9CLmT4rp9EyqCSZVnfnbKq9OvIa-ZHTepnWSyRsq4Oanj8oI2uVHtV3g-wudXwlcGsAdeGDHXx0iqYV4ZD1HnGmmJ6kZfhgFOr1WG-l-6QGIWMPL8ZZFHPj5g3QRUSuk9KUrH78QUGM-xVtMsr4q4C6ClTbcsn2SDjYlhbH_PdNpLNV0Pqnuzuq-7pOaeyDXwgpoMpOFw4QWxclB1jUPmNmNU7oZx-_ub6SBYls27Jvn2Z7z-0mstZBH2J6HfODO_-v16ZqAS0izZtA9LfOFPMWUag8L2mHiwf4PDBvsawPYM-6PgfwbxZkHKU3WunTWmZ0wbyyFCP53zGgWzwFdi4hhAu9vCuXeRkiagT3dA4LyC6znzguz7F64YQUy6wZKBfwGQyTbRJl85Sj8u7cnIUM6HgZGiAm1wfDb8iCXYsR99VV8f-U8xUbDalS78u8DidEvqzus8n3-6nLkT3reJODOEVOuMtVf5wC99w3Ct2J9aHjd74o9vuBXJXm5Qov8SVMOgjkAOPzI5Z_bTgPktrlIfJM4UbQ0pepMNY9BEGEhwSbPFf2-hvzKcz4sF1RF-tFRsZqitjHF8bh3I3TfS8p1cv5XE2Jkc8KhuUnZ_SHWQpPFTqINuJ0-s8UyZjxDRoS6XTvNvMWIp8ZqMI2IJRn4zqipyeKKkunFi08M=w504-h504-s-no?authuser=0",
     "songs": [
       {
         "idSong": 1,
         "nameSong": "Right here",
-        "artist": "New Artist 1"
+        "artist": "Keshi"
       },
       {
         "idSong": 2,
         "nameSong": "Less of you",
-        "artist": "New Artist 2"
+        "artist": "Keshi"
       },
       {
         "idSong": 3,
         "nameSong": "Somebody",
-        "artist": "New Artist 3"
+        "artist": "Keshi"
       },
       {
         "idSong": 4,
-        "nameSong": "Right here",
-        "artist": "New Artist 1"
+        "nameSong": "B.Y.S",
+        "artist": "Keshi"
       },
       {
         "idSong": 5,
-        "nameSong": "Less of you",
-        "artist": "New Artist 2"
+        "nameSong": "It's you",
+        "artist": "Keshi"
       },
       {
         "idSong": 6,
-        "nameSong": "Somebody",
-        "artist": "New Artist 3"
-      },
-      {
-        "idSong": 7,
-        "nameSong": "Right here",
-        "artist": "New Artist 1"
+        "nameSong": "Limbo",
+        "artist": "Keshi"
       }
     ]
   },
