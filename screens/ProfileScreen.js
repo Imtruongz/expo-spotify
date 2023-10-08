@@ -7,17 +7,17 @@ import {
   TouchableOpacity,
   Alert,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from "react-native-animatable";
-import songsData from "../data-json/songs.json";
+import playListData from "../data-json/playlist.json";
 import TextWhite from "../components/TextWhite";
 import { Ionicons } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
   const AvtImg = require("../assets/avatar.png");
 
-  const [songs, setSongs] = useState(songsData);
+  const [playList, setplayList] = useState(playListData);
   const [menuVisibility, setMenuVisibility] = useState({});
 
   const toggleMenu = (itemId) => {
@@ -30,6 +30,8 @@ const ProfileScreen = () => {
   function UpdatingButton() {
     Alert.alert("Updating");
   }
+
+  function handleDelete() {}
 
   return (
     <>
@@ -62,7 +64,7 @@ const ProfileScreen = () => {
       <View style={styles.bottom}>
         <TextWhite style={styles.textTitle}>Your playlist</TextWhite>
         <FlatList
-          data={songs}
+          data={playList}
           Vertical
           showsVerticalScrollIndicator={false}
           renderItem={({ item }) => (
@@ -88,16 +90,8 @@ const ProfileScreen = () => {
                   />
                 </TouchableOpacity>
                 {menuVisibility[item.id] && (
-                  <Animatable.View
-                    animation="slideInRight"
-                    duration={400}
-                  >
-                    <TouchableOpacity>
-                      <TextWhite style={styles.menuItem}>
-                        Add to playlist
-                      </TextWhite>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
+                  <Animatable.View animation="slideInRight" duration={400}>
+                    <TouchableOpacity onPress={() => handleDelete(item.id)}>
                       <TextWhite style={styles.menuItem}>
                         Remove to playlist
                       </TextWhite>
