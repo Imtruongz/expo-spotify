@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -18,9 +18,8 @@ import { Ionicons } from "@expo/vector-icons";
 
 import TextWhite from "../components/TextWhite";
 
-const DetailScreen = ({ route }) => {
+const AlbumDetail = ({ route }) => {
   const { album } = route.params;
-
   const navigation = useNavigation();
 
   const [menuVisibility, setMenuVisibility] = useState({});
@@ -65,9 +64,9 @@ const DetailScreen = ({ route }) => {
 
           <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
             <Entypo name="shuffle" size={24} color="#1DB954" />
-            <Pressable onPress={playTrack} style={styles.controlPlayIcon}>
+            <TouchableOpacity onPress={playTrack} style={styles.controlPlayIcon}>
               <Entypo name="controller-play" size={24} color="black" />
-            </Pressable>
+            </TouchableOpacity>
           </View>
         </Pressable>
       </LinearGradient>
@@ -93,10 +92,7 @@ const DetailScreen = ({ route }) => {
                   />
                 </TouchableOpacity>
                 {menuVisibility[item.idSong] && (
-                  <Animatable.View
-                    animation="slideInRight"
-                    duration={400}
-                  >
+                  <Animatable.View animation="slideInRight" duration={400}>
                     <TouchableOpacity>
                       <TextWhite style={styles.menuItem}>
                         Add to playlist
@@ -119,7 +115,7 @@ const DetailScreen = ({ route }) => {
   );
 };
 
-export default DetailScreen;
+export default AlbumDetail;
 
 const styles = StyleSheet.create({
   header: {

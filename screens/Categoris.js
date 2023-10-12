@@ -1,31 +1,32 @@
 import {
+  FlatList,
   Image,
   Pressable,
-  ScrollView,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
-import * as Animatable from "react-native-animatable"; // Thêm import này
+import * as Animatable from "react-native-animatable";
 
 import { Entypo } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 
-import songsData from "../data-json/songs.json";
+import CategoriData from "../data-json/categori.json";
 
 import TextWhite from "../components/TextWhite";
 
-const LikedSongsScreen = () => {
+const CategoriScreen = ({ route }) => {
+  const { categoris } = route.params;
   const navigation = useNavigation();
-  const [songs, setSongs] = useState(songsData);
-  const [searchResult, setSearchResult] = useState(songsData);
 
+  const [categori, setCategori] = useState(CategoriData);
+  const [searchResult, setSearchResult] = useState(CategoriData);
   const [menuVisibility, setMenuVisibility] = useState({});
 
   const toggleMenu = (itemId) => {
@@ -37,7 +38,7 @@ const LikedSongsScreen = () => {
 
   const handleSearch = (text) => {
     const searchText = text.toLowerCase();
-    const filteredItems = songs.filter((item) => {
+    const filteredItems = categori.filter((item) => {
       return item.name.toLowerCase().includes(searchText);
     });
     setSearchResult(filteredItems);
@@ -45,7 +46,7 @@ const LikedSongsScreen = () => {
 
   const playTrack = async () => {};
 
-  const songCount = songs.length;
+  const songCount = categori.length;
 
   return (
     <LinearGradient colors={["#614385", "#516395"]} style={{ flex: 1 }}>
@@ -62,21 +63,17 @@ const LikedSongsScreen = () => {
             <AntDesign name="search1" size={20} color="white" />
             <TextInput
               onChangeText={(text) => handleSearch(text)}
-              placeholder="Find in Liked songs"
+              placeholder="What do you want to listen to?"
               placeholderTextColor={"#979593"}
               style={{ fontWeight: "500", width: "100%", color: "white" }}
             />
-          </Pressable>
-
-          <Pressable style={styles.searchButton}>
-            <TextWhite>Sort</TextWhite>
           </Pressable>
         </Pressable>
 
         <View style={{ height: 20 }} />
         <View style={{ marginHorizontal: 10 }}>
           <TextWhite style={{ fontSize: 18, fontWeight: "bold" }}>
-            Liked Songs
+            {categoris.name}
           </TextWhite>
           <TextWhite style={{ fontSize: 13, marginTop: 5 }}>
             {songCount} songs
@@ -84,20 +81,25 @@ const LikedSongsScreen = () => {
         </View>
 
         <Pressable style={styles.handleButton}>
-          <Pressable style={styles.ArrowDownIcon}>
-            <AntDesign name="arrowdown" size={20} color="#614385" />
-          </Pressable>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: 28 }}>
+            <AntDesign name="hearto" size={24} color="white" />
+            <AntDesign name="download" size={24} color="white" />
+            <Ionicons name="md-ellipsis-vertical" size={24} color="white" />
+          </View>
 
           <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
-            <Entypo name="shuffle" size={24} color="#1DB954" />
-            <Pressable onPress={playTrack} style={styles.controlPlayIcon}>
+            <Entypo name="shuffle" size={24} color="white" />
+            <TouchableOpacity onPress={playTrack} style={styles.controlPlayIcon}>
               <Entypo name="controller-play" size={24} color="#614385" />
-            </Pressable>
+            </TouchableOpacity>
           </View>
         </Pressable>
 
-        <ScrollView>
-          {searchResult.map((item) => (
+        <FlatList
+          data={categoris.songs}
+          Vertical
+          showsVerticalScrollIndicator={false}
+          renderItem={({ item }) => (
             <View key={item.id} style={styles.songsItemsContainer}>
               <View style={styles.songsItemsContent}>
                 <Image
@@ -105,24 +107,24 @@ const LikedSongsScreen = () => {
                   source={{ uri: item.image }}
                 />
                 <View>
-                  <TextWhite style={styles.nameSong}>{item.name}</TextWhite>
+                  <TextWhite style={styles.nameSong}>{item.nameSong}</TextWhite>
                   <Text style={styles.nameArtists}>{item.artist}</Text>
                 </View>
               </View>
               <View
                 style={{ flexDirection: "row", alignItems: "center", gap: 12 }}
               >
-                <TouchableOpacity onPress={() => toggleMenu(item.id)}>
+                <TouchableOpacity onPress={() => toggleMenu(item.idSong)}>
                   <Ionicons
                     name="md-ellipsis-vertical"
                     size={24}
                     color="white"
                   />
                 </TouchableOpacity>
-                {menuVisibility[item.id] && (
-                  <Animatable.View // Sử dụng Animated.View từ thư viện react-native-animatable
-                    animation="slideInRight" // Hiệu ứng xuất hiện khi menu mở
-                    duration={400} // Thời gian xuất hiện (milliseconds)
+                {menuVisibility[item.idSong] && (
+                  <Animatable.View
+                    animation="slideInRight"
+                    duration={400} 
                   >
                     <TouchableOpacity>
                       <TextWhite style={styles.menuItem}>
@@ -134,19 +136,19 @@ const LikedSongsScreen = () => {
                         Remove to playlist
                       </TextWhite>
                     </TouchableOpacity>
-                    {/* Thêm các mục menu khác ở đây */}
                   </Animatable.View>
                 )}
               </View>
             </View>
-          ))}
-        </ScrollView>
+          )}
+          keyExtractor={(item) => item.idSong.toString()}
+        />
       </View>
     </LinearGradient>
   );
 };
 
-export default LikedSongsScreen;
+export default CategoriScreen;
 
 const styles = StyleSheet.create({
   searchContainer: {
@@ -163,13 +165,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#42275a",
     padding: 9,
     flex: 1,
-    borderRadius: 3,
-    height: 38,
-  },
-  searchButton: {
-    marginHorizontal: 10,
-    backgroundColor: "#42275a",
-    padding: 10,
     borderRadius: 3,
     height: 38,
   },
@@ -208,7 +203,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 12,
   },
-
   nameSong: {
     fontSize: 13,
     fontWeight: "bold",

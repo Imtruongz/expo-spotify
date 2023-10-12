@@ -31,7 +31,11 @@ const ProfileScreen = () => {
     Alert.alert("Updating");
   }
 
-  function handleDelete() {}
+  function handleDelete(songId) {
+    const updatedPlayList = playList.filter(song => song.id !== songId);
+    setplayList(updatedPlayList);
+  }
+  
 
   return (
     <>

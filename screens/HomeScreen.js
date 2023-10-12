@@ -10,7 +10,6 @@ import {
 import React, { useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
-import { AntDesign } from "@expo/vector-icons";
 
 import songsData from "../data-json/songs.json";
 import ArtistsData from "../data-json/artists.json";
@@ -70,21 +69,15 @@ const HomeScreen = () => {
 
         {/* Album */}
         <View style={styles.albumContainer}>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Liked")}
-            style={styles.albumLikedButton}
-          >
-            <LinearGradient colors={["#33006F", "#FFFFFF"]}>
-              <Pressable style={styles.heartIcon}>
-                <AntDesign name="heart" size={24} color="white" />
-              </Pressable>
-            </LinearGradient>
-
-            <TextWhite style={styles.albumLikedTitle}>Liked Songs</TextWhite>
-          </TouchableOpacity>
           {/* categori */}
           {categori.map((item) => (
-            <TouchableOpacity key={item.id} style={styles.albumLikedButton}>
+            <TouchableOpacity
+              key={item.id}
+              onPress={() =>
+                navigation.navigate("Categori", { categoris: item })
+              }
+              style={styles.albumLikedButton}
+            >
               <Image
                 style={{ width: 55, height: 55, borderRadius: 5 }}
                 source={{ uri: item.image }}
@@ -175,7 +168,7 @@ const styles = StyleSheet.create({
   navbarContainer: {
     marginHorizontal: 14,
     marginVertical: 5,
-    marginBottom: 10,
+    marginBottom: 14,
     flexDirection: "row",
     alignItems: "center",
     gap: 10,

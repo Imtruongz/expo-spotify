@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
 import TextWhite from "./TextWhite";
 import { useNavigation } from "@react-navigation/native";
 
@@ -10,7 +10,7 @@ const PopularAlbum = ({ item }) => {
   return (
     <View>
       <TouchableOpacity
-        onPress={() => navigation.navigate("Detail", { album: item })}
+        onPress={() => navigation.navigate("Album", { album: item })}
         style={{ padding: 10 }}
       >
         <Image

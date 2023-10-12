@@ -5,16 +5,16 @@ import { NavigationContainer } from "@react-navigation/native";
 import { Entypo } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
-import { MaterialIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import HomeScreen from "./screens/HomeScreen";
 import LibraryScreen from "./screens/LibraryScreen";
-import LikedSongsScreen from "./screens/LikedSongsScreen";
+import CategoriScreen from "./screens/Categoris";
 import LoginScreen from "./screens/LoginScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import SearchScreen from "./screens/SearchScreen";
 import SongInfoScreen from "./screens/SongInfoScreen";
-import ScreenDetail from "./screens/ScreenDetail";
+import AlbumDetail from "./screens/AlbumDetail";
 
 const Tab = createBottomTabNavigator();
 
@@ -78,9 +78,17 @@ function BottomTabs() {
           tabBarLabelStyle: { color: "white", marginBottom: 3 },
           tabBarIcon: ({ focused }) =>
             focused ? (
-              <MaterialIcons name="my-library-music" size={24} color="white" />
+              <MaterialCommunityIcons
+                name="music-box-multiple"
+                size={24}
+                color="white"
+              />
             ) : (
-              <MaterialIcons name="my-library-music" size={24} color="white" />
+              <MaterialCommunityIcons
+                name="music-box-multiple-outline"
+                size={24}
+                color="white"
+              />
             ),
         }}
       />
@@ -119,8 +127,8 @@ function Navigation() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Liked"
-          component={LikedSongsScreen}
+          name="Categori"
+          component={CategoriScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -129,8 +137,8 @@ function Navigation() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Detail"
-          component={ScreenDetail}
+          name="Album"
+          component={AlbumDetail}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
