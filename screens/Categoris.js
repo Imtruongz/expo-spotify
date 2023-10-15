@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 import * as Animatable from "react-native-animatable";
@@ -46,7 +46,15 @@ const CategoriScreen = ({ route }) => {
 
   const playTrack = async () => {};
 
-  const songCount = categori.length;
+  const [songCounts, setSongCounts] = useState({});
+
+  useEffect(() => {
+    const counts = categori.reduce((result, category) => {
+      result[category.name] = category.songs.length;
+      return result;
+    }, {});
+    setSongCounts(counts);
+  }, [categori]);
 
   return (
     <LinearGradient colors={["#614385", "#516395"]} style={{ flex: 1 }}>
@@ -76,12 +84,12 @@ const CategoriScreen = ({ route }) => {
             {categoris.name}
           </TextWhite>
           <TextWhite style={{ fontSize: 13, marginTop: 5 }}>
-            {songCount} songs
+            {songCounts[categoris.name]} songs
           </TextWhite>
         </View>
 
         <Pressable style={styles.handleButton}>
-        <View style={{ flexDirection: "row", alignItems: "center", gap: 28 }}>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 28 }}>
             <AntDesign name="hearto" size={24} color="white" />
             <AntDesign name="download" size={24} color="white" />
             <Ionicons name="md-ellipsis-vertical" size={24} color="white" />
@@ -89,7 +97,10 @@ const CategoriScreen = ({ route }) => {
 
           <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
             <Entypo name="shuffle" size={24} color="white" />
-            <TouchableOpacity onPress={playTrack} style={styles.controlPlayIcon}>
+            <TouchableOpacity
+              onPress={playTrack}
+              style={styles.controlPlayIcon}
+            >
               <Entypo name="controller-play" size={24} color="#614385" />
             </TouchableOpacity>
           </View>
@@ -122,10 +133,7 @@ const CategoriScreen = ({ route }) => {
                   />
                 </TouchableOpacity>
                 {menuVisibility[item.idSong] && (
-                  <Animatable.View
-                    animation="slideInRight"
-                    duration={400} 
-                  >
+                  <Animatable.View animation="slideInRight" duration={400}>
                     <TouchableOpacity>
                       <TextWhite style={styles.menuItem}>
                         Add to playlist

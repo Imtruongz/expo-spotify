@@ -22,6 +22,13 @@
         "artist": "Artist 3",
         "image": "https://lh3.googleusercontent.com/pw/ADCreHeKN0-TXz5ZutHUReXGl48OElqRpZfrozjPwDz4r9d9Wl5MKzR7ml3IecBKxzONd4BopsG_Tys14z8UPkYvHHzMgy2HDb-Ua-u5KFg61ISmH6sPsslIV_oaFp7WmfsJ6PNJmFs_v9dZNR33nvVZkl0=w700-h613-s-no?authuser=0"
       }
+      ,
+      {
+        "idSong": 4,
+        "nameSong": "Hiphop Song 4",
+        "artist": "Artist 4",
+        "image": "https://lh3.googleusercontent.com/pw/ADCreHeKN0-TXz5ZutHUReXGl48OElqRpZfrozjPwDz4r9d9Wl5MKzR7ml3IecBKxzONd4BopsG_Tys14z8UPkYvHHzMgy2HDb-Ua-u5KFg61ISmH6sPsslIV_oaFp7WmfsJ6PNJmFs_v9dZNR33nvVZkl0=w700-h613-s-no?authuser=0"
+      }
     ]
   },
   {
@@ -70,6 +77,18 @@
         "idSong": 3,
         "nameSong": "Rap Song 3",
         "artist": "Artist 3",
+        "image": "https://lh3.googleusercontent.com/pw/ADCreHdBUZNxCzrZjdTXUXgyxp8ddL2x8pVpYFjKl3E6Z3cFJIT0bsA5bG5KrVhvJeamn2Un_kNQtyrbjYdzFnlHfaYfdds1P0iy8Zy7GbkZRxdyWbXoijeKOzJgx_UPV-aumV0itsYlLoUcCY132YiDiDI=w800-h800-s-no?authuser=0"
+      },
+      {
+        "idSong": 4,
+        "nameSong": "Rap Song 4",
+        "artist": "Artist 4",
+        "image": "https://lh3.googleusercontent.com/pw/ADCreHdBUZNxCzrZjdTXUXgyxp8ddL2x8pVpYFjKl3E6Z3cFJIT0bsA5bG5KrVhvJeamn2Un_kNQtyrbjYdzFnlHfaYfdds1P0iy8Zy7GbkZRxdyWbXoijeKOzJgx_UPV-aumV0itsYlLoUcCY132YiDiDI=w800-h800-s-no?authuser=0"
+      },
+      {
+        "idSong": 5,
+        "nameSong": "Rap Song 5",
+        "artist": "Artist 5",
         "image": "https://lh3.googleusercontent.com/pw/ADCreHdBUZNxCzrZjdTXUXgyxp8ddL2x8pVpYFjKl3E6Z3cFJIT0bsA5bG5KrVhvJeamn2Un_kNQtyrbjYdzFnlHfaYfdds1P0iy8Zy7GbkZRxdyWbXoijeKOzJgx_UPV-aumV0itsYlLoUcCY132YiDiDI=w800-h800-s-no?authuser=0"
       }
     ]
