@@ -63,7 +63,7 @@
   {
     "id": 3,
     "name": "Purpose",
-    "artist": "justin bieber",
+    "artist": "Justin Bieber",
     "image": "PurposeImg",
     "songs": [
       {
@@ -86,7 +86,7 @@
   {
     "id": 4,
     "name": "Justice",
-    "artist": "justin bieber",
+    "artist": "Justin Bieber",
     "image": "JusticeImg",
     "songs": [
       {
@@ -109,7 +109,7 @@
   {
     "id": 5,
     "name": "Gabriel",
-    "artist": "keshi",
+    "artist": "Keshi",
     "image": "GabrielImg",
     "songs": [
       {
@@ -132,7 +132,7 @@
   {
     "id": 6,
     "name": "Lalisa",
-    "artist": "lisa",
+    "artist": "Lisa",
     "image": "LalisaImg",
     "songs": [
       {

@@ -23,7 +23,7 @@ const LibraryScreen = () => {
 
   return (
     <LinearGradient colors={["#040306", "#131624"]} style={{ flex: 1 }}>
-      <ScrollView style={{ marginTop: 50 }}>
+      <ScrollView style={{ marginTop: 10 }}>
         {/* Header */}
         <View style={styles.header}>
           <TextWhite style={styles.messageDay}>Your Library</TextWhite>

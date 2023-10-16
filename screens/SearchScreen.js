@@ -43,7 +43,7 @@ const LikedSongsScreen = () => {
 
   return (
     <LinearGradient colors={["#614385", "#516395"]} style={{ flex: 1 }}>
-      <ScrollView style={{ flex: 1, marginTop: 50 }}>
+      <ScrollView style={{ flex: 1, marginTop: 15 }}>
         <TextWhite style={styles.titleText1}>Search</TextWhite>
 
         <Pressable style={styles.headerContainer}>

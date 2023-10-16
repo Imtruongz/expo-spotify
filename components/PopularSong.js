@@ -1,8 +1,12 @@
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
 import TextWhite from "./TextWhite";
+import { useNavigation } from "@react-navigation/native";
+
 import React from "react";
 
 const PopularSong = ({ item }) => {
+  const navigation = useNavigation();
+
   const images = {
     ShapeOfYouImg: require("../assets/songs/shapeofyou.jpeg"),
     RollingInTheDeepImg: require("../assets/songs/rollinginthedeep.jpg"),
@@ -25,13 +29,16 @@ const PopularSong = ({ item }) => {
   };
   return (
     <View>
-      <View style={{ padding: 10 }}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Info",{ song: item })}
+        style={{ padding: 10 }}
+      >
         <Image
           style={{ width: 130, height: 130, borderRadius: 5 }}
           source={images[item.image]}
         />
         <TextWhite style={styles.blockRenderItem}>{item.name}</TextWhite>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };

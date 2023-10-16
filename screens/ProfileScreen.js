@@ -120,7 +120,7 @@ export default ProfileScreen;
 const styles = StyleSheet.create({
   header: {
     flex: 0.4,
-    paddingTop: 60,
+    paddingTop: 20,
   },
   bottom: {
     flex: 1,

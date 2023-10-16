@@ -132,7 +132,7 @@ export default AlbumDetail;
 const styles = StyleSheet.create({
   header: {
     flex: 0.9,
-    paddingTop: 60,
+    paddingTop: 20,
   },
   bottom: {
     flex: 1,

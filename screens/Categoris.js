@@ -45,16 +45,6 @@ const CategoriScreen = ({ route }) => {
 
   const playTrack = async () => {};
 
-  const [songCounts, setSongCounts] = useState({});
-
-  useEffect(() => {
-    const counts = categori.reduce((result, category) => {
-      result[category.name] = category.songs.length;
-      return result;
-    }, {});
-    setSongCounts(counts);
-  }, [categori]);
-
   const images = {
     HipHopImg: require("../assets/theloai/hiphop.jpg"),
     PopImg: require("../assets/theloai/pop.jpg"),
@@ -66,7 +56,7 @@ const CategoriScreen = ({ route }) => {
 
   return (
     <LinearGradient colors={["#614385", "#516395"]} style={{ flex: 1 }}>
-      <View style={{ flex: 1, marginTop: 50 }}>
+      <View style={{ flex: 1, marginTop: 20 }}>
         <Pressable
           onPress={() => navigation.goBack()}
           style={{ marginHorizontal: 10 }}
@@ -90,9 +80,6 @@ const CategoriScreen = ({ route }) => {
         <View style={{ marginHorizontal: 10 }}>
           <TextWhite style={{ fontSize: 18, fontWeight: "bold" }}>
             {categoris.name}
-          </TextWhite>
-          <TextWhite style={{ fontSize: 13, marginTop: 5 }}>
-            {songCounts[categoris.name]} songs
           </TextWhite>
         </View>
 
