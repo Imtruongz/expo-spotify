@@ -26,6 +26,21 @@ const LikedSongsScreen = () => {
     setSearchResult(filteredItems);
   };
 
+  const images = {
+    HipHopImg: require("../assets/theloai/hiphop.jpg"),
+    PopImg: require("../assets/theloai/pop.jpg"),
+    RapImg: require("../assets/theloai/rap.jpg"),
+    EDMImg: require("../assets/theloai/edm.jpg"),
+    podcastsImg: require("../assets/albums/BandaidsImg.jpg"),
+    RockImg: require("../assets/albums/Gabriel.jpg"),
+    LatinImg: require("../assets/albums/LalisaImg.png"),
+    KpopImg: require("../assets/albums/99%Img.jpg"),
+    ChartsImg: require("../assets/songs/blindinglight.png"),
+    MoodImg: require("../assets/songs/humble.jpg"),
+    RADARImg: require("../assets/songs/dancemonkey.jpg"),
+    DiscoverImg: require("../assets/songs/badromance.png"),
+  };
+
   return (
     <LinearGradient colors={["#614385", "#516395"]} style={{ flex: 1 }}>
       <ScrollView style={{ flex: 1, marginTop: 50 }}>
@@ -56,7 +71,7 @@ const LikedSongsScreen = () => {
               style={[styles.albumLikedButton, { backgroundColor: item.color }]}
             >
               <TextWhite style={styles.nameSong}>{item.name}</TextWhite>
-              <Image style={styles.imageSong} source={{ uri: item.image }} />
+              <Image style={styles.imageSong} source={images[item.image]} />
             </TouchableOpacity>
           ))}
         </View>

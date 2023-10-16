@@ -42,6 +42,12 @@ const HomeScreen = () => {
   const message = greetingMessage();
   const navigation = useNavigation();
   const AvtImg = require("../assets/avatar.png");
+  const images = {
+    HipHopImg: require("../assets/theloai/hiphop.jpg"),
+    PopImg: require("../assets/theloai/pop.jpg"),
+    RapImg: require("../assets/theloai/rap.jpg"),
+    EDMImg: require("../assets/theloai/edm.jpg"),
+  };
 
   return (
     <LinearGradient colors={["#040306", "#131624"]} style={{ flex: 1 }}>
@@ -80,7 +86,7 @@ const HomeScreen = () => {
             >
               <Image
                 style={{ width: 55, height: 55, borderRadius: 5 }}
-                source={{ uri: item.image }}
+                source={images[item.image]}
               />
               <View>
                 <TextWhite style={{ fontSize: 13, fontWeight: "bold" }}>

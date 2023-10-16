@@ -16,6 +16,9 @@ import { Ionicons } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
   const AvtImg = require("../assets/avatar.png");
+  const images = {
+    ShapeOfYouImg: require("../assets/songs/shapeofyou.jpeg"),
+  };
 
   const [playList, setplayList] = useState(playListData);
   const [menuVisibility, setMenuVisibility] = useState({});
@@ -32,10 +35,9 @@ const ProfileScreen = () => {
   }
 
   function handleDelete(songId) {
-    const updatedPlayList = playList.filter(song => song.id !== songId);
+    const updatedPlayList = playList.filter((song) => song.id !== songId);
     setplayList(updatedPlayList);
   }
-  
 
   return (
     <>
@@ -76,7 +78,7 @@ const ProfileScreen = () => {
               <View style={styles.itemContainer}>
                 <Image
                   style={{ width: 60, height: 60, borderRadius: 5 }}
-                  source={{ uri: item.image }}
+                  source={images[item.image]}
                 />
                 <View style={{ alignItems: "flex-start" }}>
                   <TextWhite style={styles.nameSong}>{item.name}</TextWhite>

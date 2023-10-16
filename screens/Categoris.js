@@ -26,7 +26,6 @@ const CategoriScreen = ({ route }) => {
   const navigation = useNavigation();
 
   const [categori, setCategori] = useState(CategoriData);
-  const [searchResult, setSearchResult] = useState(CategoriData);
   const [menuVisibility, setMenuVisibility] = useState({});
 
   const toggleMenu = (itemId) => {
@@ -41,7 +40,7 @@ const CategoriScreen = ({ route }) => {
     const filteredItems = categori.filter((item) => {
       return item.name.toLowerCase().includes(searchText);
     });
-    setSearchResult(filteredItems);
+    setCategori(filteredItems);
   };
 
   const playTrack = async () => {};
@@ -55,6 +54,15 @@ const CategoriScreen = ({ route }) => {
     }, {});
     setSongCounts(counts);
   }, [categori]);
+
+  const images = {
+    HipHopImg: require("../assets/theloai/hiphop.jpg"),
+    PopImg: require("../assets/theloai/pop.jpg"),
+    RapImg: require("../assets/theloai/rap.jpg"),
+    EDMImg: require("../assets/theloai/edm.jpg"),
+  };
+
+  const AlbumImg = images[categoris.image];
 
   return (
     <LinearGradient colors={["#614385", "#516395"]} style={{ flex: 1 }}>
@@ -115,7 +123,7 @@ const CategoriScreen = ({ route }) => {
               <View style={styles.songsItemsContent}>
                 <Image
                   style={{ width: 60, height: 60, borderRadius: 5 }}
-                  source={{ uri: item.image }}
+                  source={AlbumImg}
                 />
                 <View>
                   <TextWhite style={styles.nameSong}>{item.nameSong}</TextWhite>

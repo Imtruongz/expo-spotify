@@ -33,6 +33,18 @@ const AlbumDetail = ({ route }) => {
 
   const playTrack = async () => {};
 
+  const images = {
+    BandaidsImg: require("../assets/albums/BandaidsImg.jpg"),
+    MCKAlbum: require("../assets/albums/99%Img.jpg"),
+    PurposeImg: require("../assets/albums/Purpose.jpg"),
+    JusticeImg: require("../assets/albums/JusticeImg.jpg"),
+    GabrielImg: require("../assets/albums/Gabriel.jpg"),
+    LalisaImg: require("../assets/albums/LalisaImg.png"),
+  };
+
+  const AlbumImg = images[album.image];
+
+
   return (
     <>
       <LinearGradient colors={["#00cc00", "#000000"]} style={styles.header}>
@@ -45,7 +57,7 @@ const AlbumDetail = ({ route }) => {
         <View style={{ justifyContent: "center", alignItems: "center" }}>
           <Image
             style={{ width: 180, height: 180, borderRadius: 5 }}
-            source={{ uri: album.image }}
+            source={AlbumImg}
           />
           <TextWhite style={styles.textTitle}>{album.name}</TextWhite>
         </View>
