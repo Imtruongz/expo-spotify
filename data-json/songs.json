@@ -3,7 +3,8 @@
         "id": 1,
         "name": "Shape of You",
         "artist": "Ed Sheeran",
-        "image": "ShapeOfYouImg"
+        "image": "ShapeOfYouImg",
+        "path": "../assets/dbsongs/beside you.mp3"
     },
     {
         "id": 2,
