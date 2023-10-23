@@ -68,26 +68,32 @@ const SongInfoScreen = ({ route }) => {
             paddingHorizontal: 15,
           }}
         >
-          <Pressable
-            onPress={() => navigation.goBack()}
+          <View
             style={{
               flexDirection: "row",
               alignItems: "center",
               justifyContent: "space-between",
             }}
           >
-            <AntDesign name="down" size={24} color="white" />
-            <Entypo name="dots-three-vertical" size={24} color="white" />
-          </Pressable>
+            <Pressable onPress={() => navigation.goBack()}>
+              <AntDesign name="down" size={24} color="white" />
+            </Pressable>
 
-          <View style={{ padding: 10, marginTop: 30 }}>
+            <Entypo name="dots-three-vertical" size={24} color="white" />
+          </View>
+
+          <View style={{ padding: 10 }}>
             <Image
-              style={{ width: 300, height: 300, borderRadius: 150 }}
+              style={{
+                width: 300,
+                height: 300,
+                borderRadius: 150,
+                marginVertical: 60,
+              }}
               source={images[song.image]}
             />
             <View
               style={{
-                marginTop: 50,
                 flexDirection: "row",
                 justifyContent: "space-between",
                 alignItems: "center",
@@ -104,9 +110,8 @@ const SongInfoScreen = ({ route }) => {
                 </Text>
               </View>
               <View style={{ flexDirection: "row", gap: 16 }}>
-                <AntDesign name="sharealt" size={24} color="white" />
                 <AntDesign name="hearto" size={24} color="white" />
-                <Ionicons name="md-ellipsis-vertical" size={24} color="white" />
+                <AntDesign name="sharealt" size={24} color="white" />
               </View>
             </View>
 

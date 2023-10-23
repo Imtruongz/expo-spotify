@@ -59,25 +59,25 @@ const CategoriScreen = ({ route }) => {
       <View style={{ flex: 1, marginTop: 20 }}>
         <Pressable
           onPress={() => navigation.goBack()}
-          style={{ marginHorizontal: 10 }}
+          style={{ marginHorizontal: 10, marginVertical: 5 }}
         >
           <AntDesign name="left" size={22} color="white" />
         </Pressable>
 
         <Pressable style={styles.searchContainer}>
           <Pressable style={styles.searchInput}>
-            <AntDesign name="search1" size={20} color="white" />
+            <AntDesign name="search1" size={24} color="white" />
             <TextInput
               onChangeText={(text) => handleSearch(text)}
               placeholder="What do you want to listen to?"
               placeholderTextColor={"#979593"}
-              style={{ fontWeight: "500", width: "100%", color: "white" }}
+              style={{ fontWeight: "500", fontSize: 16, width: "100%", color: "white" }}
             />
           </Pressable>
         </Pressable>
 
         <View style={{ height: 20 }} />
-        <View style={{ marginHorizontal: 10 }}>
+        <View style={{ marginHorizontal: 10, marginVertical: 5 }}>
           <TextWhite style={{ fontSize: 18, fontWeight: "bold" }}>
             {categoris.name}
           </TextWhite>
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
     padding: 9,
     flex: 1,
     borderRadius: 3,
-    height: 38,
+    height: 50,
   },
   handleButton: {
     flexDirection: "row",

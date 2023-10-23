@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     opacity: 1, // Giá trị opacity mặc định
   },
   titleText1: {
-    marginHorizontal: 10,
+    marginHorizontal: 18,
     fontWeight: "bold",
     fontSize: 26,
   },
