@@ -15,7 +15,6 @@ import TextWhite from "../components/TextWhite";
 import { Ionicons } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
-  const AvtImg = require("../assets/avatar.png");
 
   const [playList, setplayList] = useState(playListData);
   const [menuVisibility, setMenuVisibility] = useState({});
@@ -31,9 +30,8 @@ const ProfileScreen = () => {
     Alert.alert("Updating");
   }
 
-  function handleDelete(songId) {
-    const updatedPlayList = playList.filter((song) => song.id !== songId);
-    setplayList(updatedPlayList);
+  function handleDelete() {
+    
   }
 
   return (

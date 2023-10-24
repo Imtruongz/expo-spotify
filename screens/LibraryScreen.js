@@ -15,7 +15,6 @@ import TextWhite from "../components/TextWhite";
 
 const LibraryScreen = () => {
   const navigation = useNavigation();
-  const AvtImg = require('../assets/avatar.png');
 
   function UpdatingButton() {
     Alert.alert("Updating");
