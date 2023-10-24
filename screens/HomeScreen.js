@@ -7,7 +7,7 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 
@@ -23,11 +23,31 @@ import PopularArtists from "../components/PopularArtists";
 import PopularAlbum from "../components/PopularAlbum";
 
 const HomeScreen = () => {
-  const [songs, setSongs] = useState(songsData);
+  const [isLoading, setisLoading] = useState(true);
+  const [songs, setSongs] = useState([]);
   const [artists, setArtist] = useState(ArtistsData);
   const [albums, setAlbums] = useState(albumData);
   const [trend, setTrend] = useState(trendingData);
   const [categori, setCategori] = useState(CategoriData);
+
+  useEffect(() => {
+    getSongs();
+  }, []);
+
+  const getSongs = async () => {
+    let urlAPI = "http://192.168.0.3:5000/songs";
+
+    try {
+      const response = await fetch(urlAPI); //load data
+      const json = await response.json(); //change data to json
+      setSongs(json);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      //ket thuc qua trinh load data , ke ca say ra loi thi cung se roi vao ham nay de chay
+      setisLoading(false); //trang thai cua ham nay se khong load nua
+    }
+  };
 
   const greetingMessage = () => {
     const currentTime = new Date().getHours();

@@ -5,7 +5,6 @@ import {
   Image,
   StyleSheet,
   Pressable,
-  Touchable,
   TouchableOpacity,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
@@ -41,6 +40,41 @@ const SongInfoScreen = ({ route }) => {
     const minutes = Math.floor(time / 60000);
     const seconds = Math.floor((time % 60000) / 1000);
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
+
+  const addSong = (song) => {
+    let urlAPI = "http://192.168.0.3:5000/playlist";
+
+    const payload = {
+      id: song.id,
+      name: song.name,
+      artist: song.artist,
+      image: song.image,
+    };
+
+    console.log("Dữ liệu gửi lên server:", payload); // In ra dữ liệu trước khi gửi
+
+    fetch(urlAPI, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((res) => {
+        if (res.ok && res.status === 201) {
+          alert("Added to your playlist");
+        } else {
+          // Thêm xử lý cho trường hợp server trả về lỗi
+          return res.json().then((data) => {
+            throw new Error("Lỗi từ server: " + data.message);
+          });
+        }
+      })
+      .catch((ex) => {
+        console.log("Lỗi không xác định:", ex);
+      });
   };
 
   return (
@@ -96,7 +130,7 @@ const SongInfoScreen = ({ route }) => {
                 </Text>
               </View>
               <View style={{ flexDirection: "row", gap: 16 }}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => addSong(song)}>
                   <AntDesign name="hearto" size={24} color="white" />
                 </TouchableOpacity>
                 <AntDesign name="sharealt" size={24} color="white" />

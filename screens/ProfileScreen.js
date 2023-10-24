@@ -15,9 +15,48 @@ import TextWhite from "../components/TextWhite";
 import { Ionicons } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
-
-  const [playList, setplayList] = useState(playListData);
+  const [isLoading, setisLoading] = useState(true);
+  const [playList, setplayList] = useState([]);
   const [menuVisibility, setMenuVisibility] = useState({});
+
+  useEffect(() => {
+    getPlaylist();
+  }, []);
+
+  const getPlaylist = async () => {
+    let urlAPI = "http://192.168.0.3:5000/playlist";
+
+    try {
+      const response = await fetch(urlAPI); //load data
+      const json = await response.json(); //change data to json
+      setplayList(json);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      //ket thuc qua trinh load data , ke ca say ra loi thi cung se roi vao ham nay de chay
+      setisLoading(false); //trang thai cua ham nay se khong load nua
+    }
+  };
+
+  const deleteSong = (id) => {
+    let urlAPI = "http://192.168.0.3:5000/playlist/" + id;
+    fetch(urlAPI, {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        if (res.status == 200) {
+          alert("Removed to your playlist");
+          console.log(`Xoá thành công bài hát có id là: ${id}`);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const toggleMenu = (itemId) => {
     setMenuVisibility({
@@ -28,10 +67,6 @@ const ProfileScreen = () => {
 
   function UpdatingButton() {
     Alert.alert("Updating");
-  }
-
-  function handleDelete() {
-    
   }
 
   return (
@@ -97,7 +132,7 @@ const ProfileScreen = () => {
                 </TouchableOpacity>
                 {menuVisibility[item.id] && (
                   <Animatable.View animation="slideInRight" duration={400}>
-                    <TouchableOpacity onPress={() => handleDelete(item.id)}>
+                    <TouchableOpacity onPress={() => deleteSong(item.id)}>
                       <TextWhite style={styles.menuItem}>
                         Remove to playlist
                       </TextWhite>
