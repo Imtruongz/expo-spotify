@@ -33,18 +33,6 @@ const AlbumDetail = ({ route }) => {
 
   const playTrack = async () => {};
 
-  const images = {
-    BandaidsImg: require("../assets/albums/BandaidsImg.jpg"),
-    MCKAlbum: require("../assets/albums/99%Img.jpg"),
-    PurposeImg: require("../assets/albums/Purpose.jpg"),
-    JusticeImg: require("../assets/albums/JusticeImg.jpg"),
-    GabrielImg: require("../assets/albums/Gabriel.jpg"),
-    LalisaImg: require("../assets/albums/LalisaImg.png"),
-  };
-
-  const AlbumImg = images[album.image];
-
-
   return (
     <>
       <LinearGradient colors={["#00cc00", "#000000"]} style={styles.header}>
@@ -57,7 +45,7 @@ const AlbumDetail = ({ route }) => {
         <View style={{ justifyContent: "center", alignItems: "center" }}>
           <Image
             style={{ width: 180, height: 180, borderRadius: 5 }}
-            source={AlbumImg}
+            source={{ uri: album.image }}
           />
           <TextWhite style={styles.textTitle}>{album.name}</TextWhite>
         </View>
@@ -76,7 +64,10 @@ const AlbumDetail = ({ route }) => {
 
           <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
             <Entypo name="shuffle" size={24} color="#1DB954" />
-            <TouchableOpacity onPress={playTrack} style={styles.controlPlayIcon}>
+            <TouchableOpacity
+              onPress={playTrack}
+              style={styles.controlPlayIcon}
+            >
               <Entypo name="controller-play" size={24} color="black" />
             </TouchableOpacity>
           </View>

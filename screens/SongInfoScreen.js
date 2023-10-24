@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { BottomModal, ModalContent } from "react-native-modal";
 import { useNavigation } from "@react-navigation/native";
 
 import { AntDesign } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
-import { Feather, FontAwesome } from "@expo/vector-icons";
+import { Feather, } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 
 const SongInfoScreen = ({ route }) => {
@@ -18,27 +17,6 @@ const SongInfoScreen = ({ route }) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [totalDuration, setTotalDuration] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-
-  const images = {
-    ShapeOfYouImg: require("../assets/songs/shapeofyou.jpeg"),
-    RollingInTheDeepImg: require("../assets/songs/rollinginthedeep.jpg"),
-    CrazyInLoveImg: require("../assets/songs/crazyinlove.jpg"),
-    HUMBLEImg: require("../assets/songs/humble.jpg"),
-    LoveStoryImg: require("../assets/songs/lovestory.jpg"),
-    UmbrellaImg: require("../assets/songs/umbrella.jpg"),
-    HotlineBlingImg: require("../assets/songs/hotlinebling.jpg"),
-    BadGuyImg: require("../assets/songs/badguy.jpg"),
-    JustTheWayYouAreImg: require("../assets/songs/justthewayyouare.jpg"),
-    IntoYouImg: require("../assets/songs/intoyou.jpg"),
-    BlindingLightsImg: require("../assets/songs/blindinglight.png"),
-    FixYouImg: require("../assets/songs/fixyou.jpg"),
-    BadRomanceImg: require("../assets/songs/badromance.png"),
-    LoseYourselfImg: require("../assets/songs/loseyourself.jpg"),
-    DanceMonkeyImg: require("../assets/songs/dancemonkey.jpg"),
-    HappyImg: require("../assets/songs/happy.jpg"),
-    SomeoneLikeYouImg: require("../assets/songs/someonelikeyou.jpg"),
-    RapVietImg: require("../assets/albums/rapviet.jpg"),
-  };
 
   const handlePlayPause = async () => {
     if (currentSound) {
@@ -90,7 +68,7 @@ const SongInfoScreen = ({ route }) => {
                 borderRadius: 150,
                 marginVertical: 60,
               }}
-              source={images[song.image]}
+              source={{ uri: song.image }}
             />
             <View
               style={{

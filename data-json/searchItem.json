@@ -2,73 +2,73 @@
   {
     "id": 1,
     "name": "Podcasts",
-    "image": "podcastsImg",
+    "image": "https://live.staticflickr.com/65535/53280420792_118206482b_w.jpg",
     "color": "#DF3400"
   },
   {
     "id": 2,
     "name": "Rock",
-    "image": "RockImg",
+    "image": "https://live.staticflickr.com/65535/53280420767_8e350415b5_w.jpg",
     "color": "#7358FD"
   },
   {
     "id": 3,
     "name": "Latin",
-    "image": "LatinImg",
+    "image": "https://live.staticflickr.com/65535/53281594743_77cc78d7f2_n.jpg",
     "color": "#1DB954"
   },
   {
     "id": 4,
     "name": "Pop",
-    "image": "PopImg",
+    "image": "https://live.staticflickr.com/65535/53281664809_37d265cdf7_w.jpg",
     "color": "#282828"
   },
   {
     "id": 5,
     "name": "K-pop",
-    "image": "KpopImg",
+    "image": "https://live.staticflickr.com/65535/53281779000_56aefe9836_w.jpg",
     "color": "#666666"
   },
   {
     "id": 6,
     "name": "Hip-hop",
-    "image": "HipHopImg",
+    "image": "https://live.staticflickr.com/65535/53281595338_0b66c7369f_w.jpg",
     "color": "#191414"
   },
   {
     "id": 7,
     "name": "Charts",
-    "image": "ChartsImg",
+    "image": "https://live.staticflickr.com/65535/53281664689_ce226486a8_n.jpg",
     "color": "#00CED1"
   },
   {
     "id": 8,
     "name": "Mood",
-    "image": "MoodImg",
+    "image": "https://live.staticflickr.com/65535/53281779690_b678e6466c_n.jpg",
     "color": "#FF0000"
   },
   {
     "id": 9,
     "name": "Rap",
-    "image": "RapImg",
+    "image": "https://live.staticflickr.com/65535/53280421457_c986ca1682_n.jpg",
     "color": "#1E90FF"
   },
   {
     "id": 10,
     "name": "EDM",
-    "image": "EDMImg",
+    "image": "https://live.staticflickr.com/65535/53281779665_4c29639bac_z.jpg",
     "color": "#FFD700"
   },
   {
     "id": 11,
     "name": "RADAR",
-    "image": "RADARImg",
+    "image": "https://live.staticflickr.com/65535/53281778985_47097d27f2_n.jpg",
     "color": "#FF69B4"
   },
   {
     "id": 12,
     "name": "Discover",
-    "image": "DiscoverImg",
+    "image": "https://live.staticflickr.com/65535/53280421357_d55e942146_n.jpg",
     "color": "#FF0000"
   }
 ]

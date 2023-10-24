@@ -45,15 +45,6 @@ const CategoriScreen = ({ route }) => {
 
   const playTrack = async () => {};
 
-  const images = {
-    HipHopImg: require("../assets/theloai/hiphop.jpg"),
-    PopImg: require("../assets/theloai/pop.jpg"),
-    RapImg: require("../assets/theloai/rap.jpg"),
-    EDMImg: require("../assets/theloai/edm.jpg"),
-  };
-
-  const AlbumImg = images[categoris.image];
-
   return (
     <LinearGradient colors={["#614385", "#516395"]} style={{ flex: 1 }}>
       <View style={{ flex: 1, marginTop: 20 }}>
@@ -71,7 +62,12 @@ const CategoriScreen = ({ route }) => {
               onChangeText={(text) => handleSearch(text)}
               placeholder="What do you want to listen to?"
               placeholderTextColor={"#979593"}
-              style={{ fontWeight: "500", fontSize: 16, width: "100%", color: "white" }}
+              style={{
+                fontWeight: "500",
+                fontSize: 16,
+                width: "100%",
+                color: "white",
+              }}
             />
           </Pressable>
         </Pressable>
@@ -110,7 +106,7 @@ const CategoriScreen = ({ route }) => {
               <View style={styles.songsItemsContent}>
                 <Image
                   style={{ width: 60, height: 60, borderRadius: 5 }}
-                  source={AlbumImg}
+                  source={{ uri: item.image }}
                 />
                 <View>
                   <TextWhite style={styles.nameSong}>{item.nameSong}</TextWhite>

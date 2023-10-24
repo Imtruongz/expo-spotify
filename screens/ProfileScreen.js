@@ -16,9 +16,6 @@ import { Ionicons } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
   const AvtImg = require("../assets/avatar.png");
-  const images = {
-    ShapeOfYouImg: require("../assets/songs/shapeofyou.jpeg"),
-  };
 
   const [playList, setplayList] = useState(playListData);
   const [menuVisibility, setMenuVisibility] = useState({});
@@ -52,7 +49,12 @@ const ProfileScreen = () => {
         </View>
 
         <View style={{ flexDirection: "row", width: "50%" }}>
-          <Image style={styles.imgAvatar} source={AvtImg} />
+          <Image
+            style={styles.imgAvatar}
+            source={{
+              uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
+            }}
+          />
           <View>
             <TextWhite style={styles.nameUser}>Nguyễn Việt Trường</TextWhite>
             <View style={styles.infoFollower}>
@@ -78,7 +80,7 @@ const ProfileScreen = () => {
               <View style={styles.itemContainer}>
                 <Image
                   style={{ width: 60, height: 60, borderRadius: 5 }}
-                  source={images[item.image]}
+                  source={{ uri: item.image }}
                 />
                 <View style={{ alignItems: "flex-start" }}>
                   <TextWhite style={styles.nameSong}>{item.name}</TextWhite>

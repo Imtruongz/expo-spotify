@@ -1,20 +1,3 @@
 [
-  {
-    "id": 1,
-    "name": "Shape of You",
-    "artist": "Ed Sheeran",
-    "image": "ShapeOfYouImg"
-  },
-  {
-    "id": 2,
-    "name": "Shape of You 2",
-    "artist": "Ed Sheeran",
-    "image": "ShapeOfYouImg"
-  },
-  {
-    "id": 3,
-    "name": "Shape of You 3",
-    "artist": "Ed Sheeran",
-    "image": "ShapeOfYouImg"
-  }
+  
 ]

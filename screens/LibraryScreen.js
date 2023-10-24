@@ -31,7 +31,7 @@ const LibraryScreen = () => {
             <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
               <Image
                 style={styles.imgAvatar}
-                source={AvtImg}
+                source={{uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg"}}
               />
             </TouchableOpacity>
           </View>

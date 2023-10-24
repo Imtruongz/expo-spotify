@@ -2,119 +2,119 @@
   {
     "id": 1,
     "name": "Hiphop",
-    "image": "HipHopImg",
+    "image": "https://live.staticflickr.com/65535/53281595338_0b66c7369f_w.jpg",
     "songs": [
       {
         "idSong": 1,
         "nameSong": "Hiphop Song 1",
         "artist": "Artist 1",
-        "image": "HipHopImg"
+        "image": "https://live.staticflickr.com/65535/53281595338_0b66c7369f_w.jpg"
       },
       {
         "idSong": 2,
         "nameSong": "Hiphop Song 2",
         "artist": "Artist 2",
-        "image": "HipHopImg"
+        "image": "https://live.staticflickr.com/65535/53281595338_0b66c7369f_w.jpg"
       },
       {
         "idSong": 3,
         "nameSong": "Hiphop Song 3",
         "artist": "Artist 3",
-        "image": "HipHopImg"
+        "image": "https://live.staticflickr.com/65535/53281595338_0b66c7369f_w.jpg"
       }
       ,
       {
         "idSong": 4,
         "nameSong": "Hiphop Song 4",
         "artist": "Artist 4",
-        "image": "HipHopImg"
+        "image": "https://live.staticflickr.com/65535/53281595338_0b66c7369f_w.jpg"
       }
     ]
   },
   {
     "id": 2,
     "name": "Pop",
-    "image": "PopImg",
+    "image": "https://live.staticflickr.com/65535/53281664809_37d265cdf7_w.jpg",
     "songs": [
       {
         "idSong": 1,
         "nameSong": "Pop Song 1",
         "artist": "Artist 1",
-        "image": "PopImg"
+        "image": "https://live.staticflickr.com/65535/53281664809_37d265cdf7_w.jpg"
       },
       {
         "idSong": 2,
         "nameSong": "Pop Song 2",
         "artist": "Artist 2",
-        "image": "PopImg"
+        "image": "https://live.staticflickr.com/65535/53281664809_37d265cdf7_w.jpg"
       },
       {
         "idSong": 3,
         "nameSong": "Pop Song 3",
         "artist": "Artist 3",
-        "image": "PopImg"
+        "image": "https://live.staticflickr.com/65535/53281664809_37d265cdf7_w.jpg"
       }
     ]
   },
   {
     "id": 3,
     "name": "Rap",
-    "image": "RapImg",
+    "image": "https://live.staticflickr.com/65535/53280421457_c986ca1682_n.jpg",
     "songs": [
       {
         "idSong": 1,
         "nameSong": "Rap Song 1",
         "artist": "Artist 1",
-        "image": "RapImg"
+        "image": "https://live.staticflickr.com/65535/53280421457_c986ca1682_n.jpg"
       },
       {
         "idSong": 2,
         "nameSong": "Rap Song 2",
         "artist": "Artist 2",
-        "image": "RapImg"
+        "image": "https://live.staticflickr.com/65535/53280421457_c986ca1682_n.jpg"
       },
       {
         "idSong": 3,
         "nameSong": "Rap Song 3",
         "artist": "Artist 3",
-        "image": "RapImg"
+        "image": "https://live.staticflickr.com/65535/53280421457_c986ca1682_n.jpg"
       },
       {
         "idSong": 4,
         "nameSong": "Rap Song 4",
         "artist": "Artist 4",
-        "image": "RapImg"
+        "image": "https://live.staticflickr.com/65535/53280421457_c986ca1682_n.jpg"
       },
       {
         "idSong": 5,
         "nameSong": "Rap Song 5",
         "artist": "Artist 5",
-        "image": "RapImg"
+        "image": "https://live.staticflickr.com/65535/53280421457_c986ca1682_n.jpg"
       }
     ]
   },
   {
     "id": 4,
     "name": "EDM",
-    "image": "EDMImg",
+    "image": "https://live.staticflickr.com/65535/53281779665_4c29639bac_z.jpg",
     "songs": [
       {
         "idSong": 1,
         "nameSong": "EDM Song 1",
         "artist": "Artist 1",
-        "image": "EDMImg"
+        "image": "https://live.staticflickr.com/65535/53281779665_4c29639bac_z.jpg"
       },
       {
         "idSong": 2,
         "nameSong": "EDM Song 2",
         "artist": "Artist 2",
-        "image": "EDMImg"
+        "image": "https://live.staticflickr.com/65535/53281779665_4c29639bac_z.jpg"
       },
       {
         "idSong": 3,
         "nameSong": "EDM Song 3",
         "artist": "Artist 3",
-        "image": "EDMImg"
+        "image": "https://live.staticflickr.com/65535/53281779665_4c29639bac_z.jpg"
       }
     ]
   }

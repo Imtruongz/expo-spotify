@@ -6,14 +6,6 @@ import React from "react";
 
 const PopularAlbum = ({ item }) => {
   const navigation = useNavigation();
-  const images = {
-    BandaidsImg: require("../assets/albums/BandaidsImg.jpg"),
-    MCKAlbum: require("../assets/albums/99%Img.jpg"),
-    PurposeImg: require("../assets/albums/Purpose.jpg"),
-    JusticeImg: require("../assets/albums/JusticeImg.jpg"),
-    GabrielImg: require("../assets/albums/Gabriel.jpg"),
-    LalisaImg: require("../assets/albums/LalisaImg.png"),
-  };
 
   return (
     <View>
@@ -23,7 +15,7 @@ const PopularAlbum = ({ item }) => {
       >
         <Image
           style={{ width: 130, height: 130, borderRadius: 5 }}
-          source={images[item.image]}
+          source={{ uri: item.image }}
         />
         <TextWhite style={styles.blockRenderItem}>{item.name}</TextWhite>
       </TouchableOpacity>

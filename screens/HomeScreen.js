@@ -41,13 +41,6 @@ const HomeScreen = () => {
   };
   const message = greetingMessage();
   const navigation = useNavigation();
-  const AvtImg = require("../assets/avatar.png");
-  const images = {
-    HipHopImg: require("../assets/theloai/hiphop.jpg"),
-    PopImg: require("../assets/theloai/pop.jpg"),
-    RapImg: require("../assets/theloai/rap.jpg"),
-    EDMImg: require("../assets/theloai/edm.jpg"),
-  };
 
   return (
     <LinearGradient colors={["#040306", "#131624"]} style={{ flex: 1 }}>
@@ -57,7 +50,12 @@ const HomeScreen = () => {
           <TextWhite style={styles.messageDay}>{message}</TextWhite>
           <View style={styles.Avatar}>
             <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-              <Image style={styles.imgAvatar} source={AvtImg} />
+              <Image
+                style={styles.imgAvatar}
+                source={{
+                  uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
+                }}
+              />
             </TouchableOpacity>
           </View>
         </View>
@@ -86,7 +84,7 @@ const HomeScreen = () => {
             >
               <Image
                 style={{ width: 55, height: 55, borderRadius: 5 }}
-                source={images[item.image]}
+                source={{ uri: item.image }}
               />
               <View>
                 <TextWhite style={{ fontSize: 13, fontWeight: "bold" }}>
