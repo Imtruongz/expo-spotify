@@ -23,8 +23,8 @@ const LoginScreen = () => {
         <Entypo
           style={{ textAlign: "center" }}
           name="spotify"
-          size={80}
-          color="white"
+          size={100}
+          color="#1DB954"
         />
         <TextWhite style={styles.textTitle}>
           Millions of Songs Free on spotify!

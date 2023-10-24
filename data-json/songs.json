@@ -3,8 +3,7 @@
         "id": 1,
         "name": "Shape of You",
         "artist": "Ed Sheeran",
-        "image": "https://live.staticflickr.com/65535/53281310471_67a6f08805.jpg",
-        "path": "../assets/dbsongs/beside you.mp3"
+        "image": "https://live.staticflickr.com/65535/53281310471_67a6f08805.jpg"
     },
     {
         "id": 2,

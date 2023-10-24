@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, Image, StyleSheet, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Pressable,
+  Touchable,
+  TouchableOpacity,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 
 import { AntDesign } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
-import { Feather, } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 
 const SongInfoScreen = ({ route }) => {
@@ -88,7 +96,9 @@ const SongInfoScreen = ({ route }) => {
                 </Text>
               </View>
               <View style={{ flexDirection: "row", gap: 16 }}>
-                <AntDesign name="hearto" size={24} color="white" />
+                <TouchableOpacity>
+                  <AntDesign name="hearto" size={24} color="white" />
+                </TouchableOpacity>
                 <AntDesign name="sharealt" size={24} color="white" />
               </View>
             </View>
