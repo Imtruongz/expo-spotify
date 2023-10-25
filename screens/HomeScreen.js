@@ -35,10 +35,11 @@ const HomeScreen = () => {
   }, []);
 
   const getSongs = async () => {
-    let urlAPI = "http://192.168.0.3:5000/songs";
+    
+    let IPv4 = "192.168.42.248";
 
     try {
-      const response = await fetch(urlAPI); //load data
+      const response = await fetch(`http://${IPv4}:5000/songs`); //load data
       const json = await response.json(); //change data to json
       setSongs(json);
     } catch (err) {

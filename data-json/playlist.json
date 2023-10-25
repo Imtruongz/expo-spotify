@@ -17,6 +17,12 @@
       "name": "Umbrella",
       "artist": "Rihanna",
       "image": "https://live.staticflickr.com/65535/53280421357_d55e942146_n.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Fix You",
+      "artist": "Coldplay",
+      "image": "https://live.staticflickr.com/65535/53281664739_3cf2fc5503_w.jpg"
     }
   ],
   "songs": [
@@ -24,7 +30,8 @@
       "id": 1,
       "name": "Shape of You",
       "artist": "Ed Sheeran",
-      "image": "https://live.staticflickr.com/65535/53281310471_67a6f08805.jpg"
+      "image": "https://live.staticflickr.com/65535/53281310471_67a6f08805.jpg",
+      "path": "https://drive.google.com/uc?export=download&id=1qsOBDeLlvtAs_vjFvql5rNabowZ63-wg"
     },
     {
       "id": 2,

@@ -24,10 +24,11 @@ const ProfileScreen = () => {
   }, []);
 
   const getPlaylist = async () => {
-    let urlAPI = "http://192.168.0.3:5000/playlist";
+    
+    let IPv4 = "192.168.42.248";
 
     try {
-      const response = await fetch(urlAPI); //load data
+      const response = await fetch(`http://${IPv4}:5000/playlist`); //load data
       const json = await response.json(); //change data to json
       setplayList(json);
     } catch (err) {
@@ -39,7 +40,7 @@ const ProfileScreen = () => {
   };
 
   const deleteSong = (id) => {
-    let urlAPI = "http://192.168.0.3:5000/playlist/" + id;
+    let urlAPI = `http://${IPv4}:5000/playlist/` + id;
     fetch(urlAPI, {
       method: "DELETE",
       headers: {

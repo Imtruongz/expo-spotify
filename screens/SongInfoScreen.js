@@ -15,6 +15,8 @@ import { Entypo } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 
+import { Audio } from "expo-av";
+
 const SongInfoScreen = ({ route }) => {
   const { song } = route.params;
   const circleSize = 12;
@@ -24,26 +26,46 @@ const SongInfoScreen = ({ route }) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [totalDuration, setTotalDuration] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [currentSound, setCurrentSound] = useState(null);
 
-  const handlePlayPause = async () => {
+  useEffect(() => {
+    // Clean up the audio instance on unmount
+    return currentSound
+      ? () => {
+          currentSound.unloadAsync();
+        }
+      : undefined;
+  }, [currentSound]);
+
+  const loadAudio = async () => {
     if (currentSound) {
-      if (isPlaying) {
-        await currentSound.pauseAsync();
-      } else {
-        await currentSound.playAsync();
-      }
-      setIsPlaying(!isPlaying);
+      await currentSound.unloadAsync();
+      setCurrentSound(null);
     }
+
+    const { sound } = await Audio.Sound.createAsync(
+      { uri: song.path }, // Assuming 'song.url' is where the song's audio file is located
+      { shouldPlay: isPlaying }
+    );
+
+    setCurrentSound(sound);
   };
 
-  const formatTime = (time) => {
-    const minutes = Math.floor(time / 60000);
-    const seconds = Math.floor((time % 60000) / 1000);
-    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  const handlePlayPause = async () => {
+    if (!currentSound) {
+      await loadAudio();
+    }
+
+    if (isPlaying) {
+      await currentSound.pauseAsync();
+    } else {
+      await currentSound.playAsync();
+    }
+    setIsPlaying(!isPlaying);
   };
 
   const addSong = (song) => {
-    let urlAPI = "http://192.168.0.3:5000/playlist";
+    let urlAPI = "http://192.168.42.248:5000/playlist";
 
     const payload = {
       id: song.id,
@@ -75,6 +97,12 @@ const SongInfoScreen = ({ route }) => {
       .catch((ex) => {
         console.log("Lỗi không xác định:", ex);
       });
+  };
+
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60000);
+    const seconds = Math.floor((time % 60000) / 1000);
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
 
   return (
