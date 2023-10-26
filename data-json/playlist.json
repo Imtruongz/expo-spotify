@@ -23,6 +23,12 @@
       "name": "Fix You",
       "artist": "Coldplay",
       "image": "https://live.staticflickr.com/65535/53281664739_3cf2fc5503_w.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Dance Monkey",
+      "artist": "Tones and I",
+      "image": "https://live.staticflickr.com/65535/53281310566_eb46351242_w.jpg"
     }
   ],
   "songs": [
@@ -31,13 +37,14 @@
       "name": "Shape of You",
       "artist": "Ed Sheeran",
       "image": "https://live.staticflickr.com/65535/53281310471_67a6f08805.jpg",
-      "path": "https://drive.google.com/uc?export=download&id=1qsOBDeLlvtAs_vjFvql5rNabowZ63-wg"
+      "path": "https://drive.google.com/uc?export=download&id=10-nyPxvwVpB-RtRq_X0-VuhUx4apue9p"
     },
     {
       "id": 2,
       "name": "Rolling in the Deep",
       "artist": "Adele",
-      "image": "https://live.staticflickr.com/65535/53281310511_291d8dd9d3_z.jpg"
+      "image": "https://live.staticflickr.com/65535/53281310511_291d8dd9d3_z.jpg",
+      "path": "https://drive.google.com/uc?export=download&id=1qsOBDeLlvtAs_vjFvql5rNabowZ63-wg"
     },
     {
       "id": 3,

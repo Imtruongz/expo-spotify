@@ -11,7 +11,6 @@ import React, { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 
-import songsData from "../data-json/songs.json";
 import ArtistsData from "../data-json/artists.json";
 import albumData from "../data-json/album.json";
 import trendingData from "../data-json/trending.json";
@@ -35,7 +34,7 @@ const HomeScreen = () => {
   }, []);
 
   const getSongs = async () => {
-    
+
     let IPv4 = "192.168.42.248";
 
     try {

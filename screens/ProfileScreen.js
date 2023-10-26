@@ -10,7 +10,6 @@ import {
 import React, { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from "react-native-animatable";
-import playListData from "../data-json/playlist.json";
 import TextWhite from "../components/TextWhite";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -24,7 +23,7 @@ const ProfileScreen = () => {
   }, []);
 
   const getPlaylist = async () => {
-    
+
     let IPv4 = "192.168.42.248";
 
     try {

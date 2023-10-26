@@ -25,44 +25,33 @@ const SongInfoScreen = ({ route }) => {
   const [progress, setProgress] = useState(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [totalDuration, setTotalDuration] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [currentSound, setCurrentSound] = useState(null);
+  const [playing, setPlaying] = useState(false);
+  const [currentSong, setCurrentSong] = useState(null);
+  const [sound, setSound] = useState(null);
+
+  const PlaySong = async (url, id) => {
+    if (playing && currentSong === id) {
+      await sound.pauseAsync();
+      setPlaying(false);
+    } else {
+      if (sound) {
+        await sound.unloadAsync();
+      }
+      const { sound: newSound } = await Audio.Sound.createAsync({ uri: url });
+      setSound(newSound);
+      await newSound.playAsync();
+      setPlaying(true);
+      setCurrentSong(id);
+    }
+  };
 
   useEffect(() => {
-    // Clean up the audio instance on unmount
-    return currentSound
+    return sound
       ? () => {
-          currentSound.unloadAsync();
+          sound.unloadAsync();
         }
       : undefined;
-  }, [currentSound]);
-
-  const loadAudio = async () => {
-    if (currentSound) {
-      await currentSound.unloadAsync();
-      setCurrentSound(null);
-    }
-
-    const { sound } = await Audio.Sound.createAsync(
-      { uri: song.path }, // Assuming 'song.url' is where the song's audio file is located
-      { shouldPlay: isPlaying }
-    );
-
-    setCurrentSound(sound);
-  };
-
-  const handlePlayPause = async () => {
-    if (!currentSound) {
-      await loadAudio();
-    }
-
-    if (isPlaying) {
-      await currentSound.pauseAsync();
-    } else {
-      await currentSound.playAsync();
-    }
-    setIsPlaying(!isPlaying);
-  };
+  }, [sound]);
 
   const addSong = (song) => {
     let urlAPI = "http://192.168.42.248:5000/playlist";
@@ -230,25 +219,15 @@ const SongInfoScreen = ({ route }) => {
               <Pressable>
                 <Ionicons name="play-skip-back" size={30} color="white" />
               </Pressable>
-              <Pressable onPress={handlePlayPause}>
-                {isPlaying ? (
-                  <AntDesign name="pausecircle" size={60} color="white" />
+              <TouchableOpacity onPress={() => PlaySong(song.path, song.id)}>
+                {playing ? (
+                  <AntDesign name="pausecircleo" size={60} color="white" />
                 ) : (
-                  <Pressable
-                    onPress={handlePlayPause}
-                    style={{
-                      width: 60,
-                      height: 60,
-                      borderRadius: 30,
-                      backgroundColor: "white",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Entypo name="controller-play" size={26} color="black" />
-                  </Pressable>
+                  <TouchableOpacity onPress={() => PlaySong(song.path, song.id)}>
+                    <AntDesign name="playcircleo" size={60} color="white" />
+                  </TouchableOpacity>
                 )}
-              </Pressable>
+              </TouchableOpacity>
               <Pressable>
                 <Ionicons name="play-skip-forward" size={30} color="white" />
               </Pressable>
