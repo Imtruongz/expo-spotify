@@ -18,6 +18,8 @@ import { Ionicons } from "@expo/vector-icons";
 import { Audio } from "expo-av";
 
 const SongInfoScreen = ({ route }) => {
+  const IPv4 = "192.168.1.8";
+
   const { song } = route.params;
   const circleSize = 12;
   const navigation = useNavigation();
@@ -54,13 +56,14 @@ const SongInfoScreen = ({ route }) => {
   }, [sound]);
 
   const addSong = (song) => {
-    let urlAPI = "http://192.168.42.248:5000/playlist";
+    let urlAPI = `http://${IPv4}:5000/playlist`;
 
     const payload = {
       id: song.id,
       name: song.name,
       artist: song.artist,
       image: song.image,
+      path: song.path,
     };
 
     console.log("Dữ liệu gửi lên server:", payload); // In ra dữ liệu trước khi gửi
@@ -83,8 +86,8 @@ const SongInfoScreen = ({ route }) => {
           });
         }
       })
-      .catch((ex) => {
-        console.log("Lỗi không xác định:", ex);
+      .catch((err) => {
+        alert("This songs has been added to your playlist.\n" + err);
       });
   };
 
@@ -223,7 +226,9 @@ const SongInfoScreen = ({ route }) => {
                 {playing ? (
                   <AntDesign name="pausecircleo" size={60} color="white" />
                 ) : (
-                  <TouchableOpacity onPress={() => PlaySong(song.path, song.id)}>
+                  <TouchableOpacity
+                    onPress={() => PlaySong(song.path, song.id)}
+                  >
                     <AntDesign name="playcircleo" size={60} color="white" />
                   </TouchableOpacity>
                 )}

@@ -46,7 +46,7 @@ const CategoriScreen = ({ route }) => {
   const playTrack = async () => {};
 
   return (
-    <LinearGradient colors={["#614385", "#516395"]} style={{ flex: 1 }}>
+    <LinearGradient colors={["#131624", "#040306"]} style={{ flex: 1 }}>
       <View style={{ flex: 1, marginTop: 20 }}>
         <Pressable
           onPress={() => navigation.goBack()}
@@ -57,7 +57,7 @@ const CategoriScreen = ({ route }) => {
 
         <Pressable style={styles.searchContainer}>
           <Pressable style={styles.searchInput}>
-            <AntDesign name="search1" size={24} color="white" />
+            <AntDesign name="search1" size={24} color="#979593" />
             <TextInput
               onChangeText={(text) => handleSearch(text)}
               placeholder="What do you want to listen to?"
@@ -66,7 +66,7 @@ const CategoriScreen = ({ route }) => {
                 fontWeight: "500",
                 fontSize: 16,
                 width: "100%",
-                color: "white",
+                color: "#979593",
               }}
             />
           </Pressable>
@@ -88,11 +88,8 @@ const CategoriScreen = ({ route }) => {
 
           <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
             <Entypo name="shuffle" size={24} color="white" />
-            <TouchableOpacity
-              onPress={playTrack}
-              style={styles.controlPlayIcon}
-            >
-              <Entypo name="controller-play" size={24} color="#614385" />
+            <TouchableOpacity onPress={playTrack}>
+              <Ionicons name="play-circle" size={70} color="#1DB954" />
             </TouchableOpacity>
           </View>
         </Pressable>
@@ -161,11 +158,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 10,
-    backgroundColor: "#42275a",
+    backgroundColor: "#131624",
     padding: 9,
     flex: 1,
     borderRadius: 3,
     height: 50,
+    borderWidth: 1,
+    borderColor: "#979593",
   },
   handleButton: {
     flexDirection: "row",
@@ -173,22 +172,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginHorizontal: 10,
     marginBottom: 20,
-  },
-  ArrowDownIcon: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-    backgroundColor: "#1DB954",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  controlPlayIcon: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#1DB954",
   },
   songsItemsContainer: {
     padding: 10,

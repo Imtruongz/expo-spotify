@@ -35,7 +35,8 @@ const AlbumDetail = ({ route }) => {
 
   return (
     <>
-      <LinearGradient colors={["#00cc00", "#000000"]} style={styles.header}>
+      <LinearGradient colors={album.gradientColors} style={styles.header}>
+
         <Pressable
           onPress={() => navigation.goBack()}
           style={{ marginHorizontal: 14 }}

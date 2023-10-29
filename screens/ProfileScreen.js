@@ -10,22 +10,28 @@ import {
 import React, { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from "react-native-animatable";
+import { useFocusEffect } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
+
 import TextWhite from "../components/TextWhite";
 import { Ionicons } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
+  const IPv4 = "192.168.1.8";
+
   const [isLoading, setisLoading] = useState(true);
   const [playList, setplayList] = useState([]);
   const [menuVisibility, setMenuVisibility] = useState({});
 
-  useEffect(() => {
-    getPlaylist();
-  }, []);
+  useFocusEffect(
+    React.useCallback(() => {
+      getPlaylist();
+    }, [])
+  );
+
+  const navigation = useNavigation();
 
   const getPlaylist = async () => {
-
-    let IPv4 = "192.168.42.248";
-
     try {
       const response = await fetch(`http://${IPv4}:5000/playlist`); //load data
       const json = await response.json(); //change data to json
@@ -51,6 +57,7 @@ const ProfileScreen = () => {
         if (res.status == 200) {
           alert("Removed to your playlist");
           console.log(`Xoá thành công bài hát có id là: ${id}`);
+          getPlaylist();
         }
       })
       .catch((err) => {
@@ -71,7 +78,7 @@ const ProfileScreen = () => {
 
   return (
     <>
-      <LinearGradient colors={["#00cc00", "#000000"]} style={styles.header}>
+      <LinearGradient colors={["#8B8B8B", "#000000"]} style={styles.header}>
         <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
           <TouchableOpacity
             onPress={UpdatingButton}
@@ -109,7 +116,10 @@ const ProfileScreen = () => {
           Vertical
           showsVerticalScrollIndicator={false}
           renderItem={({ item }) => (
-            <View style={styles.itemContainer}>
+            <TouchableOpacity
+              style={styles.itemContainer}
+              onPress={() => navigation.navigate("Info", { song: item })}
+            >
               <View style={styles.itemContainer}>
                 <Image
                   style={{ width: 60, height: 60, borderRadius: 5 }}
@@ -140,7 +150,7 @@ const ProfileScreen = () => {
                   </Animatable.View>
                 )}
               </View>
-            </View>
+            </TouchableOpacity>
           )}
           keyExtractor={(item) => item.id.toString()}
         />

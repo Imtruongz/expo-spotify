@@ -17,7 +17,7 @@ const LoginScreen = () => {
   };
 
   return (
-    <LinearGradient colors={["#040306", "#131624"]} style={{ flex: 1 }}>
+    <LinearGradient colors={["#131624","#040306"]} style={{ flex: 1 }}>
       <SafeAreaView>
         <View style={{ height: 80 }} />
         <Entypo

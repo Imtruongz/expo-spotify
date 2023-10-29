@@ -27,13 +27,13 @@ const LikedSongsScreen = () => {
   };
 
   return (
-    <LinearGradient colors={["#614385", "#516395"]} style={{ flex: 1 }}>
+    <LinearGradient colors={["#131624","#040306"]} style={{ flex: 1 }}>
       <ScrollView style={{ flex: 1, marginTop: 15 }}>
         <TextWhite style={styles.titleText1}>Search</TextWhite>
 
         <Pressable style={styles.headerContainer}>
-          <Pressable style={styles.inputContainer}>
-            <AntDesign name="search1" size={25} color="white" />
+          <Pressable style={styles.searchInput}>
+            <AntDesign name="search1" size={25} color="#979593" />
             <TextInput
               onChangeText={(text) => handleSearch(text)}
               placeholder="Artists, songs, albums or podcast"
@@ -101,21 +101,23 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     marginVertical: 20,
   },
-  inputContainer: {
+  searchInput: {
     flexDirection: "row",
     alignItems: "center",
     gap: 10,
-    backgroundColor: "#42275a",
+    backgroundColor: "#131624",
     padding: 9,
     flex: 1,
     borderRadius: 3,
     height: 50,
+    borderWidth: 1,
+    borderColor: "#979593",
   },
   inputTitle: {
     fontSize: 16,
     width: "100%",
     fontWeight: "500",
-    color: "#fff",
+    color: "#979593",
   },
   titleText2: {
     fontSize: 20,

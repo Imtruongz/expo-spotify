@@ -22,6 +22,8 @@ import PopularArtists from "../components/PopularArtists";
 import PopularAlbum from "../components/PopularAlbum";
 
 const HomeScreen = () => {
+  const IPv4 = "192.168.1.8";
+
   const [isLoading, setisLoading] = useState(true);
   const [songs, setSongs] = useState([]);
   const [artists, setArtist] = useState(ArtistsData);
@@ -34,9 +36,6 @@ const HomeScreen = () => {
   }, []);
 
   const getSongs = async () => {
-
-    let IPv4 = "192.168.42.248";
-
     try {
       const response = await fetch(`http://${IPv4}:5000/songs`); //load data
       const json = await response.json(); //change data to json
@@ -63,7 +62,7 @@ const HomeScreen = () => {
   const navigation = useNavigation();
 
   return (
-    <LinearGradient colors={["#040306", "#131624"]} style={{ flex: 1 }}>
+    <LinearGradient colors={["#131624", "#040306"]} style={{ flex: 1 }}>
       <ScrollView style={{ marginTop: 10 }}>
         {/* Header */}
         <View style={styles.header}>
@@ -221,16 +220,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#202020",
     borderRadius: 5,
     width: "44%",
-  },
-  heartIcon: {
-    width: 55,
-    height: 55,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  albumLikedTitle: {
-    fontSize: 13,
-    fontWeight: "bold",
   },
   Title: {
     fontSize: 22,

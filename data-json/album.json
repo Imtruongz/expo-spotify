@@ -4,6 +4,7 @@
     "name": "Bandaids",
     "artist": "Keshi",
     "image": "https://live.staticflickr.com/65535/53280420792_118206482b_w.jpg",
+    "gradientColors": ["#A37DA3", "#000000"],
     "songs": [
       {
         "idSong": 1,
@@ -42,6 +43,7 @@
     "name": "99%",
     "artist": "MCK",
     "image": "https://live.staticflickr.com/65535/53281778985_47097d27f2_n.jpg",
+    "gradientColors": ["#8B0000", "#000000"],
     "songs": [
       {
         "idSong": 1,
@@ -65,6 +67,7 @@
     "name": "Purpose",
     "artist": "Justin Bieber",
     "image": "https://live.staticflickr.com/65535/53280420767_8e350415b5_w.jpg",
+    "gradientColors": ["#808080", "#000000"],
     "songs": [
       {
         "idSong": 1,
@@ -88,6 +91,7 @@
     "name": "Justice",
     "artist": "Justin Bieber",
     "image": "https://live.staticflickr.com/65535/53281594733_7d00fa2fa6_w.jpg",
+    "gradientColors": ["#00E7FF", "#000000"],
     "songs": [
       {
         "idSong": 1,
@@ -111,6 +115,7 @@
     "name": "Gabriel",
     "artist": "Keshi",
     "image": "https://live.staticflickr.com/65535/53281779000_56aefe9836_w.jpg",
+    "gradientColors": ["#8B0000", "#000000"],
     "songs": [
       {
         "idSong": 1,
@@ -134,6 +139,7 @@
     "name": "Lalisa",
     "artist": "Lisa",
     "image": "https://live.staticflickr.com/65535/53281594743_77cc78d7f2_n.jpg",
+    "gradientColors": ["#8B8B8B", "#000000"],
     "songs": [
       {
         "idSong": 1,
