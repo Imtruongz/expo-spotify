@@ -21,7 +21,6 @@ import TextWhite from "../components/TextWhite";
 const AlbumDetail = ({ route }) => {
   const { album } = route.params;
   const navigation = useNavigation();
-
   const [menuVisibility, setMenuVisibility] = useState({});
 
   const toggleMenu = (itemId) => {
@@ -36,7 +35,6 @@ const AlbumDetail = ({ route }) => {
   return (
     <>
       <LinearGradient colors={album.gradientColors} style={styles.header}>
-
         <Pressable
           onPress={() => navigation.goBack()}
           style={{ marginHorizontal: 14 }}

@@ -17,7 +17,7 @@ import TextWhite from "../components/TextWhite";
 import { Ionicons } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
-  const IPv4 = "192.168.1.8";
+  const IPv4 = "192.168.42.248";
 
   const [isLoading, setisLoading] = useState(true);
   const [playList, setplayList] = useState([]);
@@ -28,8 +28,6 @@ const ProfileScreen = () => {
       getPlaylist();
     }, [])
   );
-
-  const navigation = useNavigation();
 
   const getPlaylist = async () => {
     try {
@@ -75,6 +73,8 @@ const ProfileScreen = () => {
   function UpdatingButton() {
     Alert.alert("Updating");
   }
+
+  const navigation = useNavigation();
 
   return (
     <>

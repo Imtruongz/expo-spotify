@@ -5,7 +5,7 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
-  Alert
+  Alert,
 } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
@@ -21,7 +21,7 @@ const LibraryScreen = () => {
   }
 
   return (
-    <LinearGradient colors={["#131624","#040306"]} style={{ flex: 1 }}>
+    <LinearGradient colors={["#131624", "#040306"]} style={{ flex: 1 }}>
       <ScrollView style={{ marginTop: 10 }}>
         {/* Header */}
         <View style={styles.header}>
@@ -30,7 +30,9 @@ const LibraryScreen = () => {
             <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
               <Image
                 style={styles.imgAvatar}
-                source={{uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg"}}
+                source={{
+                  uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
+                }}
               />
             </TouchableOpacity>
           </View>

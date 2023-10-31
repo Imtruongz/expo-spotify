@@ -24,7 +24,6 @@ import TextWhite from "../components/TextWhite";
 const CategoriScreen = ({ route }) => {
   const { categoris } = route.params;
   const navigation = useNavigation();
-
   const [categori, setCategori] = useState(CategoriData);
   const [menuVisibility, setMenuVisibility] = useState({});
 

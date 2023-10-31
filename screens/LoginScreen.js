@@ -3,11 +3,11 @@ import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 
-import TextWhite from "../components/TextWhite";
-
 import { MaterialIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
+
+import TextWhite from "../components/TextWhite";
 
 const LoginScreen = () => {
   const navigation = useNavigation();
@@ -17,7 +17,7 @@ const LoginScreen = () => {
   };
 
   return (
-    <LinearGradient colors={["#131624","#040306"]} style={{ flex: 1 }}>
+    <LinearGradient colors={["#131624", "#040306"]} style={{ flex: 1 }}>
       <SafeAreaView>
         <View style={{ height: 80 }} />
         <Entypo
@@ -48,7 +48,9 @@ const LoginScreen = () => {
             },
           ]}
         >
-          <TextWhite style={{fontWeight: 'bold'}}>Sign In with Spotify</TextWhite>
+          <TextWhite style={{ fontWeight: "bold" }}>
+            Sign In with Spotify
+          </TextWhite>
         </Pressable>
 
         <Pressable

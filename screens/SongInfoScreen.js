@@ -9,16 +9,15 @@ import {
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
+import { Audio } from "expo-av";
 
 import { AntDesign } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 
-import { Audio } from "expo-av";
-
 const SongInfoScreen = ({ route }) => {
-  const IPv4 = "192.168.1.8";
+  const IPv4 = "192.168.42.248";
 
   const { song } = route.params;
   const circleSize = 12;

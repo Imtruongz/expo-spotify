@@ -22,7 +22,7 @@ import PopularArtists from "../components/PopularArtists";
 import PopularAlbum from "../components/PopularAlbum";
 
 const HomeScreen = () => {
-  const IPv4 = "192.168.1.8";
+  const IPv4 = "192.168.42.248";
 
   const [isLoading, setisLoading] = useState(true);
   const [songs, setSongs] = useState([]);
