@@ -11,11 +11,6 @@ import React, { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 
-import ArtistsData from "../data-json/artists.json";
-import albumData from "../data-json/album.json";
-import trendingData from "../data-json/trending.json";
-import CategoriData from "../data-json/categori.json";
-
 import TextWhite from "../components/TextWhite";
 import PopularSong from "../components/PopularSong";
 import PopularArtists from "../components/PopularArtists";
@@ -26,13 +21,17 @@ const HomeScreen = () => {
 
   const [isLoading, setisLoading] = useState(true);
   const [songs, setSongs] = useState([]);
-  const [artists, setArtist] = useState(ArtistsData);
-  const [albums, setAlbums] = useState(albumData);
-  const [trend, setTrend] = useState(trendingData);
-  const [categori, setCategori] = useState(CategoriData);
+  const [artists, setArtist] = useState([]);
+  const [albums, setAlbums] = useState([]);
+  const [trend, setTrend] = useState([]);
+  const [category, setCategory] = useState([]);
 
   useEffect(() => {
     getSongs();
+    getArtists();
+    getTrending();
+    getCategory();
+    getAlbums();
   }, []);
 
   const getSongs = async () => {
@@ -40,6 +39,58 @@ const HomeScreen = () => {
       const response = await fetch(`http://${IPv4}:5000/songs`); //load data
       const json = await response.json(); //change data to json
       setSongs(json);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      //ket thuc qua trinh load data , ke ca say ra loi thi cung se roi vao ham nay de chay
+      setisLoading(false); //trang thai cua ham nay se khong load nua
+    }
+  };
+
+  const getArtists = async () => {
+    try {
+      const response = await fetch(`http://${IPv4}:5000/artists`); //load data
+      const json = await response.json(); //change data to json
+      setArtist(json);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      //ket thuc qua trinh load data , ke ca say ra loi thi cung se roi vao ham nay de chay
+      setisLoading(false); //trang thai cua ham nay se khong load nua
+    }
+  };
+
+  const getTrending = async () => {
+    try {
+      const response = await fetch(`http://${IPv4}:5000/trending`); //load data
+      const json = await response.json(); //change data to json
+      setTrend(json);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      //ket thuc qua trinh load data , ke ca say ra loi thi cung se roi vao ham nay de chay
+      setisLoading(false); //trang thai cua ham nay se khong load nua
+    }
+  };
+
+  const getCategory = async () => {
+    try {
+      const response = await fetch(`http://${IPv4}:5000/category`); //load data
+      const json = await response.json(); //change data to json
+      setCategory(json);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      //ket thuc qua trinh load data , ke ca say ra loi thi cung se roi vao ham nay de chay
+      setisLoading(false); //trang thai cua ham nay se khong load nua
+    }
+  };
+
+  const getAlbums = async () => {
+    try {
+      const response = await fetch(`http://${IPv4}:5000/album`); //load data
+      const json = await response.json(); //change data to json
+      setAlbums(json);
     } catch (err) {
       console.log(err);
     } finally {
@@ -92,8 +143,8 @@ const HomeScreen = () => {
 
         {/* Album */}
         <View style={styles.albumContainer}>
-          {/* categori */}
-          {categori.map((item) => (
+          {/* category */}
+          {category.map((item) => (
             <TouchableOpacity
               key={item.id}
               onPress={() =>

@@ -17,14 +17,12 @@ import { Entypo } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 
-import CategoriData from "../data-json/categori.json";
-
 import TextWhite from "../components/TextWhite";
 
 const CategoriScreen = ({ route }) => {
   const { categoris } = route.params;
   const navigation = useNavigation();
-  const [categori, setCategori] = useState(CategoriData);
+  const [categori, setCategori] = useState([]);
   const [menuVisibility, setMenuVisibility] = useState({});
 
   const toggleMenu = (itemId) => {
