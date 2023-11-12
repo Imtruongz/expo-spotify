@@ -10,14 +10,15 @@ import {
 import React, { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from "react-native-animatable";
-import { useFocusEffect } from "@react-navigation/native";
-import { useNavigation } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+
 
 import TextWhite from "../components/TextWhite";
 import { Ionicons } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
-  const IPv4 = "192.168.42.248";
+  const IPv4 = "192.168.0.9";
 
   const [isLoading, setisLoading] = useState(true);
   const [playList, setplayList] = useState([]);
@@ -77,7 +78,7 @@ const ProfileScreen = () => {
   const navigation = useNavigation();
 
   return (
-    <>
+    <SafeAreaProvider>
       <LinearGradient colors={["#8B8B8B", "#000000"]} style={styles.header}>
         <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
           <TouchableOpacity
@@ -156,7 +157,7 @@ const ProfileScreen = () => {
         />
         <View style={{ height: 50 }} />
       </View>
-    </>
+    </SafeAreaProvider>
   );
 };
 
@@ -165,7 +166,7 @@ export default ProfileScreen;
 const styles = StyleSheet.create({
   header: {
     flex: 0.4,
-    paddingTop: 20,
+    paddingTop: 15,
   },
   bottom: {
     flex: 1,

@@ -1,5 +1,4 @@
 import {
-  StyleSheet,
   View,
   ScrollView,
   Image,
@@ -16,8 +15,10 @@ import PopularSong from "../components/PopularSong";
 import PopularArtists from "../components/PopularArtists";
 import PopularAlbum from "../components/PopularAlbum";
 
+import { SafeAreaProvider } from "react-native-safe-area-context";
+
 const HomeScreen = () => {
-  const IPv4 = "192.168.42.248";
+  const IPv4 = "192.168.0.9";
 
   const [isLoading, setisLoading] = useState(true);
   const [songs, setSongs] = useState([]);
@@ -113,169 +114,109 @@ const HomeScreen = () => {
   const navigation = useNavigation();
 
   return (
-    <LinearGradient colors={["#131624", "#040306"]} style={{ flex: 1 }}>
-      <ScrollView style={{ marginTop: 10 }}>
-        {/* Header */}
-        <View style={styles.header}>
-          <TextWhite style={styles.messageDay}>{message}</TextWhite>
-          <View style={styles.Avatar}>
-            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-              <Image
-                style={styles.imgAvatar}
-                source={{
-                  uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
-                }}
-              />
-            </TouchableOpacity>
+    <SafeAreaProvider>
+      <LinearGradient colors={["#131624", "#040306"]} className="flex-1">
+        <ScrollView>
+          {/* Header */}
+          <View className="mt-3 flex-row items-center justify-between">
+            <TextWhite className="ml-6 text-[22px] font-bold">
+              {message}
+            </TextWhite>
+            <View className="flex-row items-center">
+              <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+                <Image
+                  className="w-12 h-12 rounded-3xl border-2 mr-6"
+                  source={{
+                    uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
+                  }}
+                />
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
 
-        {/* navbar */}
-        <View style={styles.navbarContainer}>
-          <Pressable style={styles.navbarButton}>
-            <TextWhite style={styles.navbarTitle}>Music</TextWhite>
-          </Pressable>
+          {/* navbar */}
+          <View className="ml-3 my-3 flex-row items-center">
+            <Pressable className="bg-[#282828] p-2.5 mx-1 rounded-full">
+              <TextWhite className="text-sm font-bold">Music</TextWhite>
+            </Pressable>
 
-          <Pressable style={styles.navbarButton}>
-            <TextWhite style={styles.navbarTitle}>Podcasts & Shows</TextWhite>
-          </Pressable>
-        </View>
+            <Pressable className="bg-[#282828] p-2.5 mx-1 rounded-full">
+              <TextWhite className="text-sm font-bold">
+                Podcasts & Shows
+              </TextWhite>
+            </Pressable>
+          </View>
 
-        {/* Album */}
-        <View style={styles.albumContainer}>
-          {/* category */}
-          {category.map((item) => (
-            <TouchableOpacity
-              key={item.id}
-              onPress={() =>
-                navigation.navigate("Categori", { categoris: item })
-              }
-              style={styles.albumLikedButton}
-            >
-              <Image
-                style={{ width: 55, height: 55, borderRadius: 5 }}
-                source={{ uri: item.image }}
-              />
-              <View>
-                <TextWhite style={{ fontSize: 13, fontWeight: "bold" }}>
-                  {item.name}
-                </TextWhite>
-              </View>
-            </TouchableOpacity>
-          ))}
-        </View>
+          {/* Album */}
+          <View className="flex-row flex-wrap items-center justify-center">
+            {/* category */}
+            {category.map((item) => (
+              <TouchableOpacity
+                key={item.id}
+                onPress={() =>
+                  navigation.navigate("Categori", { categoris: item })
+                }
+                className="flex-row items-center mx-2 my-2 bg-[#202020] rounded-md w-[44%]"
+              >
+                <Image
+                  className="w-[60px] h-[60px] mr-3 rounded-[5px]"
+                  source={{ uri: item.image }}
+                />
+                <View>
+                  <TextWhite className="text-[14px] font-bold">
+                    {item.name}
+                  </TextWhite>
+                </View>
+              </TouchableOpacity>
+            ))}
+          </View>
 
-        {/* Top songs */}
-        <TextWhite style={styles.Title}>Popular songs</TextWhite>
-        <FlatList
-          data={songs}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          renderItem={({ item, index }) => (
-            <PopularSong item={item} key={index} />
-          )}
-        />
-        {/* Top artists */}
-        <TextWhite style={styles.Title}>Popular Artists</TextWhite>
-        <FlatList
-          data={artists}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          renderItem={({ item, index }) => (
-            <PopularArtists item={item} key={index} />
-          )}
-        />
+          {/* Top songs */}
+          <TextWhite className="text-[22px] font-bold mx-[14px] my-[8px]">Popular songs</TextWhite>
+          <FlatList
+            data={songs}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item, index }) => (
+              <PopularSong item={item} key={index} />
+            )}
+          />
+          {/* Top artists */}
+          <TextWhite className="text-[22px] font-bold mx-[14px] my-[8px]">Popular Artists</TextWhite>
+          <FlatList
+            data={artists}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item, index }) => (
+              <PopularArtists item={item} key={index} />
+            )}
+          />
 
-        {/* Top albums */}
-        <TextWhite style={styles.Title}>Popular Album</TextWhite>
-        <FlatList
-          data={albums}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          renderItem={({ item, index }) => (
-            <PopularAlbum item={item} key={index} />
-          )}
-        />
-        {/* Trending now */}
-        <TextWhite style={styles.Title}>Trending now</TextWhite>
-        <FlatList
-          data={trend}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          renderItem={({ item, index }) => (
-            <PopularSong item={item} key={index} />
-          )}
-        />
-        <View style={{ height: 50 }} />
-      </ScrollView>
-    </LinearGradient>
+          {/* Top albums */}
+          <TextWhite className="text-[22px] font-bold mx-[14px] my-[8px]">Popular Album</TextWhite>
+          <FlatList
+            data={albums}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item, index }) => (
+              <PopularAlbum item={item} key={index} />
+            )}
+          />
+          {/* Trending now */}
+          <TextWhite className="text-[22px] font-bold mx-[14px] my-[8px]">Trending now</TextWhite>
+          <FlatList
+            data={trend}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item, index }) => (
+              <PopularSong item={item} key={index} />
+            )}
+          />
+          <View className="h-[50px]"/>
+        </ScrollView>
+      </LinearGradient>
+    </SafeAreaProvider>
   );
 };
 
 export default HomeScreen;
-
-const styles = StyleSheet.create({
-  header: {
-    padding: 10,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  Avatar: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  imgAvatar: {
-    width: 42,
-    height: 42,
-    borderRadius: 20,
-    borderColor: "green",
-    borderWidth: 2,
-    resizeMode: "cover",
-    marginRight: 10,
-  },
-  messageDay: {
-    marginLeft: 10,
-    fontSize: 25,
-    fontWeight: "bold",
-  },
-  navbarContainer: {
-    marginHorizontal: 14,
-    marginVertical: 5,
-    marginBottom: 14,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 10,
-  },
-  navbarButton: {
-    backgroundColor: "#282828",
-    padding: 10,
-    borderRadius: 30,
-  },
-  navbarTitle: {
-    fontSize: 15,
-  },
-  albumContainer: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  albumLikedButton: {
-    marginBottom: 0,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 10,
-    marginHorizontal: 10,
-    marginVertical: 10,
-    backgroundColor: "#202020",
-    borderRadius: 5,
-    width: "44%",
-  },
-  Title: {
-    fontSize: 22,
-    fontWeight: "bold",
-    marginHorizontal: 10,
-    marginVertical: 13,
-  },
-});

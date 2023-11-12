@@ -13,9 +13,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 import * as Animatable from "react-native-animatable";
 
-import { Entypo } from "@expo/vector-icons";
-import { Ionicons } from "@expo/vector-icons";
-import { AntDesign } from "@expo/vector-icons";
+import { Entypo, Ionicons, AntDesign } from "@expo/vector-icons";
 
 import TextWhite from "../components/TextWhite";
 

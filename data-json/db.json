@@ -1,53 +1,17 @@
 {
   "playlist": [
     {
-      "id": 1,
-      "name": "Shape of You",
-      "artist": "Ed Sheeran",
-      "image": "https://live.staticflickr.com/65535/53281310471_67a6f08805.jpg",
-      "path": "https://drive.google.com/uc?export=download&id=10-nyPxvwVpB-RtRq_X0-VuhUx4apue9p"
-    },
-    {
-      "id": 2,
-      "name": "Rolling in the Deep",
-      "artist": "Adele",
-      "image": "https://live.staticflickr.com/65535/53281310511_291d8dd9d3_z.jpg",
-      "path": "https://drive.google.com/uc?export=download&id=1rtRuq8C2fo-dx7qI1kwTaeQDqgwj2Lax"
-    },
-    {
-      "id": 3,
-      "name": "Crazy in Love",
-      "artist": "Beyoncé",
-      "image": "https://live.staticflickr.com/65535/53281310571_04dba4818a_n.jpg",
-      "path": "https://drive.google.com/uc?export=download&id=1cp-KRpM3IE5CZ3zzqCAxQg8NAozWCJ5p"
-    },
-    {
-      "id": 4,
-      "name": "HUMBLE.",
-      "artist": "Kendrick Lamar",
-      "image": "https://live.staticflickr.com/65535/53281595323_6e0eae3f14_w.jpg",
-      "path": "https://drive.google.com/uc?export=download&id=1qWplzzJDppU-IlKsNl-0Q7uV1nRcwaIN"
-    },
-    {
-      "id": 5,
-      "name": "Love Story",
-      "artist": "Taylor Swift",
-      "image": "https://live.staticflickr.com/65535/53281664694_9408548401_z.jpg",
-      "path": "https://drive.google.com/uc?export=download&id=1s6Q975GtPk5oMJnTbfujyizVFPBJnv3Q"
-    },
-    {
-      "id": 8,
-      "name": "Bad Guy",
-      "artist": "Billie Eilish",
-      "image": "https://live.staticflickr.com/65535/53281779685_923870f3c6_w.jpg",
-      "path": "https://drive.google.com/uc?export=download&id=1SCOkcRACyGurHCwRnjpHsdzXqg401WFM"
-    },
-    {
       "id": 10,
       "name": "Into You",
       "artist": "Ariana Grande",
       "image": "https://live.staticflickr.com/65535/53281595318_a0f4252370_z.jpg",
       "path": "https://drive.google.com/uc?export=download&id=1w7UNS04NJXMJ0cD0Zp19XbLVECLvJ3c9"
+    },
+    {
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://live.staticflickr.com/65535/53300257084_f9228a91cf_z.jpg",
+      "id": 11
     }
   ],
   "songs": [
@@ -354,33 +318,39 @@
       "songs": [
         {
           "idSong": 1,
-          "nameSong": "Right here",
-          "artist": "Keshi"
+          "name": "Right here",
+          "artist": "Keshi",
+          "image": "https://live.staticflickr.com/65535/53300257084_f9228a91cf_z.jpg"
         },
         {
           "idSong": 2,
-          "nameSong": "Less of you",
-          "artist": "Keshi"
+          "name": "Less of you",
+          "artist": "Keshi",
+          "image": "https://live.staticflickr.com/65535/53299884221_40819af7a4_m.jpg"
         },
         {
           "idSong": 3,
-          "nameSong": "Somebody",
-          "artist": "Keshi"
+          "name": "Somebody",
+          "artist": "Keshi",
+          "image": "https://live.staticflickr.com/65535/53299884271_c3f91d3c0e_z.jpg"
         },
         {
           "idSong": 4,
-          "nameSong": "B.Y.S",
-          "artist": "Keshi"
+          "name": "B.Y.S",
+          "artist": "Keshi",
+          "image": "https://live.staticflickr.com/65535/53300360540_243c154b09_z.jpg"
         },
         {
           "idSong": 5,
-          "nameSong": "It's you",
-          "artist": "Keshi"
+          "name": "It's you",
+          "artist": "Keshi",
+          "image": "https://live.staticflickr.com/65535/53300360530_c3ca71d7b9_m.jpg"
         },
         {
           "idSong": 6,
-          "nameSong": "Limbo",
-          "artist": "Keshi"
+          "name": "Limbo",
+          "artist": "Keshi",
+          "image": "https://live.staticflickr.com/65535/53300360515_599b8e194f_z.jpg"
         }
       ]
     },
@@ -396,18 +366,21 @@
       "songs": [
         {
           "idSong": 1,
-          "nameSong": "New Song 1",
-          "artist": "New Artist 1"
+          "name": "New Song 1",
+          "artist": "New Artist 1",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
         },
         {
           "idSong": 2,
-          "nameSong": "New Song 2",
-          "artist": "New Artist 2"
+          "name": "New Song 2",
+          "artist": "New Artist 2",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
         },
         {
           "idSong": 3,
-          "nameSong": "New Song 3",
-          "artist": "New Artist 3"
+          "name": "New Song 3",
+          "artist": "New Artist 3",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
         }
       ]
     },
@@ -423,18 +396,21 @@
       "songs": [
         {
           "idSong": 1,
-          "nameSong": "New Song 1",
-          "artist": "New Artist 1"
+          "name": "New Song 1",
+          "artist": "New Artist 1",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
         },
         {
           "idSong": 2,
-          "nameSong": "New Song 2",
-          "artist": "New Artist 2"
+          "name": "New Song 2",
+          "artist": "New Artist 2",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
         },
         {
           "idSong": 3,
-          "nameSong": "New Song 3",
-          "artist": "New Artist 3"
+          "name": "New Song 3",
+          "artist": "New Artist 3",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
         }
       ]
     },
@@ -450,18 +426,21 @@
       "songs": [
         {
           "idSong": 1,
-          "nameSong": "New Song 1",
-          "artist": "New Artist 1"
+          "name": "New Song 1",
+          "artist": "New Artist 1",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
         },
         {
           "idSong": 2,
-          "nameSong": "New Song 2",
-          "artist": "New Artist 2"
+          "name": "New Song 2",
+          "artist": "New Artist 2",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
         },
         {
           "idSong": 3,
-          "nameSong": "New Song 3",
-          "artist": "New Artist 3"
+          "name": "New Song 3",
+          "artist": "New Artist 3",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
         }
       ]
     },
@@ -477,18 +456,21 @@
       "songs": [
         {
           "idSong": 1,
-          "nameSong": "New Song 1",
-          "artist": "New Artist 1"
+          "name": "New Song 1",
+          "artist": "New Artist 1",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
         },
         {
           "idSong": 2,
-          "nameSong": "New Song 2",
-          "artist": "New Artist 2"
+          "name": "New Song 2",
+          "artist": "New Artist 2",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
         },
         {
           "idSong": 3,
-          "nameSong": "New Song 3",
-          "artist": "New Artist 3"
+          "name": "New Song 3",
+          "artist": "New Artist 3",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
         }
       ]
     },
@@ -504,18 +486,21 @@
       "songs": [
         {
           "idSong": 1,
-          "nameSong": "New Song 1",
-          "artist": "New Artist 1"
+          "name": "New Song 1",
+          "artist": "New Artist 1",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
         },
         {
           "idSong": 2,
-          "nameSong": "New Song 2",
-          "artist": "New Artist 2"
+          "name": "New Song 2",
+          "artist": "New Artist 2",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
         },
         {
           "idSong": 3,
-          "nameSong": "New Song 3",
-          "artist": "New Artist 3"
+          "name": "New Song 3",
+          "artist": "New Artist 3",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
         }
       ]
     }

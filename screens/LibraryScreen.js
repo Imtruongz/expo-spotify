@@ -12,6 +12,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Entypo } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import TextWhite from "../components/TextWhite";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const LibraryScreen = () => {
   const navigation = useNavigation();
@@ -21,48 +22,52 @@ const LibraryScreen = () => {
   }
 
   return (
-    <LinearGradient colors={["#131624", "#040306"]} style={{ flex: 1 }}>
-      <ScrollView style={{ marginTop: 10 }}>
-        {/* Header */}
-        <View style={styles.header}>
-          <TextWhite style={styles.messageDay}>Your Library</TextWhite>
-          <View style={styles.Avatar}>
-            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-              <Image
-                style={styles.imgAvatar}
-                source={{
-                  uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
-                }}
-              />
+    <SafeAreaProvider>
+      <LinearGradient colors={["#131624", "#040306"]} style={{ flex: 1 }}>
+        <ScrollView style={{ marginTop: 10 }}>
+          {/* Header */}
+          <View style={styles.header}>
+            <TextWhite style={styles.messageDay}>Your Library</TextWhite>
+            <View style={styles.Avatar}>
+              <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+                <Image
+                  style={styles.imgAvatar}
+                  source={{
+                    uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
+                  }}
+                />
+              </TouchableOpacity>
+            </View>
+          </View>
+          <View style={styles.createBlock}>
+            <View style={styles.tips}>
+              <Entypo name="spotify" size={24} color="green" />
+              <TextWhite>Tips</TextWhite>
+            </View>
+            <TextWhite style={styles.title}>
+              Create your first playlist
+            </TextWhite>
+            <TextWhite>It's easy, we will help you</TextWhite>
+            <TouchableOpacity onPress={UpdatingButton} style={styles.button}>
+              <Text>Create playlist</Text>
             </TouchableOpacity>
           </View>
-        </View>
-        <View style={styles.createBlock}>
-          <View style={styles.tips}>
-            <Entypo name="spotify" size={24} color="green" />
-            <TextWhite>Tips</TextWhite>
+          <View style={styles.createBlock}>
+            <View style={styles.tips}>
+              <Entypo name="spotify" size={24} color="green" />
+              <TextWhite>Tips</TextWhite>
+            </View>
+            <TextWhite style={styles.title}>
+              Let's find some podcasts to follow
+            </TextWhite>
+            <TextWhite>We'll keep you updated on new episodes</TextWhite>
+            <TouchableOpacity onPress={UpdatingButton} style={styles.button}>
+              <Text>Browse podcasts</Text>
+            </TouchableOpacity>
           </View>
-          <TextWhite style={styles.title}>Create your first playlist</TextWhite>
-          <TextWhite>It's easy, we will help you</TextWhite>
-          <TouchableOpacity onPress={UpdatingButton} style={styles.button}>
-            <Text>Create playlist</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.createBlock}>
-          <View style={styles.tips}>
-            <Entypo name="spotify" size={24} color="green" />
-            <TextWhite>Tips</TextWhite>
-          </View>
-          <TextWhite style={styles.title}>
-            Let's find some podcasts to follow
-          </TextWhite>
-          <TextWhite>We'll keep you updated on new episodes</TextWhite>
-          <TouchableOpacity onPress={UpdatingButton} style={styles.button}>
-            <Text>Browse podcasts</Text>
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
-    </LinearGradient>
+        </ScrollView>
+      </LinearGradient>
+    </SafeAreaProvider>
   );
 };
 

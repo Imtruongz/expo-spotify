@@ -11,15 +11,13 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 import { Audio } from "expo-av";
 
-import { AntDesign } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
-import { Feather } from "@expo/vector-icons";
-import { Ionicons } from "@expo/vector-icons";
+import { Entypo, Feather, Ionicons, AntDesign } from "@expo/vector-icons";
 
 const SongInfoScreen = ({ route }) => {
-  const IPv4 = "192.168.42.248";
+  const IPv4 = "192.168.0.9";
 
   const { song } = route.params;
+
   const circleSize = 12;
   const navigation = useNavigation();
 
@@ -98,7 +96,7 @@ const SongInfoScreen = ({ route }) => {
 
   return (
     <View swipeDirection={["up", "down"]} swipeThreshold={200}>
-      <LinearGradient colors={["#bdbdbd", "#151515"]}>
+      <LinearGradient colors={["#131624", "#040306"]}>
         <View
           style={{
             height: "100%",

@@ -11,6 +11,7 @@ import React, { useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { AntDesign } from "@expo/vector-icons";
 import SearchItem from "../data-json/searchItem.json";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import TextWhite from "../components/TextWhite";
 
@@ -27,41 +28,46 @@ const LikedSongsScreen = () => {
   };
 
   return (
-    <LinearGradient colors={["#131624", "#040306"]} style={{ flex: 1 }}>
-      <ScrollView style={{ flex: 1, marginTop: 15 }}>
-        <TextWhite style={styles.titleText1}>Search</TextWhite>
+    <SafeAreaProvider>
+      <LinearGradient colors={["#131624", "#040306"]} style={{ flex: 1 }}>
+        <ScrollView style={{marginTop: 15}}>
+          <TextWhite style={styles.titleText1}>Search</TextWhite>
 
-        <Pressable style={styles.headerContainer}>
-          <Pressable style={styles.searchInput}>
-            <AntDesign name="search1" size={25} color="#979593" />
-            <TextInput
-              onChangeText={(text) => handleSearch(text)}
-              placeholder="Artists, songs, albums or podcast"
-              placeholderTextColor={"#979593"}
-              style={styles.inputTitle}
-            />
+          <Pressable style={styles.headerContainer}>
+            <Pressable style={styles.searchInput}>
+              <AntDesign name="search1" size={25} color="#979593" />
+              <TextInput
+                onChangeText={(text) => handleSearch(text)}
+                placeholder="Artists, songs, albums or podcast"
+                placeholderTextColor={"#979593"}
+                style={styles.inputTitle}
+              />
+            </Pressable>
           </Pressable>
-        </Pressable>
 
-        <View style={{ marginHorizontal: 10 }}>
-          <TextWhite style={styles.titleText2}>
-            What do you want to listen to ?
-          </TextWhite>
-        </View>
+          <View style={{ marginHorizontal: 10 }}>
+            <TextWhite style={styles.titleText2}>
+              What do you want to listen to ?
+            </TextWhite>
+          </View>
 
-        <View style={styles.albumContainer}>
-          {searchResult.map((item) => (
-            <TouchableOpacity
-              key={item.id}
-              style={[styles.albumLikedButton, { backgroundColor: item.color }]}
-            >
-              <TextWhite style={styles.nameSong}>{item.name}</TextWhite>
-              <Image style={styles.imageSong} source={{ uri: item.image }} />
-            </TouchableOpacity>
-          ))}
-        </View>
-      </ScrollView>
-    </LinearGradient>
+          <View style={styles.albumContainer}>
+            {searchResult.map((item) => (
+              <TouchableOpacity
+                key={item.id}
+                style={[
+                  styles.albumLikedButton,
+                  { backgroundColor: item.color },
+                ]}
+              >
+                <TextWhite style={styles.nameSong}>{item.name}</TextWhite>
+                <Image style={styles.imageSong} source={{ uri: item.image }} />
+              </TouchableOpacity>
+            ))}
+          </View>
+        </ScrollView>
+      </LinearGradient>
+    </SafeAreaProvider>
   );
 };
 

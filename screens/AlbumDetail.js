@@ -12,9 +12,11 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 import * as Animatable from "react-native-animatable";
 
-import { AntDesign } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
-import { Ionicons } from "@expo/vector-icons";
+import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
+import {
+  SafeAreaProvider,
+  useSafeAreaInsets,
+} from "react-native-safe-area-context";
 
 import TextWhite from "../components/TextWhite";
 
@@ -78,9 +80,12 @@ const AlbumDetail = ({ route }) => {
           Vertical
           showsVerticalScrollIndicator={false}
           renderItem={({ item }) => (
-            <View style={styles.itemContainer}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Info", { song: item })}
+              style={styles.itemContainer}
+            >
               <View style={{ alignItems: "flex-start" }}>
-                <TextWhite style={styles.nameSong}>{item.nameSong}</TextWhite>
+                <TextWhite style={styles.nameSong}>{item.name}</TextWhite>
                 <Text style={styles.nameArtists}>{item.artist}</Text>
               </View>
               <View
@@ -108,7 +113,7 @@ const AlbumDetail = ({ route }) => {
                   </Animatable.View>
                 )}
               </View>
-            </View>
+            </TouchableOpacity>
           )}
           keyExtractor={(item) => item.idSong.toString()}
         />
