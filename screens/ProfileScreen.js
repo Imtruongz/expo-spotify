@@ -13,12 +13,11 @@ import * as Animatable from "react-native-animatable";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
-
 import TextWhite from "../components/TextWhite";
 import { Ionicons } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
-  const IPv4 = "192.168.0.9";
+  const IPv4 = "192.168.42.248";
 
   const [isLoading, setisLoading] = useState(true);
   const [playList, setplayList] = useState([]);
@@ -79,49 +78,55 @@ const ProfileScreen = () => {
 
   return (
     <SafeAreaProvider>
-      <LinearGradient colors={["#8B8B8B", "#000000"]} style={styles.header}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
-          <TouchableOpacity
-            onPress={UpdatingButton}
-            style={{ marginRight: 15 }}
-          >
+      <LinearGradient
+        colors={["#8B8B8B", "#000000"]}
+        className="flex-[0.4] py-4"
+      >
+        <View className="flex-row justify-end">
+          <TouchableOpacity onPress={UpdatingButton} className="mr-4">
             <Ionicons name="settings-outline" size={24} color="white" />
           </TouchableOpacity>
         </View>
 
-        <View style={{ flexDirection: "row", width: "50%" }}>
+        <View className="flex-row w-1/2">
           <Image
-            style={styles.imgAvatar}
+            className="w-32 h-32 rounded-[64px] ml-6"
             source={{
               uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
             }}
           />
           <View>
-            <TextWhite style={styles.nameUser}>Nguyễn Việt Trường</TextWhite>
-            <View style={styles.infoFollower}>
-              <TextWhite style={{ fontWeight: "bold" }}>0</TextWhite>
-              <Text style={{ color: "#E0E0E0" }}>follower</Text>
-              <TextWhite style={{ fontWeight: "bold" }}>0</TextWhite>
-              <Text style={{ color: "#E0E0E0" }}>following</Text>
+            <TextWhite className="font-bold text-2xl ml-5">
+              Nguyễn Việt Trường
+            </TextWhite>
+            <View className="flex-row gap-2 px-5 py-2">
+              <TextWhite className="font-bold">0</TextWhite>
+              <Text className="text-[#E0E0E0]">follower</Text>
+              <TextWhite className="font-bold">0</TextWhite>
+              <Text className="text-[#E0E0E0]">following</Text>
             </View>
           </View>
         </View>
         <TouchableOpacity onPress={UpdatingButton}>
-          <TextWhite style={styles.editButton}>Edit</TextWhite>
+          <TextWhite className="w-14 mt-4 ml-14 rounded-[40px] px-4 py-2 font-bold border-2 border-white border-solid">
+            Edit
+          </TextWhite>
         </TouchableOpacity>
       </LinearGradient>
-      <View style={styles.bottom}>
-        <TextWhite style={styles.textTitle}>Your playlist</TextWhite>
+      <View className="flex-1 bg-black">
+        <TextWhite className="text-center text-xl font-bold mb-4">
+          Your playlist
+        </TextWhite>
         <FlatList
           data={playList}
           Vertical
           showsVerticalScrollIndicator={false}
           renderItem={({ item }) => (
             <TouchableOpacity
-              style={styles.itemContainer}
+              className="p-2 flex-row items-center justify-between"
               onPress={() => navigation.navigate("Info", { song: item })}
             >
-              <View style={styles.itemContainer}>
+              <View className="p-2 flex-row items-center justify-between gap-3">
                 <Image
                   style={{ width: 60, height: 60, borderRadius: 5 }}
                   source={{ uri: item.image }}

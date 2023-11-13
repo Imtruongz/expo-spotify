@@ -3,7 +3,6 @@ import {
   View,
   Text,
   FlatList,
-  StyleSheet,
   Image,
   Pressable,
   TouchableOpacity,
@@ -13,10 +12,6 @@ import { useNavigation } from "@react-navigation/native";
 import * as Animatable from "react-native-animatable";
 
 import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from "react-native-safe-area-context";
 
 import TextWhite from "../components/TextWhite";
 
@@ -36,45 +31,39 @@ const AlbumDetail = ({ route }) => {
 
   return (
     <>
-      <LinearGradient colors={album.gradientColors} style={styles.header}>
-        <Pressable
-          onPress={() => navigation.goBack()}
-          style={{ marginHorizontal: 14 }}
-        >
+      <LinearGradient colors={album.gradientColors} className="flex-[0.9] pt-5">
+        <Pressable onPress={() => navigation.goBack()} className="mx-4">
           <AntDesign name="left" size={22} color="white" />
         </Pressable>
-        <View style={{ justifyContent: "center", alignItems: "center" }}>
-          <Image
-            style={{ width: 180, height: 180, borderRadius: 5 }}
-            source={{ uri: album.image }}
-          />
-          <TextWhite style={styles.textTitle}>{album.name}</TextWhite>
-        </View>
-        <View style={{ marginHorizontal: 14 }}>
-          <TextWhite style={{ fontSize: 18, fontWeight: "bold" }}>
-            {album.artist}
+        <View className="justify-center items-center">
+          <Image className="w-44 h-44 rounded" source={{ uri: album.image }} />
+          <TextWhite className="text-center text-xl font-bold my-3">
+            {album.name}
           </TextWhite>
         </View>
+        <View className="mx-4">
+          <TextWhite className="text-lg font-bold">{album.artist}</TextWhite>
+        </View>
 
-        <Pressable style={styles.handleButton}>
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 28 }}>
+        <Pressable className="flex-row items-center justify-between mx-4">
+          <View className="flex-row items-center gap-7">
             <AntDesign name="hearto" size={24} color="white" />
             <AntDesign name="download" size={24} color="white" />
             <Ionicons name="md-ellipsis-vertical" size={24} color="white" />
           </View>
 
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+          <View className="flex-row items-center gap-2">
             <Entypo name="shuffle" size={24} color="#1DB954" />
             <TouchableOpacity
               onPress={playTrack}
-              style={styles.controlPlayIcon}
+              className="w-14 h-14 rounded-[30px] justify-center items-center bg-[#1DB954]"
             >
               <Entypo name="controller-play" size={24} color="black" />
             </TouchableOpacity>
           </View>
         </Pressable>
       </LinearGradient>
-      <View style={styles.bottom}>
+      <View className="flex-1 bg-black">
         <FlatList
           data={album.songs}
           Vertical
@@ -82,15 +71,17 @@ const AlbumDetail = ({ route }) => {
           renderItem={({ item }) => (
             <TouchableOpacity
               onPress={() => navigation.navigate("Info", { song: item })}
-              style={styles.itemContainer}
+              className="p-3 flex-row items-center justify-between"
             >
-              <View style={{ alignItems: "flex-start" }}>
-                <TextWhite style={styles.nameSong}>{item.name}</TextWhite>
-                <Text style={styles.nameArtists}>{item.artist}</Text>
+              <View className="items-start">
+                <TextWhite className="text-base font-bold mt-1">
+                  {item.name}
+                </TextWhite>
+                <Text className="text-xs font-semibold text-[#E0E0E0] mt-2">
+                  {item.artist}
+                </Text>
               </View>
-              <View
-                style={{ flexDirection: "row", alignItems: "center", gap: 12 }}
-              >
+              <View className="flex-row items-center gap-3">
                 <TouchableOpacity onPress={() => toggleMenu(item.idSong)}>
                   <Ionicons
                     name="md-ellipsis-vertical"
@@ -101,13 +92,8 @@ const AlbumDetail = ({ route }) => {
                 {menuVisibility[item.idSong] && (
                   <Animatable.View animation="slideInRight" duration={400}>
                     <TouchableOpacity>
-                      <TextWhite style={styles.menuItem}>
+                      <TextWhite className="font-bold">
                         Add to playlist
-                      </TextWhite>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                      <TextWhite style={styles.menuItem}>
-                        Remove to playlist
                       </TextWhite>
                     </TouchableOpacity>
                   </Animatable.View>
@@ -123,54 +109,3 @@ const AlbumDetail = ({ route }) => {
 };
 
 export default AlbumDetail;
-
-const styles = StyleSheet.create({
-  header: {
-    flex: 0.9,
-    paddingTop: 20,
-  },
-  bottom: {
-    flex: 1,
-    backgroundColor: "black",
-  },
-  nameSong: {
-    fontSize: 17,
-    fontWeight: "bold",
-    marginTop: 7,
-  },
-  nameArtists: {
-    fontSize: 12,
-    fontWeight: "500",
-    color: "#E0E0E0",
-    marginTop: 7,
-  },
-  textTitle: {
-    textAlign: "center",
-    fontSize: 22,
-    fontWeight: "bold",
-    marginVertical: 12,
-  },
-  itemContainer: {
-    padding: 14,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  handleButton: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginHorizontal: 14,
-  },
-  controlPlayIcon: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#1DB954",
-  },
-  menuItem: {
-    fontWeight: "bold",
-  },
-});

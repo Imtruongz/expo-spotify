@@ -1,5 +1,4 @@
 import {
-  StyleSheet,
   Text,
   View,
   Image,
@@ -9,10 +8,10 @@ import {
 } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
-import { Entypo } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import TextWhite from "../components/TextWhite";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { Entypo } from "@expo/vector-icons";
+import TextWhite from "../components/TextWhite";
 
 const LibraryScreen = () => {
   const navigation = useNavigation();
@@ -23,15 +22,16 @@ const LibraryScreen = () => {
 
   return (
     <SafeAreaProvider>
-      <LinearGradient colors={["#131624", "#040306"]} style={{ flex: 1 }}>
-        <ScrollView style={{ marginTop: 10 }}>
-          {/* Header */}
-          <View style={styles.header}>
-            <TextWhite style={styles.messageDay}>Your Library</TextWhite>
-            <View style={styles.Avatar}>
+      <LinearGradient colors={["#131624", "#040306"]} className="flex-1">
+        <ScrollView className="mt-5">
+          <View className="mx-3 flex-row items-center justify-between mb-7">
+            <TextWhite className="ml-3 text-2xl font-bold">
+              Your Library
+            </TextWhite>
+            <View className="flex-row items-center">
               <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
                 <Image
-                  style={styles.imgAvatar}
+                  className="w-10 h-10 rounded-[20px]"
                   source={{
                     uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
                   }}
@@ -39,29 +39,35 @@ const LibraryScreen = () => {
               </TouchableOpacity>
             </View>
           </View>
-          <View style={styles.createBlock}>
-            <View style={styles.tips}>
+          <View className="w-[90%] h-52 bg-[#282828] rounded-lg mx-5  px-4 flex-col gap-y-3 mb-12">
+            <View className="flex-row items-center gap-2">
               <Entypo name="spotify" size={24} color="green" />
               <TextWhite>Tips</TextWhite>
             </View>
-            <TextWhite style={styles.title}>
+            <TextWhite className="font-bold text-lg">
               Create your first playlist
             </TextWhite>
             <TextWhite>It's easy, we will help you</TextWhite>
-            <TouchableOpacity onPress={UpdatingButton} style={styles.button}>
+            <TouchableOpacity
+              onPress={UpdatingButton}
+              className="bg-white w-1/2 rounded-[50px] p-2 justify-center items-center"
+            >
               <Text>Create playlist</Text>
             </TouchableOpacity>
           </View>
-          <View style={styles.createBlock}>
-            <View style={styles.tips}>
+          <View className="w-[90%] h-52 bg-[#282828] rounded-lg mx-5 px-4 flex-col gap-y-3">
+            <View className="flex-row items-center gap-2">
               <Entypo name="spotify" size={24} color="green" />
               <TextWhite>Tips</TextWhite>
             </View>
-            <TextWhite style={styles.title}>
+            <TextWhite className="font-bold text-lg">
               Let's find some podcasts to follow
             </TextWhite>
             <TextWhite>We'll keep you updated on new episodes</TextWhite>
-            <TouchableOpacity onPress={UpdatingButton} style={styles.button}>
+            <TouchableOpacity
+              onPress={UpdatingButton}
+              className="bg-white w-1/2 rounded-[50px] p-2 justify-center items-center"
+            >
               <Text>Browse podcasts</Text>
             </TouchableOpacity>
           </View>
@@ -72,57 +78,3 @@ const LibraryScreen = () => {
 };
 
 export default LibraryScreen;
-
-const styles = StyleSheet.create({
-  header: {
-    padding: 10,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  Avatar: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  imgAvatar: {
-    width: 42,
-    height: 42,
-    borderRadius: 20,
-    borderColor: "green",
-    borderWidth: 2,
-    resizeMode: "cover",
-    marginRight: 10,
-  },
-  messageDay: {
-    marginLeft: 10,
-    fontSize: 25,
-    fontWeight: "bold",
-  },
-  createBlock: {
-    width: "90%",
-    height: 200,
-    backgroundColor: "#282828",
-    borderRadius: 6,
-    margin: 18,
-    padding: 20,
-    flexDirection: "column",
-    gap: 14,
-  },
-  tips: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 6,
-  },
-  title: {
-    fontWeight: "bold",
-    fontSize: 18,
-  },
-  button: {
-    backgroundColor: "white",
-    width: "50%",
-    borderRadius: 50,
-    padding: 9,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});

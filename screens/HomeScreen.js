@@ -18,7 +18,7 @@ import PopularAlbum from "../components/PopularAlbum";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const HomeScreen = () => {
-  const IPv4 = "192.168.0.9";
+  const IPv4 = "192.168.42.248";
 
   const [isLoading, setisLoading] = useState(true);
   const [songs, setSongs] = useState([]);
@@ -119,13 +119,11 @@ const HomeScreen = () => {
         <ScrollView>
           {/* Header */}
           <View className="mt-3 flex-row items-center justify-between">
-            <TextWhite className="ml-6 text-[22px] font-bold">
-              {message}
-            </TextWhite>
+            <TextWhite className="ml-6 text-xl font-bold">{message}</TextWhite>
             <View className="flex-row items-center">
               <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
                 <Image
-                  className="w-12 h-12 rounded-3xl border-2 mr-6"
+                  className="w-10 h-10 rounded-3xl border-2 mr-6"
                   source={{
                     uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
                   }}
@@ -159,11 +157,11 @@ const HomeScreen = () => {
                 className="flex-row items-center mx-2 my-2 bg-[#202020] rounded-md w-[44%]"
               >
                 <Image
-                  className="w-[60px] h-[60px] mr-3 rounded-[5px]"
+                  className="w-14 h-14 mr-3 rounded-md"
                   source={{ uri: item.image }}
                 />
                 <View>
-                  <TextWhite className="text-[14px] font-bold">
+                  <TextWhite className="text-sm font-bold">
                     {item.name}
                   </TextWhite>
                 </View>
@@ -172,7 +170,9 @@ const HomeScreen = () => {
           </View>
 
           {/* Top songs */}
-          <TextWhite className="text-[22px] font-bold mx-[14px] my-[8px]">Popular songs</TextWhite>
+          <TextWhite className="text-2xl font-bold mx-4 my-2">
+            Popular songs
+          </TextWhite>
           <FlatList
             data={songs}
             horizontal
@@ -182,7 +182,9 @@ const HomeScreen = () => {
             )}
           />
           {/* Top artists */}
-          <TextWhite className="text-[22px] font-bold mx-[14px] my-[8px]">Popular Artists</TextWhite>
+          <TextWhite className="text-2xl font-bold mx-4 my-2">
+            Popular Artists
+          </TextWhite>
           <FlatList
             data={artists}
             horizontal
@@ -193,7 +195,9 @@ const HomeScreen = () => {
           />
 
           {/* Top albums */}
-          <TextWhite className="text-[22px] font-bold mx-[14px] my-[8px]">Popular Album</TextWhite>
+          <TextWhite className="text-2xl font-bold mx-4 my-2">
+            Popular Album
+          </TextWhite>
           <FlatList
             data={albums}
             horizontal
@@ -203,7 +207,9 @@ const HomeScreen = () => {
             )}
           />
           {/* Trending now */}
-          <TextWhite className="text-[22px] font-bold mx-[14px] my-[8px]">Trending now</TextWhite>
+          <TextWhite className="text-2xl font-bold mx-4 my-2">
+            Trending now
+          </TextWhite>
           <FlatList
             data={trend}
             horizontal
@@ -212,7 +218,7 @@ const HomeScreen = () => {
               <PopularSong item={item} key={index} />
             )}
           />
-          <View className="h-[50px]"/>
+          <View className="h-14" />
         </ScrollView>
       </LinearGradient>
     </SafeAreaProvider>
