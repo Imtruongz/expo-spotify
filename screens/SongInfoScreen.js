@@ -13,7 +13,7 @@ import { Audio } from "expo-av";
 import { Entypo, Feather, Ionicons, AntDesign } from "@expo/vector-icons";
 
 const SongInfoScreen = ({ route }) => {
-  const IPv4 = "192.168.1.3";
+  const IPv4 = "192.168.1.7";
 
   const { song } = route.params;
 

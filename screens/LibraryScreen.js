@@ -31,7 +31,7 @@ const LibraryScreen = () => {
             <View className="flex-row items-center">
               <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
                 <Image
-                  className="w-10 h-10 rounded-[20px]"
+                  className="w-10 h-10 rounded-[20px] mr-2"
                   source={{
                     uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
                   }}

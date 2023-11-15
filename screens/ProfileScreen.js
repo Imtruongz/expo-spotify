@@ -1,5 +1,4 @@
 import {
-  StyleSheet,
   Text,
   View,
   Image,
@@ -17,7 +16,7 @@ import TextWhite from "../components/TextWhite";
 import { Ionicons } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
-  const IPv4 = "192.168.1.3";
+  const IPv4 = "192.168.1.7";
 
   const [isLoading, setisLoading] = useState(true);
   const [playList, setplayList] = useState([]);
@@ -108,7 +107,7 @@ const ProfileScreen = () => {
           </View>
         </View>
         <TouchableOpacity onPress={UpdatingButton}>
-          <TextWhite className="w-14 mt-4 ml-14 rounded-[40px] px-4 py-2 font-bold border-2 border-white border-solid">
+          <TextWhite className="text-center w-14 mt-4 ml-14 p-2 font-bold rounded-3xl border-2 border-white border-solid">
             Edit
           </TextWhite>
         </TouchableOpacity>
@@ -128,17 +127,19 @@ const ProfileScreen = () => {
             >
               <View className="p-2 flex-row items-center justify-between gap-3">
                 <Image
-                  style={{ width: 60, height: 60, borderRadius: 5 }}
+                  className="w-14 h-14 rounded"
                   source={{ uri: item.image }}
                 />
-                <View style={{ alignItems: "flex-start" }}>
-                  <TextWhite style={styles.nameSong}>{item.name}</TextWhite>
-                  <Text style={styles.nameArtists}>{item.artist}</Text>
+                <View className="items-start">
+                  <TextWhite className="text-xs font-bold mt-2">
+                    {item.name}
+                  </TextWhite>
+                  <Text className="text-xs font-semibold text-[#E0E0E0] mt-2">
+                    {item.artist}
+                  </Text>
                 </View>
               </View>
-              <View
-                style={{ flexDirection: "row", alignItems: "center", gap: 12 }}
-              >
+              <View className="flex-row items-center gap-3">
                 <TouchableOpacity onPress={() => toggleMenu(item.id)}>
                   <Ionicons
                     name="md-ellipsis-vertical"
@@ -149,7 +150,7 @@ const ProfileScreen = () => {
                 {menuVisibility[item.id] && (
                   <Animatable.View animation="slideInRight" duration={400}>
                     <TouchableOpacity onPress={() => deleteSong(item.id)}>
-                      <TextWhite style={styles.menuItem}>
+                      <TextWhite className="font-bold text-2xl ml-5">
                         Remove to playlist
                       </TextWhite>
                     </TouchableOpacity>
@@ -160,79 +161,10 @@ const ProfileScreen = () => {
           )}
           keyExtractor={(item) => item.id.toString()}
         />
-        <View style={{ height: 50 }} />
+        <View className="h-14" />
       </View>
     </SafeAreaProvider>
   );
 };
 
 export default ProfileScreen;
-
-const styles = StyleSheet.create({
-  header: {
-    flex: 0.4,
-    paddingTop: 15,
-  },
-  bottom: {
-    flex: 1,
-    backgroundColor: "black",
-  },
-  imgAvatar: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    borderColor: "white",
-    borderWidth: 2,
-    resizeMode: "cover",
-    marginLeft: 25,
-  },
-  nameSong: {
-    fontSize: 13,
-    fontWeight: "bold",
-    marginTop: 7,
-  },
-  nameArtists: {
-    fontSize: 12,
-    fontWeight: "500",
-    color: "#E0E0E0",
-    marginTop: 7,
-  },
-  nameUser: {
-    fontWeight: "bold",
-    fontSize: 25,
-    marginLeft: 20,
-  },
-  infoFollower: {
-    flexDirection: "row",
-    marginTop: 10,
-    marginLeft: 20,
-    gap: 5,
-  },
-  editButton: {
-    width: 60,
-    marginTop: 15,
-    marginLeft: 55,
-    borderRadius: 40,
-    borderColor: "white",
-    borderWidth: 1,
-    paddingHorizontal: 17,
-    paddingVertical: 6,
-    fontWeight: "bold",
-  },
-  textTitle: {
-    textAlign: "center",
-    fontSize: 22,
-    fontWeight: "bold",
-    marginBottom: 15,
-  },
-  itemContainer: {
-    padding: 7,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: 12,
-  },
-  menuItem: {
-    fontWeight: "bold",
-  },
-});

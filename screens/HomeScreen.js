@@ -16,7 +16,7 @@ import PopularArtists from "../components/PopularArtists";
 import PopularAlbum from "../components/PopularAlbum";
 
 const HomeScreen = () => {
-  const IPv4 = "192.168.1.3";
+  const IPv4 = "192.168.1.7";
 
   const [isLoading, setisLoading] = useState(true);
   const [songs, setSongs] = useState([]);
@@ -121,7 +121,7 @@ const HomeScreen = () => {
             <View className="flex-row items-center">
               <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
                 <Image
-                  className="w-10 h-10 rounded-3xl border-2 mr-6"
+                  className="w-10 h-10 mr-6 rounded-3xl"
                   source={{
                     uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
                   }}

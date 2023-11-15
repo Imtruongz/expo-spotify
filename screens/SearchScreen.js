@@ -2,7 +2,6 @@ import {
   Image,
   Pressable,
   ScrollView,
-  StyleSheet,
   TextInput,
   View,
   TouchableOpacity,
@@ -29,39 +28,41 @@ const LikedSongsScreen = () => {
 
   return (
     <SafeAreaProvider>
-      <LinearGradient colors={["#131624", "#040306"]} style={{ flex: 1 }}>
-        <ScrollView style={{marginTop: 15}}>
-          <TextWhite style={styles.titleText1}>Search</TextWhite>
-
-          <Pressable style={styles.headerContainer}>
-            <Pressable style={styles.searchInput}>
+      <LinearGradient colors={["#131624", "#040306"]} clasName="flex-1">
+        <ScrollView className="mt-4">
+          <TextWhite className="mx-5 font-bold text-2xl">Search</TextWhite>
+          <Pressable className="flex-row items-center justify-between mx-3 my-5">
+            <Pressable className="w-full flex-row items-center bg-[#131624] p-2 rounded-sm h-12 border-2 border-[#979593] border-solid">
               <AntDesign name="search1" size={25} color="#979593" />
               <TextInput
                 onChangeText={(text) => handleSearch(text)}
                 placeholder="Artists, songs, albums or podcast"
                 placeholderTextColor={"#979593"}
-                style={styles.inputTitle}
+                className="text-base w-full ml-2 font-semibold text-[#979593]"
               />
             </Pressable>
           </Pressable>
 
-          <View style={{ marginHorizontal: 10 }}>
-            <TextWhite style={styles.titleText2}>
+          <View className="mx-3">
+            <TextWhite className="text-xl font-bold">
               What do you want to listen to ?
             </TextWhite>
           </View>
 
-          <View style={styles.albumContainer}>
+          <View className="flex-row flex-wrap items-center justify-between mb-12">
             {searchResult.map((item) => (
               <TouchableOpacity
                 key={item.id}
-                style={[
-                  styles.albumLikedButton,
-                  { backgroundColor: item.color },
-                ]}
+                style={[{ backgroundColor: item.color }]}
+                className="mb-3 p-3 flex-row justify-around gap-3 mx-3 my-3 rounded-md w-40 h-24"
               >
-                <TextWhite style={styles.nameSong}>{item.name}</TextWhite>
-                <Image style={styles.imageSong} source={{ uri: item.image }} />
+                <TextWhite className="text-base font-bold">
+                  {item.name}
+                </TextWhite>
+                <Image
+                  className="w-14 h-14 rotate-12 m-1 rounded-md"
+                  source={{ uri: item.image }}
+                />
               </TouchableOpacity>
             ))}
           </View>
@@ -72,72 +73,3 @@ const LikedSongsScreen = () => {
 };
 
 export default LikedSongsScreen;
-
-const styles = StyleSheet.create({
-  albumContainer: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginBottom: 50,
-  },
-  albumLikedButton: {
-    marginBottom: 10,
-    padding: 12,
-    flexDirection: "row",
-    justifyContent: "space-around",
-    gap: 10,
-    marginHorizontal: 10,
-    marginVertical: 10,
-    borderRadius: 5,
-    elevation: 3,
-    width: 160,
-    height: 95,
-    opacity: 1, // Giá trị opacity mặc định
-  },
-  titleText1: {
-    marginHorizontal: 18,
-    fontWeight: "bold",
-    fontSize: 26,
-  },
-  headerContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginHorizontal: 10,
-    marginVertical: 20,
-  },
-  searchInput: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 10,
-    backgroundColor: "#131624",
-    padding: 9,
-    flex: 1,
-    borderRadius: 3,
-    height: 50,
-    borderWidth: 1,
-    borderColor: "#979593",
-  },
-  inputTitle: {
-    fontSize: 16,
-    width: "100%",
-    fontWeight: "500",
-    color: "#979593",
-  },
-  titleText2: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  nameSong: {
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-  imageSong: {
-    width: 60,
-    height: 60,
-    transform: [{ rotate: "15deg" }],
-    margin: 4,
-    borderRadius: 6,
-  },
-});
