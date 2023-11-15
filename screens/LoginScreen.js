@@ -1,10 +1,8 @@
-import { StyleSheet, View, SafeAreaView, Pressable } from "react-native";
 import React from "react";
+import { StyleSheet, View, SafeAreaView, Pressable } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
-
 import { MaterialIcons, AntDesign, Entypo } from "@expo/vector-icons";
-
 import TextWhite from "../components/TextWhite";
 
 const LoginScreen = () => {
@@ -15,20 +13,21 @@ const LoginScreen = () => {
   };
 
   return (
-    <LinearGradient colors={["#131624", "#040306"]} style={{ flex: 1 }}>
+    <LinearGradient colors={["#131624", "#040306"]} className="flex-1">
       <SafeAreaView>
-        <View style={{ height: 80 }} />
+        <View className="h-20" />
         <Entypo
           style={{ textAlign: "center" }}
           name="spotify"
           size={100}
           color="#1DB954"
         />
-        <TextWhite style={styles.textTitle}>
+        <TextWhite className="text-4xl font-bold text-center mt-10">
           Millions of Songs Free on spotify!
         </TextWhite>
 
-        <View style={{ height: 80 }} />
+        <View className="h-20" />
+
         <Pressable
           onPress={authenticate}
           style={({ pressed }) => [
@@ -42,7 +41,6 @@ const LoginScreen = () => {
               alignItems: "center",
               justifyContent: "center",
               marginVertical: 10,
-              opacity: pressed ? 0.8 : 1, // Thay đổi opacity khi pressed
             },
           ]}
         >

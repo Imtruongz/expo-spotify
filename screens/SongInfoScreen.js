@@ -3,7 +3,6 @@ import {
   View,
   Text,
   Image,
-  StyleSheet,
   Pressable,
   TouchableOpacity,
 } from "react-native";
@@ -14,7 +13,7 @@ import { Audio } from "expo-av";
 import { Entypo, Feather, Ionicons, AntDesign } from "@expo/vector-icons";
 
 const SongInfoScreen = ({ route }) => {
-  const IPv4 = "192.168.42.248";
+  const IPv4 = "192.168.1.3";
 
   const { song } = route.params;
 
@@ -84,7 +83,7 @@ const SongInfoScreen = ({ route }) => {
         }
       })
       .catch((err) => {
-        alert("This songs has been added to your playlist.\n" + err);
+        alert("This songs has been added to your playlist.");
       });
   };
 
@@ -97,21 +96,8 @@ const SongInfoScreen = ({ route }) => {
   return (
     <View swipeDirection={["up", "down"]} swipeThreshold={200}>
       <LinearGradient colors={["#131624", "#040306"]}>
-        <View
-          style={{
-            height: "100%",
-            width: "100%",
-            marginTop: 20,
-            paddingHorizontal: 15,
-          }}
-        >
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
+        <View className="h-full w-full mt-5 px-4">
+          <View className="flex-row items-center justify-between">
             <Pressable onPress={() => navigation.goBack()}>
               <AntDesign name="down" size={24} color="white" />
             </Pressable>
@@ -119,34 +105,19 @@ const SongInfoScreen = ({ route }) => {
             <Entypo name="dots-three-vertical" size={24} color="white" />
           </View>
 
-          <View style={{ padding: 10 }}>
+          <View className="p-2">
             <Image
-              style={{
-                width: 300,
-                height: 300,
-                borderRadius: 150,
-                marginVertical: 60,
-              }}
+              className="w-[310px] h-[310px] rounded-[155px] my-[60px]"
               source={{ uri: song.image }}
             />
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
+            <View className="flex-row justify-between items-center">
               <View>
-                <Text
-                  style={{ fontSize: 24, fontWeight: "bold", color: "white" }}
-                >
+                <Text className="text-2xl font-bold text-white">
                   {song.name}
                 </Text>
-                <Text style={{ color: "#D3D3D3", marginTop: 4 }}>
-                  {song.artist}
-                </Text>
+                <Text className="text-[#D3D3D3] mt-1">{song.artist}</Text>
               </View>
-              <View style={{ flexDirection: "row", gap: 16 }}>
+              <View className="flex-row gap-4">
                 <TouchableOpacity onPress={() => addSong(song)}>
                   <AntDesign name="hearto" size={24} color="white" />
                 </TouchableOpacity>
@@ -154,19 +125,8 @@ const SongInfoScreen = ({ route }) => {
               </View>
             </View>
 
-            <View style={{ marginTop: 14 }}>
-              <View
-                style={{
-                  width: "100%",
-                  marginTop: 10,
-                  height: 3,
-                  backgroundColor: "gray",
-                  borderRadius: 5,
-                }}
-              >
-                <View
-                  style={[styles.progressbar, { width: `${progress * 100}%` }]}
-                />
+            <View className="mt-4">
+              <View className="w-full mt-2 h-1 bg-gray-700 rounded-md">
                 <View
                   style={[
                     {
@@ -184,35 +144,17 @@ const SongInfoScreen = ({ route }) => {
                   ]}
                 />
               </View>
-              <View
-                style={{
-                  marginTop: 12,
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                }}
-              >
-                <Text
-                  style={{ color: "white", fontSize: 15, color: "#D3D3D3" }}
-                >
+              <View className="mt-3 flex-row items-center justify-between">
+                <Text className="text-sm text-[#D3D3D3]">
                   {formatTime(currentTime)}
                 </Text>
 
-                <Text
-                  style={{ color: "white", fontSize: 15, color: "#D3D3D3" }}
-                >
+                <Text className="text-sm text-[#D3D3D3]">
                   {formatTime(totalDuration)}
                 </Text>
               </View>
             </View>
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "space-between",
-                marginTop: 17,
-              }}
-            >
+            <View className="flex-row items-center justify-between mt-4">
               <Pressable>
                 <Entypo name="shuffle" size={26} color="white" />
               </Pressable>
@@ -244,70 +186,4 @@ const SongInfoScreen = ({ route }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 20,
-  },
-  albumImage: {
-    width: 300,
-    height: 300,
-    borderRadius: 150,
-    marginBottom: 20,
-  },
-  songTitle: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  songArtist: {
-    fontSize: 16,
-    color: "#555",
-  },
-});
-
 export default SongInfoScreen;
-
-{
-  /* <Pressable
-  style={{
-    backgroundColor: "#5072A7",
-    width: "90%",
-    padding: 10,
-    marginLeft: "auto",
-    marginRight: "auto",
-    marginBottom: 15,
-    position: "absolute",
-    borderRadius: 6,
-    left: 20,
-    bottom: 10,
-    justifyContent: "space-between",
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 10,
-  }}
->
-  <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
-    <Image style={{ width: 40, height: 40 }} source={ShapeOfYouImg} />
-    <Text
-      numberOfLines={1}
-      style={{
-        fontSize: 13,
-        width: 220,
-        color: "white",
-        fontWeight: "bold",
-      }}
-    >
-      ABC ABC
-    </Text>
-  </View>
-
-  <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
-    <AntDesign name="heart" size={24} color="#1DB954" />
-    <Pressable>
-      <AntDesign name="pausecircle" size={24} color="white" />
-    </Pressable>
-  </View>
-</Pressable> */
-}

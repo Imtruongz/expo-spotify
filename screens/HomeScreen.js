@@ -9,16 +9,14 @@ import {
 import React, { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
-
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import TextWhite from "../components/TextWhite";
 import PopularSong from "../components/PopularSong";
 import PopularArtists from "../components/PopularArtists";
 import PopularAlbum from "../components/PopularAlbum";
 
-import { SafeAreaProvider } from "react-native-safe-area-context";
-
 const HomeScreen = () => {
-  const IPv4 = "192.168.42.248";
+  const IPv4 = "192.168.1.3";
 
   const [isLoading, setisLoading] = useState(true);
   const [songs, setSongs] = useState([]);

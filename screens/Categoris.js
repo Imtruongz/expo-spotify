@@ -11,9 +11,7 @@ import React, { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 import * as Animatable from "react-native-animatable";
-
 import { Entypo, Ionicons, AntDesign } from "@expo/vector-icons";
-
 import TextWhite from "../components/TextWhite";
 
 const CategoriScreen = ({ route }) => {

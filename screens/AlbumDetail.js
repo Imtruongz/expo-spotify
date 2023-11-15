@@ -10,9 +10,7 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 import * as Animatable from "react-native-animatable";
-
 import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
-
 import TextWhite from "../components/TextWhite";
 
 const AlbumDetail = ({ route }) => {
