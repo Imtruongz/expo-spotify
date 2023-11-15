@@ -14,7 +14,9 @@ import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
 import TextWhite from "../components/TextWhite";
 
 const AlbumDetail = ({ route }) => {
+  const IPv4 = "192.168.1.7";
   const { album } = route.params;
+
   const navigation = useNavigation();
   const [menuVisibility, setMenuVisibility] = useState({});
 
@@ -23,6 +25,42 @@ const AlbumDetail = ({ route }) => {
       ...menuVisibility,
       [itemId]: !menuVisibility[itemId],
     });
+  };
+
+  const addSong = (song) => {
+    let urlAPI = `http://${IPv4}:5000/playlist`;
+
+    const payload = {
+      id: song.id,
+      name: song.name,
+      artist: song.artist,
+      image: song.image,
+      path: song.path,
+    };
+
+    console.log("Dữ liệu gửi lên server:", payload); // In ra dữ liệu trước khi gửi
+
+    fetch(urlAPI, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((res) => {
+        if (res.ok && res.status === 201) {
+          alert("Added to your playlist");
+        } else {
+          // Thêm xử lý cho trường hợp server trả về lỗi
+          return res.json().then((data) => {
+            throw new Error("Lỗi từ server: " + data.message);
+          });
+        }
+      })
+      .catch((err) => {
+        alert("This songs has been added to your playlist.");
+      });
   };
 
   const playTrack = async () => {};
@@ -89,8 +127,8 @@ const AlbumDetail = ({ route }) => {
                 </TouchableOpacity>
                 {menuVisibility[item.idSong] && (
                   <Animatable.View animation="slideInRight" duration={400}>
-                    <TouchableOpacity>
-                      <TextWhite className="font-bold">
+                    <TouchableOpacity onPress={() => addSong(item)}>
+                      <TextWhite className="font-bold py-2">
                         Add to playlist
                       </TextWhite>
                     </TouchableOpacity>

@@ -9,7 +9,7 @@ import {
 import React, { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import TextWhite from "../components/TextWhite";
 import PopularSong from "../components/PopularSong";
 import PopularArtists from "../components/PopularArtists";
@@ -112,114 +112,110 @@ const HomeScreen = () => {
   const navigation = useNavigation();
 
   return (
-    <SafeAreaProvider>
-      <LinearGradient colors={["#131624", "#040306"]} className="flex-1">
-        <ScrollView>
-          {/* Header */}
-          <View className="mt-3 flex-row items-center justify-between">
-            <TextWhite className="ml-6 text-xl font-bold">{message}</TextWhite>
-            <View className="flex-row items-center">
-              <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-                <Image
-                  className="w-10 h-10 mr-6 rounded-3xl"
-                  source={{
-                    uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
-                  }}
-                />
-              </TouchableOpacity>
-            </View>
+    <LinearGradient colors={["#131624", "#040306"]} className="flex-1">
+      <SafeAreaView />
+      <ScrollView>
+        {/* Header */}
+        <View className="mt-3 flex-row items-center justify-between">
+          <TextWhite className="ml-6 text-xl font-bold">{message}</TextWhite>
+          <View className="flex-row items-center">
+            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+              <Image
+                className="w-10 h-10 mr-6 rounded-3xl"
+                source={{
+                  uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
+                }}
+              />
+            </TouchableOpacity>
           </View>
+        </View>
 
-          {/* navbar */}
-          <View className="ml-3 my-3 flex-row items-center">
-            <Pressable className="bg-[#282828] p-2.5 mx-1 rounded-full">
-              <TextWhite className="text-sm font-bold">Music</TextWhite>
-            </Pressable>
+        {/* navbar */}
+        <View className="ml-3 my-3 flex-row items-center">
+          <Pressable className="bg-[#282828] p-2.5 mx-1 rounded-full">
+            <TextWhite className="text-sm font-bold">Music</TextWhite>
+          </Pressable>
 
-            <Pressable className="bg-[#282828] p-2.5 mx-1 rounded-full">
-              <TextWhite className="text-sm font-bold">
-                Podcasts & Shows
-              </TextWhite>
-            </Pressable>
-          </View>
+          <Pressable className="bg-[#282828] p-2.5 mx-1 rounded-full">
+            <TextWhite className="text-sm font-bold">
+              Podcasts & Shows
+            </TextWhite>
+          </Pressable>
+        </View>
 
-          {/* Album */}
-          <View className="flex-row flex-wrap items-center justify-center">
-            {/* category */}
-            {category.map((item) => (
-              <TouchableOpacity
-                key={item.id}
-                onPress={() =>
-                  navigation.navigate("Categori", { categoris: item })
-                }
-                className="flex-row items-center mx-2 my-2 bg-[#202020] rounded-md w-[44%]"
-              >
-                <Image
-                  className="w-14 h-14 mr-3 rounded-md"
-                  source={{ uri: item.image }}
-                />
-                <View>
-                  <TextWhite className="text-sm font-bold">
-                    {item.name}
-                  </TextWhite>
-                </View>
-              </TouchableOpacity>
-            ))}
-          </View>
+        {/* Album */}
+        <View className="flex-row flex-wrap items-center justify-center">
+          {/* category */}
+          {category.map((item) => (
+            <TouchableOpacity
+              key={item.id}
+              onPress={() =>
+                navigation.navigate("Categori", { categoris: item })
+              }
+              className="flex-row items-center mx-2 my-2 bg-[#202020] rounded-md w-[44%]"
+            >
+              <Image
+                className="w-14 h-14 mr-3 rounded-md"
+                source={{ uri: item.image }}
+              />
+              <View>
+                <TextWhite className="text-sm font-bold">{item.name}</TextWhite>
+              </View>
+            </TouchableOpacity>
+          ))}
+        </View>
 
-          {/* Top songs */}
-          <TextWhite className="text-2xl font-bold mx-4 my-2">
-            Popular songs
-          </TextWhite>
-          <FlatList
-            data={songs}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            renderItem={({ item, index }) => (
-              <PopularSong item={item} key={index} />
-            )}
-          />
-          {/* Top artists */}
-          <TextWhite className="text-2xl font-bold mx-4 my-2">
-            Popular Artists
-          </TextWhite>
-          <FlatList
-            data={artists}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            renderItem={({ item, index }) => (
-              <PopularArtists item={item} key={index} />
-            )}
-          />
-
-          {/* Top albums */}
-          <TextWhite className="text-2xl font-bold mx-4 my-2">
-            Popular Album
-          </TextWhite>
-          <FlatList
-            data={albums}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            renderItem={({ item, index }) => (
-              <PopularAlbum item={item} key={index} />
-            )}
-          />
-          {/* Trending now */}
-          <TextWhite className="text-2xl font-bold mx-4 my-2">
-            Trending now
-          </TextWhite>
-          <FlatList
-            data={trend}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            renderItem={({ item, index }) => (
-              <PopularSong item={item} key={index} />
-            )}
-          />
-          <View className="h-14" />
-        </ScrollView>
-      </LinearGradient>
-    </SafeAreaProvider>
+        {/* Top songs */}
+        <TextWhite className="text-2xl font-bold mx-4 my-2">
+          Popular songs
+        </TextWhite>
+        <FlatList
+          data={songs}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item, index }) => (
+            <PopularSong item={item} key={index} />
+          )}
+        />
+        {/* Top albums */}
+        <TextWhite className="text-2xl font-bold mx-4 my-2">
+          Popular Album
+        </TextWhite>
+        <FlatList
+          data={albums}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item, index }) => (
+            <PopularAlbum item={item} key={index} />
+          )}
+        />
+        {/* Top artists */}
+        <TextWhite className="text-2xl font-bold mx-4 my-2">
+          Popular Artists
+        </TextWhite>
+        <FlatList
+          data={artists}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item, index }) => (
+            <PopularArtists item={item} key={index} />
+          )}
+        />
+        {/* Trending now */}
+        <TextWhite className="text-2xl font-bold mx-4 my-2">
+          Trending now
+        </TextWhite>
+        <FlatList
+          data={trend}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item, index }) => (
+            <PopularSong item={item} key={index} />
+          )}
+        />
+        <View className="h-14" />
+      </ScrollView>
+    </LinearGradient>
   );
 };
 

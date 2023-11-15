@@ -154,7 +154,7 @@ const ProfileScreen = () => {
                 {menuVisibility[item.id] && (
                   <Animatable.View animation="slideInRight" duration={400}>
                     <TouchableOpacity onPress={() => deleteSong(item.id)}>
-                      <TextWhite className="font-bold text-sm mr-2">
+                      <TextWhite className="font-bold text-sm mr-2 py-2">
                         Remove to playlist
                       </TextWhite>
                     </TouchableOpacity>
