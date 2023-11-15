@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  View,
-  Text,
-  Image,
-  Pressable,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, Image, Pressable, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 import { Audio } from "expo-av";

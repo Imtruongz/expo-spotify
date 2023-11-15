@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, SafeAreaView, Pressable } from "react-native";
+import { View, SafeAreaView, Pressable } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 import { MaterialIcons, AntDesign, Entypo } from "@expo/vector-icons";
@@ -7,10 +7,6 @@ import TextWhite from "../components/TextWhite";
 
 const LoginScreen = () => {
   const navigation = useNavigation();
-
-  const authenticate = () => {
-    navigation.navigate("Main"); // Điều hướng đến màn hình mới
-  };
 
   return (
     <LinearGradient colors={["#131624", "#040306"]} className="flex-1">
@@ -29,101 +25,38 @@ const LoginScreen = () => {
         <View className="h-20" />
 
         <Pressable
-          onPress={authenticate}
-          style={({ pressed }) => [
-            {
-              backgroundColor: "#1DB954",
-              padding: 10,
-              marginLeft: "auto",
-              marginRight: "auto",
-              width: 300,
-              borderRadius: 25,
-              alignItems: "center",
-              justifyContent: "center",
-              marginVertical: 10,
-            },
-          ]}
+          onPress={() => navigation.navigate("Main")}
+          className="bg-[#1DB954] p-3 ml-auto mr-auto w-80 rounded-3xl items-center justify-center my-3"
         >
-          <TextWhite style={{ fontWeight: "bold" }}>
-            Sign In with Spotify
-          </TextWhite>
+          <TextWhite className="font-bold">Sign In with Spotify</TextWhite>
         </Pressable>
 
         <Pressable
-          onPress={authenticate}
-          style={({ pressed }) => [
-            {
-              backgroundColor: "#131624",
-              padding: 10,
-              marginLeft: "auto",
-              marginRight: "auto",
-              width: 300,
-              borderRadius: 25,
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "row",
-              alignItems: "center",
-              marginVertical: 10,
-              borderColor: "#C0C0C0",
-              borderWidth: 0.8,
-              opacity: pressed ? 0.8 : 1,
-            },
-          ]}
+          onPress={() => navigation.navigate("Main")}
+          className="bg-[#131624] p-2 ml-auto mr-auto w-80 flex-row rounded-3xl items-center justify-center my-3 border-2 border-[#C0C0C0] border-solid"
         >
           <MaterialIcons name="phone-android" size={24} color="white" />
-          <TextWhite style={styles.buttonLogin}>
+          <TextWhite className="font-semibold text-center flex-1">
             Continue with phone number
           </TextWhite>
         </Pressable>
 
         <Pressable
-          onPress={authenticate}
-          style={({ pressed }) => [
-            {
-              backgroundColor: "#131624",
-              padding: 10,
-              marginLeft: "auto",
-              marginRight: "auto",
-              width: 300,
-              borderRadius: 25,
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "row",
-              alignItems: "center",
-              marginVertical: 10,
-              borderColor: "#C0C0C0",
-              borderWidth: 0.8,
-              opacity: pressed ? 0.8 : 1,
-            },
-          ]}
+          onPress={() => navigation.navigate("Main")}
+          className="bg-[#131624] p-2 ml-auto mr-auto w-80 flex-row rounded-3xl items-center justify-center my-3 border-2 border-[#C0C0C0] border-solid"
         >
           <AntDesign name="google" size={24} color="white" />
-          <TextWhite style={styles.buttonLogin}>Continue with Google</TextWhite>
+          <TextWhite className="font-semibold text-center flex-1">
+            Continue with Google
+          </TextWhite>
         </Pressable>
 
         <Pressable
-          onPress={authenticate}
-          style={({ pressed }) => [
-            {
-              backgroundColor: "#131624",
-              padding: 10,
-              marginLeft: "auto",
-              marginRight: "auto",
-              width: 300,
-              borderRadius: 25,
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "row",
-              alignItems: "center",
-              marginVertical: 10,
-              borderColor: "#C0C0C0",
-              borderWidth: 0.8,
-              opacity: pressed ? 0.8 : 1,
-            },
-          ]}
+          onPress={() => navigation.navigate("Main")}
+          className="bg-[#131624] p-2 ml-auto mr-auto w-80 flex-row rounded-3xl items-center justify-center my-3 border-2 border-[#C0C0C0] border-solid"
         >
           <Entypo name="facebook" size={24} color="white" />
-          <TextWhite style={styles.buttonLogin}>
+          <TextWhite className="font-semibold text-center flex-1">
             Sign In with Facebook
           </TextWhite>
         </Pressable>
@@ -133,17 +66,3 @@ const LoginScreen = () => {
 };
 
 export default LoginScreen;
-
-const styles = StyleSheet.create({
-  textTitle: {
-    fontSize: 40,
-    fontWeight: "bold",
-    textAlign: "center",
-    marginTop: 40,
-  },
-  buttonLogin: {
-    fontWeight: "500",
-    textAlign: "center",
-    flex: 1,
-  },
-});

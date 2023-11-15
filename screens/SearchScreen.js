@@ -4,6 +4,7 @@ import {
   ScrollView,
   TextInput,
   View,
+  Alert,
   TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
@@ -26,41 +27,44 @@ const LikedSongsScreen = () => {
     setSearchResult(filteredItems);
   };
 
+  function UpdatingButton() {
+    Alert.alert("Updating");
+  }
+
   return (
     <SafeAreaProvider>
       <LinearGradient colors={["#131624", "#040306"]} clasName="flex-1">
-        <ScrollView className="mt-4">
+        <ScrollView className="mt-4 h-full">
           <TextWhite className="mx-5 font-bold text-2xl">Search</TextWhite>
-          <Pressable className="flex-row items-center justify-between mx-3 my-5">
-            <Pressable className="w-full flex-row items-center bg-[#131624] p-2 rounded-sm h-12 border-2 border-[#979593] border-solid">
-              <AntDesign name="search1" size={25} color="#979593" />
-              <TextInput
-                onChangeText={(text) => handleSearch(text)}
-                placeholder="Artists, songs, albums or podcast"
-                placeholderTextColor={"#979593"}
-                className="text-base w-full ml-2 font-semibold text-[#979593]"
-              />
-            </Pressable>
-          </Pressable>
-
+          <Pressable className="flex-row items-center p-2 rounded-md border-[2px] border-[#979593]  mx-3 my-5">
+          <AntDesign name="search1" size={24} color="#979593" />
+          <TextInput
+            onChangeText={(text) => handleSearch(text)}
+            placeholder="Artists, songs, albums or podcast"
+            placeholderTextColor={"#979593"}
+            className="font-semibold text-base w-full text-[#979593] ml-2"
+          />
+        </Pressable>
+          
           <View className="mx-3">
             <TextWhite className="text-xl font-bold">
               What do you want to listen to ?
             </TextWhite>
           </View>
 
-          <View className="flex-row flex-wrap items-center justify-between mb-12">
+          <View className="flex-row flex-wrap justify-center mb-12">
             {searchResult.map((item) => (
               <TouchableOpacity
                 key={item.id}
+                onPress={UpdatingButton}
                 style={[{ backgroundColor: item.color }]}
-                className="mb-3 p-3 flex-row justify-around gap-3 mx-3 my-3 rounded-md w-40 h-24"
+                className="flex-row justify-between mx-3 my-3 p-2 rounded-lg w-[150px] h-20"
               >
                 <TextWhite className="text-base font-bold">
                   {item.name}
                 </TextWhite>
                 <Image
-                  className="w-14 h-14 rotate-12 m-1 rounded-md"
+                  className="w-14 h-14 rotate-12 rounded-md"
                   source={{ uri: item.image }}
                 />
               </TouchableOpacity>

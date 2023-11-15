@@ -1,11 +1,43 @@
 {
   "playlist": [
     {
-      "id": 10,
-      "name": "Into You",
-      "artist": "Ariana Grande",
-      "image": "https://live.staticflickr.com/65535/53281595318_a0f4252370_z.jpg",
-      "path": "https://drive.google.com/uc?export=download&id=1w7UNS04NJXMJ0cD0Zp19XbLVECLvJ3c9"
+      "id": 1,
+      "name": "Shape of You",
+      "artist": "Ed Sheeran",
+      "image": "https://live.staticflickr.com/65535/53281310471_67a6f08805.jpg",
+      "path": "https://drive.google.com/uc?export=download&id=10-nyPxvwVpB-RtRq_X0-VuhUx4apue9p"
+    },
+    {
+      "id": 2,
+      "name": "Rolling in the Deep",
+      "artist": "Adele",
+      "image": "https://live.staticflickr.com/65535/53281310511_291d8dd9d3_z.jpg",
+      "path": "https://drive.google.com/uc?export=download&id=1rtRuq8C2fo-dx7qI1kwTaeQDqgwj2Lax"
+    },
+    {
+      "id": 3,
+      "name": "Crazy in Love",
+      "artist": "Beyoncé",
+      "image": "https://live.staticflickr.com/65535/53281310571_04dba4818a_n.jpg",
+      "path": "https://drive.google.com/uc?export=download&id=1cp-KRpM3IE5CZ3zzqCAxQg8NAozWCJ5p"
+    },
+    {
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://live.staticflickr.com/65535/53300257084_f9228a91cf_z.jpg",
+      "id": 4
+    },
+    {
+      "name": "B.Y.S",
+      "artist": "Keshi",
+      "image": "https://live.staticflickr.com/65535/53300360540_243c154b09_z.jpg",
+      "id": 5
+    },
+    {
+      "name": "Somebody",
+      "artist": "Keshi",
+      "image": "https://live.staticflickr.com/65535/53299884271_c3f91d3c0e_z.jpg",
+      "id": 6
     },
     {
       "id": 8,

@@ -34,7 +34,10 @@ const AlbumDetail = ({ route }) => {
           <AntDesign name="left" size={22} color="white" />
         </Pressable>
         <View className="justify-center items-center">
-          <Image className="w-44 h-44 rounded" source={{ uri: album.image }} />
+          <Image
+            className="w-44 h-44 rounded-xl"
+            source={{ uri: album.image }}
+          />
           <TextWhite className="text-center text-xl font-bold my-3">
             {album.name}
           </TextWhite>
@@ -43,7 +46,7 @@ const AlbumDetail = ({ route }) => {
           <TextWhite className="text-lg font-bold">{album.artist}</TextWhite>
         </View>
 
-        <Pressable className="flex-row items-center justify-between mx-4">
+        <Pressable className="flex-row items-center justify-between ml-2">
           <View className="flex-row items-center gap-7">
             <AntDesign name="hearto" size={24} color="white" />
             <AntDesign name="download" size={24} color="white" />
@@ -52,11 +55,8 @@ const AlbumDetail = ({ route }) => {
 
           <View className="flex-row items-center gap-2">
             <Entypo name="shuffle" size={24} color="#1DB954" />
-            <TouchableOpacity
-              onPress={playTrack}
-              className="w-14 h-14 rounded-[30px] justify-center items-center bg-[#1DB954]"
-            >
-              <Entypo name="controller-play" size={24} color="black" />
+            <TouchableOpacity onPress={playTrack}>
+              <Ionicons name="play-circle" size={70} color="#1DB954" />
             </TouchableOpacity>
           </View>
         </Pressable>

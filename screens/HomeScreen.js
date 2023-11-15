@@ -102,7 +102,7 @@ const HomeScreen = () => {
     const currentTime = new Date().getHours();
     if (currentTime < 12) {
       return "Good Morning";
-    } else if (currentTime < 16) {
+    } else if (currentTime < 18) {
       return "Good Afternoon";
     } else {
       return "Good Evening";

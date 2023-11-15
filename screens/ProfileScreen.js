@@ -73,6 +73,8 @@ const ProfileScreen = () => {
     Alert.alert("Updating");
   }
 
+  
+
   const navigation = useNavigation();
 
   return (
@@ -98,16 +100,18 @@ const ProfileScreen = () => {
             <TextWhite className="font-bold text-2xl ml-5">
               Nguyễn Việt Trường
             </TextWhite>
-            <View className="flex-row gap-2 px-5 py-2">
+            <View className="flex-row flex-wrap gap-1 px-5 py-2">
               <TextWhite className="font-bold">0</TextWhite>
               <Text className="text-[#E0E0E0]">follower</Text>
               <TextWhite className="font-bold">0</TextWhite>
               <Text className="text-[#E0E0E0]">following</Text>
+              <TextWhite className="font-bold">{playList.length}</TextWhite>
+              <Text className="text-[#E0E0E0]">songs</Text>
             </View>
           </View>
         </View>
         <TouchableOpacity onPress={UpdatingButton}>
-          <TextWhite className="text-center w-14 mt-4 ml-14 p-2 font-bold rounded-3xl border-2 border-white border-solid">
+          <TextWhite className="text-center w-14 mt-4 ml-14 p-[6px] font-bold rounded-3xl border-2 border-white border-solid">
             Edit
           </TextWhite>
         </TouchableOpacity>
@@ -122,19 +126,19 @@ const ProfileScreen = () => {
           showsVerticalScrollIndicator={false}
           renderItem={({ item }) => (
             <TouchableOpacity
-              className="p-2 flex-row items-center justify-between"
+              className=" flex-row items-center justify-between"
               onPress={() => navigation.navigate("Info", { song: item })}
             >
-              <View className="p-2 flex-row items-center justify-between gap-3">
+              <View className="p-3 flex-row items-center justify-between gap-3">
                 <Image
                   className="w-14 h-14 rounded"
                   source={{ uri: item.image }}
                 />
-                <View className="items-start">
-                  <TextWhite className="text-xs font-bold mt-2">
+                <View>
+                  <TextWhite className="text-sm font-bold text-[#E0E0E0]">
                     {item.name}
                   </TextWhite>
-                  <Text className="text-xs font-semibold text-[#E0E0E0] mt-2">
+                  <Text className="text-xs font-semibold text-[#E0E0E0] mt-1">
                     {item.artist}
                   </Text>
                 </View>
@@ -150,7 +154,7 @@ const ProfileScreen = () => {
                 {menuVisibility[item.id] && (
                   <Animatable.View animation="slideInRight" duration={400}>
                     <TouchableOpacity onPress={() => deleteSong(item.id)}>
-                      <TextWhite className="font-bold text-2xl ml-5">
+                      <TextWhite className="font-bold text-sm mr-2">
                         Remove to playlist
                       </TextWhite>
                     </TouchableOpacity>
