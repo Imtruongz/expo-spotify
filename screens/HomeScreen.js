@@ -16,7 +16,7 @@ import PopularArtists from "../components/PopularArtists";
 import PopularAlbum from "../components/PopularAlbum";
 
 const HomeScreen = () => {
-  const IPv4 = "192.168.1.7";
+  const IPv4 = "192.168.1.14";
 
   const [isLoading, setisLoading] = useState(true);
   const [songs, setSongs] = useState([]);
@@ -41,7 +41,6 @@ const HomeScreen = () => {
     } catch (err) {
       console.log(err);
     } finally {
-      //ket thuc qua trinh load data , ke ca say ra loi thi cung se roi vao ham nay de chay
       setisLoading(false); //trang thai cua ham nay se khong load nua
     }
   };
@@ -54,8 +53,7 @@ const HomeScreen = () => {
     } catch (err) {
       console.log(err);
     } finally {
-      //ket thuc qua trinh load data , ke ca say ra loi thi cung se roi vao ham nay de chay
-      setisLoading(false); //trang thai cua ham nay se khong load nua
+      setisLoading(false);
     }
   };
 
@@ -67,8 +65,7 @@ const HomeScreen = () => {
     } catch (err) {
       console.log(err);
     } finally {
-      //ket thuc qua trinh load data , ke ca say ra loi thi cung se roi vao ham nay de chay
-      setisLoading(false); //trang thai cua ham nay se khong load nua
+      setisLoading(false);
     }
   };
 
@@ -80,8 +77,7 @@ const HomeScreen = () => {
     } catch (err) {
       console.log(err);
     } finally {
-      //ket thuc qua trinh load data , ke ca say ra loi thi cung se roi vao ham nay de chay
-      setisLoading(false); //trang thai cua ham nay se khong load nua
+      setisLoading(false);
     }
   };
 
@@ -93,8 +89,7 @@ const HomeScreen = () => {
     } catch (err) {
       console.log(err);
     } finally {
-      //ket thuc qua trinh load data , ke ca say ra loi thi cung se roi vao ham nay de chay
-      setisLoading(false); //trang thai cua ham nay se khong load nua
+      setisLoading(false);
     }
   };
 

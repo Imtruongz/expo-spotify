@@ -14,7 +14,7 @@ import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
 import TextWhite from "../components/TextWhite";
 
 const AlbumDetail = ({ route }) => {
-  const IPv4 = "192.168.1.7";
+  const IPv4 = "192.168.1.14";
   const { album } = route.params;
 
   const navigation = useNavigation();
@@ -118,7 +118,7 @@ const AlbumDetail = ({ route }) => {
                 </Text>
               </View>
               <View className="flex-row items-center gap-3">
-                <TouchableOpacity onPress={() => toggleMenu(item.idSong)}>
+                <TouchableOpacity className="py-2 pl-2" onPress={() => toggleMenu(item.idSong)}>
                   <Ionicons
                     name="md-ellipsis-vertical"
                     size={24}

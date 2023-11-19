@@ -16,7 +16,7 @@ import TextWhite from "../components/TextWhite";
 import { Ionicons } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
-  const IPv4 = "192.168.1.7";
+  const IPv4 = "192.168.1.14";
 
   const [isLoading, setisLoading] = useState(true);
   const [playList, setplayList] = useState([]);
@@ -31,12 +31,11 @@ const ProfileScreen = () => {
   const getPlaylist = async () => {
     try {
       const response = await fetch(`http://${IPv4}:5000/playlist`); //load data
-      const json = await response.json(); //change data to json
+      const json = await response.json();
       setplayList(json);
     } catch (err) {
       console.log(err);
     } finally {
-      //ket thuc qua trinh load data , ke ca say ra loi thi cung se roi vao ham nay de chay
       setisLoading(false); //trang thai cua ham nay se khong load nua
     }
   };
@@ -144,7 +143,7 @@ const ProfileScreen = () => {
                 </View>
               </View>
               <View className="flex-row items-center gap-3">
-                <TouchableOpacity onPress={() => toggleMenu(item.id)}>
+                <TouchableOpacity className="p-2" onPress={() => toggleMenu(item.id)}>
                   <Ionicons
                     name="md-ellipsis-vertical"
                     size={24}

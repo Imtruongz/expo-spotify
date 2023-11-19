@@ -96,7 +96,7 @@ const CategoriScreen = ({ route }) => {
                   </Text>
                 </View>
               </View>
-              <TouchableOpacity onPress={() => toggleMenu(item.idSong)}>
+              <TouchableOpacity className="py-2 pl-2" onPress={() => toggleMenu(item.idSong)}>
                 <Ionicons name="md-ellipsis-vertical" size={24} color="white" />
               </TouchableOpacity>
               {menuVisibility[item.idSong] && (

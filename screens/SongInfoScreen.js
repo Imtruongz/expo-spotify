@@ -8,7 +8,7 @@ import { Entypo, Feather, Ionicons, AntDesign } from "@expo/vector-icons";
 
 const SongInfoScreen = ({ route }) => {
   
-  const IPv4 = "192.168.1.7";
+  const IPv4 = "192.168.1.14";
   const { song } = route.params;
 
   const circleSize = 12;

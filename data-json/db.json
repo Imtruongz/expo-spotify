@@ -1,5 +1,26 @@
 {
-  "playlist": [],
+  "playlist": [
+    {
+      "name": "Less of you",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/besideyou.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 3
+    },
+    {
+      "name": "New Song 2",
+      "artist": "New Artist 2",
+      "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg",
+      "id": 4
+    },
+    {
+      "name": "Blue",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/limbo.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1qsOBDeLlvtAs_vjFvql5rNabowZ63-wg",
+      "id": 5
+    }
+  ],
   "songs": [
     {
       "id": 1,
@@ -303,42 +324,42 @@
       ],
       "songs": [
         {
-          "idSong": 1,
+          "idSong": 17,
           "name": "Right here",
           "artist": "Keshi",
           "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
           "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH"
         },
         {
-          "idSong": 2,
+          "idSong": 18,
           "name": "Less of you",
           "artist": "Keshi",
           "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/besideyou.jpg?raw=true",
           "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH"
         },
         {
-          "idSong": 3,
+          "idSong": 19,
           "name": "Somebody",
           "artist": "Keshi",
           "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/lessofyou.jpg?raw=true",
           "path": "https://drive.google.com/uc?export=download&id=1UaH0GvqX2MLIjP-wGd9dQoOLnwtROBoO"
         },
         {
-          "idSong": 4,
+          "idSong": 20,
           "name": "Blue",
           "artist": "Keshi",
           "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/limbo.jpg?raw=true",
           "path": "https://drive.google.com/uc?export=download&id=1qsOBDeLlvtAs_vjFvql5rNabowZ63-wg"
         },
         {
-          "idSong": 5,
+          "idSong": 21,
           "name": "Beside you",
           "artist": "Keshi",
           "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/righthere.jpg?raw=true",
           "path": "https://drive.google.com/uc?export=download&id=11cPwC8znyW7nMfM8UnkPGSUIl3JW-xuG"
         },
         {
-          "idSong": 6,
+          "idSong": 22,
           "name": "Limbo",
           "artist": "Keshi",
           "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/somebody.jpg?raw=true",
