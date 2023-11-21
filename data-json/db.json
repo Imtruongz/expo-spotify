@@ -1,24 +1,77 @@
 {
   "playlist": [
     {
+      "id": 1,
+      "name": "Shape of You",
+      "artist": "Ed Sheeran",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/shapeofyou.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=10-nyPxvwVpB-RtRq_X0-VuhUx4apue9p"
+    },
+    {
+      "id": 2,
+      "name": "Rolling in the Deep",
+      "artist": "Adele",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/rollinginthedeep.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1rtRuq8C2fo-dx7qI1kwTaeQDqgwj2Lax"
+    },
+    {
+      "id": 3,
+      "name": "Crazy in Love",
+      "artist": "Beyoncé",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/crazyinlove.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1cp-KRpM3IE5CZ3zzqCAxQg8NAozWCJ5p"
+    },
+    {
+      "id": 15,
+      "name": "Dance Monkey",
+      "artist": "Tones and I",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/dancemonkey.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1Y9lqTmGOgq6ZIZBXSlDYyTPYP60BOBMG"
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 16
+    },
+    {
+      "idSong": 2,
       "name": "Less of you",
       "artist": "Keshi",
       "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/besideyou.jpg?raw=true",
       "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
-      "id": 3
+      "id": 17
     },
     {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 18
+    },
+    {
+      "idSong": 1,
+      "name": "New Song 1",
+      "artist": "New Artist 1",
+      "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg",
+      "id": 19
+    },
+    {
+      "idSong": 1,
+      "name": "New Song 1",
+      "artist": "New Artist 1",
+      "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg",
+      "id": 20
+    },
+    {
+      "idSong": 2,
       "name": "New Song 2",
       "artist": "New Artist 2",
       "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg",
-      "id": 4
-    },
-    {
-      "name": "Blue",
-      "artist": "Keshi",
-      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/limbo.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1qsOBDeLlvtAs_vjFvql5rNabowZ63-wg",
-      "id": 5
+      "id": 21
     }
   ],
   "songs": [
@@ -324,42 +377,42 @@
       ],
       "songs": [
         {
-          "idSong": 17,
+          "idSong": 1,
           "name": "Right here",
           "artist": "Keshi",
           "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
           "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH"
         },
         {
-          "idSong": 18,
+          "idSong": 2,
           "name": "Less of you",
           "artist": "Keshi",
           "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/besideyou.jpg?raw=true",
           "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH"
         },
         {
-          "idSong": 19,
+          "idSong": 3,
           "name": "Somebody",
           "artist": "Keshi",
           "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/lessofyou.jpg?raw=true",
           "path": "https://drive.google.com/uc?export=download&id=1UaH0GvqX2MLIjP-wGd9dQoOLnwtROBoO"
         },
         {
-          "idSong": 20,
+          "idSong": 4,
           "name": "Blue",
           "artist": "Keshi",
           "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/limbo.jpg?raw=true",
           "path": "https://drive.google.com/uc?export=download&id=1qsOBDeLlvtAs_vjFvql5rNabowZ63-wg"
         },
         {
-          "idSong": 21,
+          "idSong": 5,
           "name": "Beside you",
           "artist": "Keshi",
           "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/righthere.jpg?raw=true",
           "path": "https://drive.google.com/uc?export=download&id=11cPwC8znyW7nMfM8UnkPGSUIl3JW-xuG"
         },
         {
-          "idSong": 22,
+          "idSong": 6,
           "name": "Limbo",
           "artist": "Keshi",
           "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/somebody.jpg?raw=true",

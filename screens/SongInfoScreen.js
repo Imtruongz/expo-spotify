@@ -7,7 +7,6 @@ import { Audio } from "expo-av";
 import { Entypo, Feather, Ionicons, AntDesign } from "@expo/vector-icons";
 
 const SongInfoScreen = ({ route }) => {
-  
   const IPv4 = "192.168.1.14";
   const { song } = route.params;
 
@@ -21,19 +20,40 @@ const SongInfoScreen = ({ route }) => {
   const [currentSong, setCurrentSong] = useState(null);
   const [sound, setSound] = useState(null);
 
-  const PlaySong = async (url, id) => {
-    if (playing && currentSong === id) {
-      await sound.pauseAsync();
-      setPlaying(false);
+  const playMusic = async (url, id) => {
+    if (sound && currentSong === id) {
+      await sound.playAsync();
+      setPlaying(true);
     } else {
       if (sound) {
         await sound.unloadAsync();
       }
-      const { sound: newSound } = await Audio.Sound.createAsync({ uri: url });
+      const { sound: newSound } = await Audio.Sound.createAsync(
+        { uri: url },
+        {}, // Các options khác (nếu có)
+        handlePlaybackStatusUpdate // Gán hàm lắng nghe ở đây
+      );
       setSound(newSound);
       await newSound.playAsync();
       setPlaying(true);
       setCurrentSong(id);
+    }
+  };
+
+  const handlePlaybackStatusUpdate = (playbackStatus) => {
+    if (playbackStatus.isLoaded) {
+      setCurrentTime(playbackStatus.positionMillis);
+      setTotalDuration(playbackStatus.durationMillis);
+      setProgress(
+        playbackStatus.positionMillis / playbackStatus.durationMillis
+      );
+    }
+  };
+
+  const pauseMusic = async () => {
+    if (playing) {
+      await sound.pauseAsync();
+      setPlaying(false);
     }
   };
 
@@ -155,17 +175,18 @@ const SongInfoScreen = ({ route }) => {
               <Pressable>
                 <Ionicons name="play-skip-back" size={30} color="white" />
               </Pressable>
-              <TouchableOpacity onPress={() => PlaySong(song.path, song.id)}>
+              <TouchableOpacity
+                onPress={() =>
+                  playing ? pauseMusic() : playMusic(song.path, song.id)
+                }
+              >
                 {playing ? (
                   <AntDesign name="pausecircleo" size={60} color="white" />
                 ) : (
-                  <TouchableOpacity
-                    onPress={() => PlaySong(song.path, song.id)}
-                  >
-                    <AntDesign name="playcircleo" size={60} color="white" />
-                  </TouchableOpacity>
+                  <AntDesign name="playcircleo" size={60} color="white" />
                 )}
               </TouchableOpacity>
+
               <Pressable>
                 <Ionicons name="play-skip-forward" size={30} color="white" />
               </Pressable>

@@ -31,7 +31,7 @@ const AlbumDetail = ({ route }) => {
     let urlAPI = `http://${IPv4}:5000/playlist`;
 
     const payload = {
-      id: song.id,
+      idSong: song.idSong,
       name: song.name,
       artist: song.artist,
       image: song.image,
@@ -118,7 +118,10 @@ const AlbumDetail = ({ route }) => {
                 </Text>
               </View>
               <View className="flex-row items-center gap-3">
-                <TouchableOpacity className="py-2 pl-2" onPress={() => toggleMenu(item.idSong)}>
+                <TouchableOpacity
+                  className="py-2 pl-2"
+                  onPress={() => toggleMenu(item.idSong)}
+                >
                   <Ionicons
                     name="md-ellipsis-vertical"
                     size={24}
