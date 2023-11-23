@@ -5,6 +5,7 @@ import {
   FlatList,
   TouchableOpacity,
   Alert,
+  ActivityIndicator,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
@@ -22,21 +23,44 @@ const ProfileScreen = () => {
   const [playList, setplayList] = useState([]);
   const [menuVisibility, setMenuVisibility] = useState({});
 
+  const [page, setPage] = useState(1); // Trang hiện tại
+  const [isMoreData, setIsMoreData] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
+
   useFocusEffect(
     React.useCallback(() => {
       getPlaylist();
-    }, [])
+    }, [page])
   );
 
   const getPlaylist = async () => {
+    // Kiểm tra xem còn dữ liệu để tải thêm không
+    if (!isMoreData) return;
     try {
-      const response = await fetch(`http://${IPv4}:5000/playlist`); //load data
+      const response = await fetch(`http://${IPv4}:5000/playlist?_page=${page}&_limit=10`);
       const json = await response.json();
-      setplayList(json);
+      // Kiểm tra nếu số lượng bản ghi nhận được ít hơn giới hạn
+      if (json.length < 10) {
+        setIsMoreData(false);
+      }
+      // Lọc ra những bài hát không trùng lặp
+      const newItems = json.filter(
+        (item) => !playList.some((p) => p.id === item.id)
+      );
+      // Cập nhật danh sách với những bài hát mới
+      setplayList((prev) => [...prev, ...newItems]);
     } catch (err) {
       console.log(err);
     } finally {
-      setisLoading(false); //trang thai cua ham nay se khong load nua
+      setisLoading(false);
+      setLoadingMore(false);
+    }
+  };
+
+  const loadMore = () => {
+    if (isMoreData && !loadingMore && playList.length >= page * 10) {
+      setLoadingMore(true);
+      setPage((prev) => prev + 1);
     }
   };
 
@@ -71,8 +95,6 @@ const ProfileScreen = () => {
   function UpdatingButton() {
     Alert.alert("Updating");
   }
-
-  
 
   const navigation = useNavigation();
 
@@ -143,7 +165,10 @@ const ProfileScreen = () => {
                 </View>
               </View>
               <View className="flex-row items-center gap-3">
-                <TouchableOpacity className="p-2" onPress={() => toggleMenu(item.id)}>
+                <TouchableOpacity
+                  className="p-2"
+                  onPress={() => toggleMenu(item.id)}
+                >
                   <Ionicons
                     name="md-ellipsis-vertical"
                     size={24}
@@ -163,6 +188,11 @@ const ProfileScreen = () => {
             </TouchableOpacity>
           )}
           keyExtractor={(item) => item.id.toString()}
+          onEndReached={loadMore}
+          onEndReachedThreshold={0.1}
+          ListFooterComponent={
+            loadingMore ? <ActivityIndicator size="large" color="#fff" /> : null
+          }
         />
         <View className="h-14" />
       </View>

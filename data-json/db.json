@@ -1,6 +1,325 @@
 {
   "playlist": [
-    
+    {
+      "id": 1,
+      "name": "Shape of You",
+      "artist": "Ed Sheeran",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/shapeofyou.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=10-nyPxvwVpB-RtRq_X0-VuhUx4apue9p"
+    },
+    {
+      "id": 2,
+      "name": "Rolling in the Deep",
+      "artist": "Adele",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/rollinginthedeep.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1rtRuq8C2fo-dx7qI1kwTaeQDqgwj2Lax"
+    },
+    {
+      "id": 3,
+      "name": "Crazy in Love",
+      "artist": "Beyoncé",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/crazyinlove.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1cp-KRpM3IE5CZ3zzqCAxQg8NAozWCJ5p"
+    },
+    {
+      "id": 4,
+      "name": "HUMBLE.",
+      "artist": "Kendrick Lamar",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/humble.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1qWplzzJDppU-IlKsNl-0Q7uV1nRcwaIN"
+    },
+    {
+      "id": 5,
+      "name": "Love Story",
+      "artist": "Taylor Swift",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/lovesotry.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1s6Q975GtPk5oMJnTbfujyizVFPBJnv3Q"
+    },
+    {
+      "id": 6,
+      "name": "Umbrella",
+      "artist": "Rihanna",
+      "image": "https://live.staticflickr.com/65535/53280421357_d55e942146_n.jpg",
+      "path": "https://drive.google.com/uc?export=download&id=1x086G9rqO8wUPDLBtPLLx1w7rVckz13b"
+    },
+    {
+      "id": 7,
+      "name": "Hotline Bling",
+      "artist": "Drake",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/hotlinebling.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1GD3wuBkhK_jFz_Ipdtu82Dt2NG6aDBx6"
+    },
+    {
+      "id": 8,
+      "name": "Bad Guy",
+      "artist": "Billie Eilish",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/badguy.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1SCOkcRACyGurHCwRnjpHsdzXqg401WFM"
+    },
+    {
+      "id": 9,
+      "name": "Just the Way You Are",
+      "artist": "Bruno Mars",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/justthewayyouare.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1VX9TEPXpP8t6GbjxLanK-XLo_nBHMAlj"
+    },
+    {
+      "id": 10,
+      "name": "Into You",
+      "artist": "Ariana Grande",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/intoyou.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1w7UNS04NJXMJ0cD0Zp19XbLVECLvJ3c9"
+    },
+    {
+      "id": 11,
+      "name": "Blinding Lights",
+      "artist": "The Weeknd",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/blindinglights.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=192Sw6oOX6zmnec-YvuxSud7Sdvt7H675"
+    },
+    {
+      "id": 12,
+      "name": "Fix You",
+      "artist": "Coldplay",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/fixyou.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1U1ODNiYmgo1qZDTv4bEULbofDjV0Ovv_"
+    },
+    {
+      "id": 13,
+      "name": "Bad Romance",
+      "artist": "Lady Gaga",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/badromance.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1D52yFQ-EKgJLE5rviAi6dWKorWxgnrt6"
+    },
+    {
+      "id": 14,
+      "name": "Lose Yourself",
+      "artist": "Eminem",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/loseyourself.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1v93H_PknddDP7aYTazXM_Cw7QEC7K6L7"
+    },
+    {
+      "id": 15,
+      "name": "Dance Monkey",
+      "artist": "Tones and I",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/dancemonkey.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1Y9lqTmGOgq6ZIZBXSlDYyTPYP60BOBMG"
+    },
+    {
+      "id": 16,
+      "name": "Happy",
+      "artist": "Pharrell Williams",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/happy.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1epgpERCFuMIkR-pFDLhsZ9m_bwaNSMSd"
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 17
+    },
+    {
+      "idSong": 2,
+      "name": "Less of you",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/besideyou.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 18
+    },
+    {
+      "idSong": 3,
+      "name": "Somebody",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/lessofyou.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1UaH0GvqX2MLIjP-wGd9dQoOLnwtROBoO",
+      "id": 19
+    },
+    {
+      "idSong": 4,
+      "name": "Blue",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/limbo.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1qsOBDeLlvtAs_vjFvql5rNabowZ63-wg",
+      "id": 20
+    },
+    {
+      "idSong": 5,
+      "name": "Beside you",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/righthere.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=11cPwC8znyW7nMfM8UnkPGSUIl3JW-xuG",
+      "id": 21
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 22
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 23
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 24
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 25
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 26
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 27
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 28
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 29
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 30
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 31
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 32
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 33
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 34
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 35
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 36
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 37
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 38
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 39
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 40
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 41
+    },
+    {
+      "idSong": 1,
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 42
+    }
   ],
   "songs": [
     {
