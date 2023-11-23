@@ -14,7 +14,7 @@ import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
 import TextWhite from "../components/TextWhite";
 
 const AlbumDetail = ({ route }) => {
-  const IPv4 = "192.168.1.14";
+  const IPv4 = "192.168.0.9";
   const { album } = route.params;
 
   const navigation = useNavigation();
@@ -84,7 +84,7 @@ const AlbumDetail = ({ route }) => {
           <TextWhite className="text-lg font-bold">{album.artist}</TextWhite>
         </View>
 
-        <Pressable className="flex-row items-center justify-between ml-2">
+        <Pressable className="flex-row items-center justify-between ml-4 mr-1">
           <View className="flex-row items-center gap-7">
             <AntDesign name="hearto" size={24} color="white" />
             <AntDesign name="download" size={24} color="white" />
