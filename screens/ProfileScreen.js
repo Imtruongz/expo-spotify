@@ -37,7 +37,9 @@ const ProfileScreen = () => {
     // Kiểm tra xem còn dữ liệu để tải thêm không
     if (!isMoreData) return;
     try {
-      const response = await fetch(`http://${IPv4}:5000/playlist?_page=${page}&_limit=10`);
+      const response = await fetch(
+        `http://${IPv4}:5000/playlist?_page=${page}&_limit=10`
+      );
       const json = await response.json();
       // Kiểm tra nếu số lượng bản ghi nhận được ít hơn giới hạn
       if (json.length < 10) {

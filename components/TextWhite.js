@@ -7,7 +7,7 @@ const TextWhite = (props) => {
 
 const styles = StyleSheet.create({
   defaultText: {
-    color: 'white', // Màu mặc định là trắng
+    color: 'white',
   },
 });
 
