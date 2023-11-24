@@ -1,7 +1,8 @@
 import React from "react";
-import { View, SafeAreaView, Pressable } from "react-native";
+import { View, Pressable } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { MaterialIcons, AntDesign, Entypo } from "@expo/vector-icons";
 import TextWhite from "../components/TextWhite";
 

@@ -78,32 +78,18 @@
       "path": "https://drive.google.com/uc?export=download&id=192Sw6oOX6zmnec-YvuxSud7Sdvt7H675"
     },
     {
+      "id": 12,
+      "name": "Fix You",
+      "artist": "Coldplay",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/fixyou.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1U1ODNiYmgo1qZDTv4bEULbofDjV0Ovv_"
+    },
+    {
       "id": 13,
       "name": "Bad Romance",
       "artist": "Lady Gaga",
       "image": "https://github.com/Imtruongz/assets/blob/main/songs/badromance.jpg?raw=true",
       "path": "https://drive.google.com/uc?export=download&id=1D52yFQ-EKgJLE5rviAi6dWKorWxgnrt6"
-    },
-    {
-      "id": 14,
-      "name": "Lose Yourself",
-      "artist": "Eminem",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/loseyourself.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1v93H_PknddDP7aYTazXM_Cw7QEC7K6L7"
-    },
-    {
-      "id": 15,
-      "name": "Dance Monkey",
-      "artist": "Tones and I",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/dancemonkey.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1Y9lqTmGOgq6ZIZBXSlDYyTPYP60BOBMG"
-    },
-    {
-      "id": 16,
-      "name": "Happy",
-      "artist": "Pharrell Williams",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/happy.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1epgpERCFuMIkR-pFDLhsZ9m_bwaNSMSd"
     }
   ],
   "songs": [

@@ -5,7 +5,7 @@ export default function App() {
   return (
     <>
       <Navigation />
-      <StatusBar barStyle={"light-content"} />
+      {/* <StatusBar barStyle={"light-content"} /> */}
     </>
   );
 }

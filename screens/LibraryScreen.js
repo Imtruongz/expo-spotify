@@ -9,7 +9,7 @@ import {
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Entypo } from "@expo/vector-icons";
 import TextWhite from "../components/TextWhite";
 
@@ -21,9 +21,9 @@ const LibraryScreen = () => {
   }
 
   return (
-    <SafeAreaProvider>
       <LinearGradient colors={["#131624", "#040306"]} className="flex-1">
-        <ScrollView className="mt-5">
+        <SafeAreaView>
+        <ScrollView>
           <View className="mx-3 flex-row items-center justify-between mb-7">
             <TextWhite className="ml-3 text-2xl font-bold">
               Your Library
@@ -72,8 +72,8 @@ const LibraryScreen = () => {
             </TouchableOpacity>
           </View>
         </ScrollView>
+        </SafeAreaView>
       </LinearGradient>
-    </SafeAreaProvider>
   );
 };
 

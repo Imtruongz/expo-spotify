@@ -11,7 +11,7 @@ import React, { useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { AntDesign } from "@expo/vector-icons";
 import SearchItem from "../data-json/searchItem.json";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import TextWhite from "../components/TextWhite";
 
@@ -32,9 +32,9 @@ const LikedSongsScreen = () => {
   }
 
   return (
-    <SafeAreaProvider>
       <LinearGradient colors={["#131624", "#040306"]} clasName="flex-1">
-        <ScrollView className="mt-4 h-full">
+        <SafeAreaView>
+        <ScrollView>
           <TextWhite className="mx-5 font-bold text-2xl">Search</TextWhite>
           <Pressable className="flex-row items-center p-2 rounded-md border-[2px] border-[#979593]  mx-3 my-5">
           <AntDesign name="search1" size={24} color="#979593" />
@@ -58,7 +58,7 @@ const LikedSongsScreen = () => {
                 key={item.id}
                 onPress={UpdatingButton}
                 style={[{ backgroundColor: item.color }]}
-                className="flex-row justify-between mx-3 my-3 p-2 rounded-lg w-[150px] h-20"
+                className="flex-row justify-between mx-3 my-3 p-2 rounded-lg w-[43%] h-20"
               >
                 <TextWhite className="text-base font-bold">
                   {item.name}
@@ -71,8 +71,8 @@ const LikedSongsScreen = () => {
             ))}
           </View>
         </ScrollView>
+        </SafeAreaView>
       </LinearGradient>
-    </SafeAreaProvider>
   );
 };
 

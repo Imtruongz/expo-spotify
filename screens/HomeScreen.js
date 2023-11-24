@@ -9,14 +9,14 @@ import {
 import React, { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
 import TextWhite from "../components/TextWhite";
 import PopularSong from "../components/PopularSong";
 import PopularArtists from "../components/PopularArtists";
 import PopularAlbum from "../components/PopularAlbum";
 
 const HomeScreen = () => {
-  const IPv4 = "192.168.0.9";
+  const IPv4 = "172.20.10.13";
 
   const [isLoading, setisLoading] = useState(true);
   const [songs, setSongs] = useState([]);
@@ -108,10 +108,11 @@ const HomeScreen = () => {
 
   return (
     <LinearGradient colors={["#131624", "#040306"]} className="flex-1">
-      <SafeAreaView />
+    <SafeAreaView>
       <ScrollView>
+      
         {/* Header */}
-        <View className="mt-3 flex-row items-center justify-between">
+        <View className="flex-row items-center justify-between">
           <TextWhite className="ml-6 text-xl font-bold">{message}</TextWhite>
           <View className="flex-row items-center">
             <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
@@ -210,6 +211,7 @@ const HomeScreen = () => {
         />
         <View className="h-14" />
       </ScrollView>
+      </SafeAreaView>
     </LinearGradient>
   );
 };

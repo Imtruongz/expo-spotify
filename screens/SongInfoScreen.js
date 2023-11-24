@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { View, Text, Image, Pressable, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Audio } from "expo-av";
 
 import { Entypo, Feather, Ionicons, AntDesign } from "@expo/vector-icons";
 
 const SongInfoScreen = ({ route }) => {
-  const IPv4 = "192.168.0.9";
+  const IPv4 = "172.20.10.13";
   const { song } = route.params;
 
   const circleSize = 12;
@@ -76,7 +77,7 @@ const SongInfoScreen = ({ route }) => {
       path: song.path,
     };
 
-    console.log("Dữ liệu gửi lên server:", payload); // In ra dữ liệu trước khi gửi
+    console.log("Dữ liệu gửi lên server:", payload); // TEst
 
     fetch(urlAPI, {
       method: "POST",
@@ -108,9 +109,9 @@ const SongInfoScreen = ({ route }) => {
   };
 
   return (
-    <View swipeDirection={["up", "down"]} swipeThreshold={200}>
-      <LinearGradient colors={["#131624", "#040306"]}>
-        <View className="h-full w-full mt-5 px-4">
+    <LinearGradient colors={["#131624", "#040306"]}>
+      <SafeAreaView>
+        <View className="h-full w-full px-4">
           <View className="flex-row items-center justify-between">
             <Pressable onPress={() => navigation.goBack()}>
               <AntDesign name="down" size={24} color="white" />
@@ -120,10 +121,12 @@ const SongInfoScreen = ({ route }) => {
           </View>
 
           <View className="p-2">
-            <Image
-              className="w-[310px] h-[310px] rounded-[155px] my-[60px]"
-              source={{ uri: song.image }}
-            />
+            <View className="items-center">
+              <Image
+                className="w-[310px] h-[310px] rounded-[155px] my-[60px]"
+                source={{ uri: song.image }}
+              />
+            </View>
             <View className="flex-row justify-between items-center">
               <View>
                 <Text className="text-2xl font-bold text-white">
@@ -196,8 +199,8 @@ const SongInfoScreen = ({ route }) => {
             </View>
           </View>
         </View>
-      </LinearGradient>
-    </View>
+      </SafeAreaView>
+    </LinearGradient>
   );
 };
 

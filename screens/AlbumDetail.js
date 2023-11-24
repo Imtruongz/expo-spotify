@@ -9,12 +9,13 @@ import {
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import * as Animatable from "react-native-animatable";
 import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
 import TextWhite from "../components/TextWhite";
 
 const AlbumDetail = ({ route }) => {
-  const IPv4 = "192.168.0.9";
+  const IPv4 = "172.20.10.13";
   const { album } = route.params;
 
   const navigation = useNavigation();
@@ -31,14 +32,14 @@ const AlbumDetail = ({ route }) => {
     let urlAPI = `http://${IPv4}:5000/playlist`;
 
     const payload = {
-      idSong: song.idSong,
+      id: song.id,
       name: song.name,
       artist: song.artist,
       image: song.image,
       path: song.path,
     };
 
-    console.log("Dữ liệu gửi lên server:", payload); // In ra dữ liệu trước khi gửi
+    console.log("Dữ liệu gửi lên server:", payload); // TEtst
 
     fetch(urlAPI, {
       method: "POST",
@@ -63,41 +64,41 @@ const AlbumDetail = ({ route }) => {
       });
   };
 
-  const playTrack = async () => {};
-
   return (
     <>
-      <LinearGradient colors={album.gradientColors} className="flex-[0.9] pt-5">
-        <Pressable onPress={() => navigation.goBack()} className="mx-4">
-          <AntDesign name="left" size={22} color="white" />
-        </Pressable>
-        <View className="justify-center items-center">
-          <Image
-            className="w-44 h-44 rounded-xl"
-            source={{ uri: album.image }}
-          />
-          <TextWhite className="text-center text-xl font-bold my-3">
-            {album.name}
-          </TextWhite>
-        </View>
-        <View className="mx-4">
-          <TextWhite className="text-lg font-bold">{album.artist}</TextWhite>
-        </View>
-
-        <Pressable className="flex-row items-center justify-between ml-4 mr-1">
-          <View className="flex-row items-center gap-7">
-            <AntDesign name="hearto" size={24} color="white" />
-            <AntDesign name="download" size={24} color="white" />
-            <Ionicons name="md-ellipsis-vertical" size={24} color="white" />
+      <LinearGradient colors={album.gradientColors} className="flex-[0.9]">
+        <SafeAreaView>
+          <Pressable onPress={() => navigation.goBack()} className="mx-4">
+            <AntDesign name="left" size={22} color="white" />
+          </Pressable>
+          <View className="justify-center items-center">
+            <Image
+              className="w-44 h-44 rounded-xl"
+              source={{ uri: album.image }}
+            />
+            <TextWhite className="text-center text-xl font-bold my-3">
+              {album.name}
+            </TextWhite>
+          </View>
+          <View className="mx-4">
+            <TextWhite className="text-lg font-bold">{album.artist}</TextWhite>
           </View>
 
-          <View className="flex-row items-center gap-2">
-            <Entypo name="shuffle" size={24} color="#1DB954" />
-            <TouchableOpacity onPress={playTrack}>
-              <Ionicons name="play-circle" size={70} color="#1DB954" />
-            </TouchableOpacity>
-          </View>
-        </Pressable>
+          <Pressable className="flex-row items-center justify-between ml-4 mr-1">
+            <View className="flex-row items-center gap-7">
+              <AntDesign name="hearto" size={24} color="white" />
+              <AntDesign name="download" size={24} color="white" />
+              <Ionicons name="md-ellipsis-vertical" size={24} color="white" />
+            </View>
+
+            <View className="flex-row items-center gap-2">
+              <Entypo name="shuffle" size={24} color="#1DB954" />
+              <TouchableOpacity>
+                <Ionicons name="play-circle" size={70} color="#1DB954" />
+              </TouchableOpacity>
+            </View>
+          </Pressable>
+        </SafeAreaView>
       </LinearGradient>
       <View className="flex-1 bg-black">
         <FlatList
