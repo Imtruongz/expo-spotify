@@ -15,7 +15,6 @@ import * as Animatable from "react-native-animatable";
 import { Entypo, Ionicons, AntDesign } from "@expo/vector-icons";
 import TextWhite from "../components/TextWhite";
 
-
 const CategoriScreen = ({ route }) => {
   const { categoris } = route.params;
   const navigation = useNavigation();

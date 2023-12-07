@@ -21,8 +21,8 @@ const LibraryScreen = () => {
   }
 
   return (
-      <LinearGradient colors={["#131624", "#040306"]} className="flex-1">
-        <SafeAreaView>
+    <LinearGradient colors={["#131624", "#040306"]} className="flex-1">
+      <SafeAreaView>
         <ScrollView>
           <View className="mx-3 flex-row items-center justify-between mb-7 mt-3">
             <TextWhite className="ml-3 text-2xl font-bold">
@@ -72,8 +72,8 @@ const LibraryScreen = () => {
             </TouchableOpacity>
           </View>
         </ScrollView>
-        </SafeAreaView>
-      </LinearGradient>
+      </SafeAreaView>
+    </LinearGradient>
   );
 };
 

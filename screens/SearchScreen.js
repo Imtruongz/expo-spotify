@@ -32,20 +32,20 @@ const LikedSongsScreen = () => {
   }
 
   return (
-      <LinearGradient colors={["#131624", "#040306"]} clasName="flex-1">
-        <SafeAreaView>
+    <LinearGradient colors={["#131624", "#040306"]} clasName="flex-1">
+      <SafeAreaView>
         <ScrollView>
           <TextWhite className="mx-5 font-bold text-2xl mt-3">Search</TextWhite>
           <Pressable className="flex-row items-center p-2 rounded-md border-[2px] border-[#979593]  mx-3 my-5">
-          <AntDesign name="search1" size={24} color="#979593" />
-          <TextInput
-            onChangeText={(text) => handleSearch(text)}
-            placeholder="Artists, songs, albums or podcast"
-            placeholderTextColor={"#979593"}
-            className="font-semibold text-base w-full text-[#979593] ml-2"
-          />
-        </Pressable>
-          
+            <AntDesign name="search1" size={24} color="#979593" />
+            <TextInput
+              onChangeText={(text) => handleSearch(text)}
+              placeholder="Artists, songs, albums or podcast"
+              placeholderTextColor={"#979593"}
+              className="font-semibold text-base w-full text-[#979593] ml-2"
+            />
+          </Pressable>
+
           <View className="mx-3">
             <TextWhite className="text-xl font-bold">
               What do you want to listen to ?
@@ -71,8 +71,8 @@ const LikedSongsScreen = () => {
             ))}
           </View>
         </ScrollView>
-        </SafeAreaView>
-      </LinearGradient>
+      </SafeAreaView>
+    </LinearGradient>
   );
 };
 

@@ -216,51 +216,236 @@
   "artists": [
     {
       "id": 1,
-      "name": "Shape of You",
       "artist": "Ed Sheeran",
-      "image": "https://live.staticflickr.com/65535/53281664519_67351d5c07.jpg"
+      "image": "https://live.staticflickr.com/65535/53281664519_67351d5c07.jpg",
+      "gradientColors": ["#808080", "#000000"],
+      "songs": [
+        {
+          "idSong": 1,
+          "name": "Right here",
+          "artist": "Keshi",
+          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+          "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH"
+        },
+        {
+          "idSong": 2,
+          "name": "Less of you",
+          "artist": "Keshi",
+          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/besideyou.jpg?raw=true",
+          "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH"
+        },
+        {
+          "idSong": 3,
+          "name": "Somebody",
+          "artist": "Keshi",
+          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/lessofyou.jpg?raw=true",
+          "path": "https://drive.google.com/uc?export=download&id=1UaH0GvqX2MLIjP-wGd9dQoOLnwtROBoO"
+        },
+        {
+          "idSong": 4,
+          "name": "Blue",
+          "artist": "Keshi",
+          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/limbo.jpg?raw=true",
+          "path": "https://drive.google.com/uc?export=download&id=1qsOBDeLlvtAs_vjFvql5rNabowZ63-wg"
+        },
+        {
+          "idSong": 5,
+          "name": "Beside you",
+          "artist": "Keshi",
+          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/righthere.jpg?raw=true",
+          "path": "https://drive.google.com/uc?export=download&id=11cPwC8znyW7nMfM8UnkPGSUIl3JW-xuG"
+        },
+        {
+          "idSong": 6,
+          "name": "Limbo",
+          "artist": "Keshi",
+          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/somebody.jpg?raw=true",
+          "path": "https://drive.google.com/uc?export=download&id=1ELlnnoPmMwHGBbTIDkUARCM6uAdPKiKr"
+        }
+      ]
     },
     {
       "id": 2,
-      "name": "Rolling in the Deep",
       "artist": "Adele",
-      "image": "https://live.staticflickr.com/65535/53281595178_35f8ca3c75_w.jpg"
+      "image": "https://live.staticflickr.com/65535/53281595178_35f8ca3c75_w.jpg",
+      "gradientColors": ["#808080", "#000000"],
+      "songs": [
+        {
+          "idSong": 1,
+          "name": "New Song 1",
+          "artist": "New Artist 1",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        },
+        {
+          "idSong": 2,
+          "name": "New Song 2",
+          "artist": "New Artist 2",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        },
+        {
+          "idSong": 3,
+          "name": "New Song 3",
+          "artist": "New Artist 3",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        }
+      ]
     },
     {
       "id": 3,
-      "name": "Crazy in Love",
       "artist": "Beyoncé",
-      "image": "https://live.staticflickr.com/65535/53280421247_222dcd319b_w.jpg"
+      "image": "https://live.staticflickr.com/65535/53280421247_222dcd319b_w.jpg",
+      "gradientColors": ["#808080", "#000000"],
+      "songs": [
+        {
+          "idSong": 1,
+          "name": "New Song 1",
+          "artist": "New Artist 1",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        },
+        {
+          "idSong": 2,
+          "name": "New Song 2",
+          "artist": "New Artist 2",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        },
+        {
+          "idSong": 3,
+          "name": "New Song 3",
+          "artist": "New Artist 3",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        }
+      ]
     },
     {
       "id": 4,
-      "name": "HUMBLE.",
       "artist": "Kendrick Lamar",
-      "image": "https://live.staticflickr.com/65535/53281779385_8b2c8a919e_w.jpg"
+      "image": "https://live.staticflickr.com/65535/53281779385_8b2c8a919e_w.jpg",
+      "gradientColors": ["#808080", "#000000"],
+      "songs": [
+        {
+          "idSong": 1,
+          "name": "New Song 1",
+          "artist": "New Artist 1",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        },
+        {
+          "idSong": 2,
+          "name": "New Song 2",
+          "artist": "New Artist 2",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        },
+        {
+          "idSong": 3,
+          "name": "New Song 3",
+          "artist": "New Artist 3",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        }
+      ]
     },
     {
       "id": 5,
-      "name": "Love Story",
       "artist": "Taylor Swift",
-      "image": "https://live.staticflickr.com/65535/53281595103_8e6c3044d8.jpg"
+      "image": "https://live.staticflickr.com/65535/53281595103_8e6c3044d8.jpg",
+      "gradientColors": ["#808080", "#000000"],
+      "songs": [
+        {
+          "idSong": 1,
+          "name": "New Song 1",
+          "artist": "New Artist 1",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        },
+        {
+          "idSong": 2,
+          "name": "New Song 2",
+          "artist": "New Artist 2",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        },
+        {
+          "idSong": 3,
+          "name": "New Song 3",
+          "artist": "New Artist 3",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        }
+      ]
     },
     {
       "id": 6,
-      "name": "Umbrella",
       "artist": "Rihanna",
-      "image": "https://live.staticflickr.com/65535/53281595153_b1f39cd943.jpg"
+      "image": "https://live.staticflickr.com/65535/53281595153_b1f39cd943.jpg",
+      "gradientColors": ["#808080", "#000000"],
+      "songs": [
+        {
+          "idSong": 1,
+          "name": "New Song 1",
+          "artist": "New Artist 1",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        },
+        {
+          "idSong": 2,
+          "name": "New Song 2",
+          "artist": "New Artist 2",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        },
+        {
+          "idSong": 3,
+          "name": "New Song 3",
+          "artist": "New Artist 3",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        }
+      ]
     },
     {
       "id": 7,
-      "name": "Hotline Bling",
       "artist": "Drake",
-      "image": "https://live.staticflickr.com/65535/53281310401_278a710422_w.jpg"
+      "image": "https://live.staticflickr.com/65535/53281310401_278a710422_w.jpg",
+      "gradientColors": ["#808080", "#000000"],
+      "songs": [
+        {
+          "idSong": 1,
+          "name": "New Song 1",
+          "artist": "New Artist 1",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        },
+        {
+          "idSong": 2,
+          "name": "New Song 2",
+          "artist": "New Artist 2",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        },
+        {
+          "idSong": 3,
+          "name": "New Song 3",
+          "artist": "New Artist 3",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        }
+      ]
     },
     {
       "id": 8,
-      "name": "Bad Guy",
       "artist": "Billie Eilish",
-      "image": "https://live.staticflickr.com/65535/53281310391_70edf721a7.jpg"
+      "image": "https://live.staticflickr.com/65535/53281310391_70edf721a7.jpg",
+      "gradientColors": ["#808080", "#000000"],
+
+      "songs": [
+        {
+          "idSong": 1,
+          "name": "New Song 1",
+          "artist": "New Artist 1",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        },
+        {
+          "idSong": 2,
+          "name": "New Song 2",
+          "artist": "New Artist 2",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        },
+        {
+          "idSong": 3,
+          "name": "New Song 3",
+          "artist": "New Artist 3",
+          "image": "https://live.staticflickr.com/65535/53299897596_e6b04b663d_n.jpg"
+        }
+      ]
     }
   ],
   "category": [
@@ -389,10 +574,7 @@
       "name": "Bandaids",
       "artist": "Keshi",
       "image": "https://live.staticflickr.com/65535/53280420792_118206482b_w.jpg",
-      "gradientColors": [
-        "#A37DA3",
-        "#000000"
-      ],
+      "gradientColors": ["#A37DA3", "#000000"],
       "songs": [
         {
           "idSong": 1,
@@ -443,10 +625,7 @@
       "name": "99%",
       "artist": "MCK",
       "image": "https://live.staticflickr.com/65535/53281778985_47097d27f2_n.jpg",
-      "gradientColors": [
-        "#8B0000",
-        "#000000"
-      ],
+      "gradientColors": ["#8B0000", "#000000"],
       "songs": [
         {
           "idSong": 1,
@@ -473,10 +652,7 @@
       "name": "Purpose",
       "artist": "Justin Bieber",
       "image": "https://live.staticflickr.com/65535/53280420767_8e350415b5_w.jpg",
-      "gradientColors": [
-        "#808080",
-        "#000000"
-      ],
+      "gradientColors": ["#808080", "#000000"],
       "songs": [
         {
           "idSong": 1,
@@ -503,10 +679,7 @@
       "name": "Justice",
       "artist": "Justin Bieber",
       "image": "https://live.staticflickr.com/65535/53281594733_7d00fa2fa6_w.jpg",
-      "gradientColors": [
-        "#00E7FF",
-        "#000000"
-      ],
+      "gradientColors": ["#00E7FF", "#000000"],
       "songs": [
         {
           "idSong": 1,
@@ -533,10 +706,7 @@
       "name": "Gabriel",
       "artist": "Keshi",
       "image": "https://live.staticflickr.com/65535/53281779000_56aefe9836_w.jpg",
-      "gradientColors": [
-        "#8B0000",
-        "#000000"
-      ],
+      "gradientColors": ["#8B0000", "#000000"],
       "songs": [
         {
           "idSong": 1,
@@ -563,10 +733,7 @@
       "name": "Lalisa",
       "artist": "Lisa",
       "image": "https://live.staticflickr.com/65535/53281594743_77cc78d7f2_n.jpg",
-      "gradientColors": [
-        "#8B8B8B",
-        "#000000"
-      ],
+      "gradientColors": ["#8B8B8B", "#000000"],
       "songs": [
         {
           "idSong": 1,
