@@ -8,7 +8,7 @@ import { Audio } from "expo-av";
 import { Entypo, Feather, Ionicons, AntDesign } from "@expo/vector-icons";
 
 const SongInfoScreen = ({ route }) => {
-  const IPv4 = "172.20.10.13";
+  const IPv4 = "192.168.1.5";
   const { song } = route.params;
 
   const circleSize = 12;
@@ -111,7 +111,7 @@ const SongInfoScreen = ({ route }) => {
   return (
     <LinearGradient colors={["#131624", "#040306"]}>
       <SafeAreaView>
-        <View className="h-full w-full px-4">
+        <View className="h-full w-full px-4 mt-3">
           <View className="flex-row items-center justify-between">
             <Pressable onPress={() => navigation.goBack()}>
               <AntDesign name="down" size={24} color="white" />

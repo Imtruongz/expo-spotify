@@ -16,7 +16,7 @@ import PopularArtists from "../components/PopularArtists";
 import PopularAlbum from "../components/PopularAlbum";
 
 const HomeScreen = () => {
-  const IPv4 = "172.20.10.13";
+  const IPv4 = "192.168.1.5";
 
   const [isLoading, setisLoading] = useState(true);
   const [songs, setSongs] = useState([]);
@@ -112,7 +112,7 @@ const HomeScreen = () => {
       <ScrollView>
       
         {/* Header */}
-        <View className="flex-row items-center justify-between">
+        <View className="flex-row items-center justify-between mt-3">
           <TextWhite className="ml-6 text-xl font-bold">{message}</TextWhite>
           <View className="flex-row items-center">
             <TouchableOpacity onPress={() => navigation.navigate("Profile")}>

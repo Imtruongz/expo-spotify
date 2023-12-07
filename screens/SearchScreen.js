@@ -35,7 +35,7 @@ const LikedSongsScreen = () => {
       <LinearGradient colors={["#131624", "#040306"]} clasName="flex-1">
         <SafeAreaView>
         <ScrollView>
-          <TextWhite className="mx-5 font-bold text-2xl">Search</TextWhite>
+          <TextWhite className="mx-5 font-bold text-2xl mt-3">Search</TextWhite>
           <Pressable className="flex-row items-center p-2 rounded-md border-[2px] border-[#979593]  mx-3 my-5">
           <AntDesign name="search1" size={24} color="#979593" />
           <TextInput

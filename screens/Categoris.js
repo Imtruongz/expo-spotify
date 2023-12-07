@@ -37,8 +37,6 @@ const CategoriScreen = ({ route }) => {
     setCategori(filteredItems);
   };
 
-  const playTrack = async () => {};
-
   return (
     <LinearGradient colors={["#131624", "#040306"]} className="flex-1">
       <SafeAreaView>
@@ -72,7 +70,7 @@ const CategoriScreen = ({ route }) => {
 
             <View className="flex-row items-center gap-2">
               <Entypo name="shuffle" size={24} color="white" />
-              <TouchableOpacity onPress={playTrack}>
+              <TouchableOpacity>
                 <Ionicons name="play-circle" size={70} color="#1DB954" />
               </TouchableOpacity>
             </View>

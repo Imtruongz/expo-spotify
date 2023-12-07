@@ -15,7 +15,7 @@ import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
 import TextWhite from "../components/TextWhite";
 
 const AlbumDetail = ({ route }) => {
-  const IPv4 = "172.20.10.13";
+  const IPv4 = "192.168.1.5";
   const { album } = route.params;
 
   const navigation = useNavigation();
@@ -68,7 +68,7 @@ const AlbumDetail = ({ route }) => {
     <>
       <LinearGradient colors={album.gradientColors} className="flex-[0.9]">
         <SafeAreaView>
-          <Pressable onPress={() => navigation.goBack()} className="mx-4">
+          <Pressable onPress={() => navigation.goBack()} className="mx-4 mt-3">
             <AntDesign name="left" size={22} color="white" />
           </Pressable>
           <View className="justify-center items-center">

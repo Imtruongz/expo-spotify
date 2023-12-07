@@ -24,7 +24,7 @@ const LibraryScreen = () => {
       <LinearGradient colors={["#131624", "#040306"]} className="flex-1">
         <SafeAreaView>
         <ScrollView>
-          <View className="mx-3 flex-row items-center justify-between mb-7">
+          <View className="mx-3 flex-row items-center justify-between mb-7 mt-3">
             <TextWhite className="ml-3 text-2xl font-bold">
               Your Library
             </TextWhite>

@@ -17,7 +17,7 @@ import TextWhite from "../components/TextWhite";
 import { Ionicons } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
-  const IPv4 = "172.20.10.13";
+  const IPv4 = "192.168.1.5";
   const navigation = useNavigation();
 
   const [isLoading, setisLoading] = useState(true);
@@ -112,7 +112,7 @@ const ProfileScreen = () => {
     <>
       <LinearGradient colors={["#8B8B8B", "#000000"]} className="flex-[0.5]">
         <SafeAreaView>
-          <View className="flex-row justify-end">
+          <View className="flex-row justify-end mt-3">
             <TouchableOpacity onPress={UpdatingButton} className="mr-4">
               <Ionicons name="settings-outline" size={24} color="white" />
             </TouchableOpacity>
