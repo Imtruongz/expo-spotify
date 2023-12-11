@@ -1,97 +1,5 @@
 {
-  "playlist": [
-    {
-      "id": 1,
-      "name": "Shape of You",
-      "artist": "Ed Sheeran",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/shapeofyou.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=10-nyPxvwVpB-RtRq_X0-VuhUx4apue9p"
-    },
-    {
-      "id": 2,
-      "name": "Rolling in the Deep",
-      "artist": "Adele",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/rollinginthedeep.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1rtRuq8C2fo-dx7qI1kwTaeQDqgwj2Lax"
-    },
-    {
-      "id": 3,
-      "name": "Crazy in Love",
-      "artist": "Beyoncé",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/crazyinlove.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1cp-KRpM3IE5CZ3zzqCAxQg8NAozWCJ5p"
-    },
-    {
-      "id": 4,
-      "name": "HUMBLE.",
-      "artist": "Kendrick Lamar",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/humble.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1qWplzzJDppU-IlKsNl-0Q7uV1nRcwaIN"
-    },
-    {
-      "id": 5,
-      "name": "Love Story",
-      "artist": "Taylor Swift",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/lovesotry.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1s6Q975GtPk5oMJnTbfujyizVFPBJnv3Q"
-    },
-    {
-      "id": 6,
-      "name": "Umbrella",
-      "artist": "Rihanna",
-      "image": "https://live.staticflickr.com/65535/53280421357_d55e942146_n.jpg",
-      "path": "https://drive.google.com/uc?export=download&id=1x086G9rqO8wUPDLBtPLLx1w7rVckz13b"
-    },
-    {
-      "id": 7,
-      "name": "Hotline Bling",
-      "artist": "Drake",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/hotlinebling.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1GD3wuBkhK_jFz_Ipdtu82Dt2NG6aDBx6"
-    },
-    {
-      "id": 8,
-      "name": "Bad Guy",
-      "artist": "Billie Eilish",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/badguy.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1SCOkcRACyGurHCwRnjpHsdzXqg401WFM"
-    },
-    {
-      "id": 9,
-      "name": "Just the Way You Are",
-      "artist": "Bruno Mars",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/justthewayyouare.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1VX9TEPXpP8t6GbjxLanK-XLo_nBHMAlj"
-    },
-    {
-      "id": 10,
-      "name": "Into You",
-      "artist": "Ariana Grande",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/intoyou.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1w7UNS04NJXMJ0cD0Zp19XbLVECLvJ3c9"
-    },
-    {
-      "id": 11,
-      "name": "Blinding Lights",
-      "artist": "The Weeknd",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/blindinglights.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=192Sw6oOX6zmnec-YvuxSud7Sdvt7H675"
-    },
-    {
-      "id": 12,
-      "name": "Fix You",
-      "artist": "Coldplay",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/fixyou.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1U1ODNiYmgo1qZDTv4bEULbofDjV0Ovv_"
-    },
-    {
-      "id": 13,
-      "name": "Bad Romance",
-      "artist": "Lady Gaga",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/badromance.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1D52yFQ-EKgJLE5rviAi6dWKorWxgnrt6"
-    }
-  ],
+  "playlist": [],
   "songs": [
     {
       "id": 1,
@@ -218,7 +126,10 @@
       "id": 1,
       "artist": "Ed Sheeran",
       "image": "https://live.staticflickr.com/65535/53281664519_67351d5c07.jpg",
-      "gradientColors": ["#808080", "#000000"],
+      "gradientColors": [
+        "#808080",
+        "#000000"
+      ],
       "songs": [
         {
           "idSong": 1,
@@ -268,7 +179,10 @@
       "id": 2,
       "artist": "Adele",
       "image": "https://live.staticflickr.com/65535/53281595178_35f8ca3c75_w.jpg",
-      "gradientColors": ["#808080", "#000000"],
+      "gradientColors": [
+        "#808080",
+        "#000000"
+      ],
       "songs": [
         {
           "idSong": 1,
@@ -294,7 +208,10 @@
       "id": 3,
       "artist": "Beyoncé",
       "image": "https://live.staticflickr.com/65535/53280421247_222dcd319b_w.jpg",
-      "gradientColors": ["#808080", "#000000"],
+      "gradientColors": [
+        "#808080",
+        "#000000"
+      ],
       "songs": [
         {
           "idSong": 1,
@@ -320,7 +237,10 @@
       "id": 4,
       "artist": "Kendrick Lamar",
       "image": "https://live.staticflickr.com/65535/53281779385_8b2c8a919e_w.jpg",
-      "gradientColors": ["#808080", "#000000"],
+      "gradientColors": [
+        "#808080",
+        "#000000"
+      ],
       "songs": [
         {
           "idSong": 1,
@@ -346,7 +266,10 @@
       "id": 5,
       "artist": "Taylor Swift",
       "image": "https://live.staticflickr.com/65535/53281595103_8e6c3044d8.jpg",
-      "gradientColors": ["#808080", "#000000"],
+      "gradientColors": [
+        "#808080",
+        "#000000"
+      ],
       "songs": [
         {
           "idSong": 1,
@@ -372,7 +295,10 @@
       "id": 6,
       "artist": "Rihanna",
       "image": "https://live.staticflickr.com/65535/53281595153_b1f39cd943.jpg",
-      "gradientColors": ["#808080", "#000000"],
+      "gradientColors": [
+        "#808080",
+        "#000000"
+      ],
       "songs": [
         {
           "idSong": 1,
@@ -398,7 +324,10 @@
       "id": 7,
       "artist": "Drake",
       "image": "https://live.staticflickr.com/65535/53281310401_278a710422_w.jpg",
-      "gradientColors": ["#808080", "#000000"],
+      "gradientColors": [
+        "#808080",
+        "#000000"
+      ],
       "songs": [
         {
           "idSong": 1,
@@ -424,8 +353,10 @@
       "id": 8,
       "artist": "Billie Eilish",
       "image": "https://live.staticflickr.com/65535/53281310391_70edf721a7.jpg",
-      "gradientColors": ["#808080", "#000000"],
-
+      "gradientColors": [
+        "#808080",
+        "#000000"
+      ],
       "songs": [
         {
           "idSong": 1,
@@ -574,7 +505,10 @@
       "name": "Bandaids",
       "artist": "Keshi",
       "image": "https://live.staticflickr.com/65535/53280420792_118206482b_w.jpg",
-      "gradientColors": ["#A37DA3", "#000000"],
+      "gradientColors": [
+        "#A37DA3",
+        "#000000"
+      ],
       "songs": [
         {
           "idSong": 1,
@@ -625,7 +559,10 @@
       "name": "99%",
       "artist": "MCK",
       "image": "https://live.staticflickr.com/65535/53281778985_47097d27f2_n.jpg",
-      "gradientColors": ["#8B0000", "#000000"],
+      "gradientColors": [
+        "#8B0000",
+        "#000000"
+      ],
       "songs": [
         {
           "idSong": 1,
@@ -652,7 +589,10 @@
       "name": "Purpose",
       "artist": "Justin Bieber",
       "image": "https://live.staticflickr.com/65535/53280420767_8e350415b5_w.jpg",
-      "gradientColors": ["#808080", "#000000"],
+      "gradientColors": [
+        "#808080",
+        "#000000"
+      ],
       "songs": [
         {
           "idSong": 1,
@@ -679,7 +619,10 @@
       "name": "Justice",
       "artist": "Justin Bieber",
       "image": "https://live.staticflickr.com/65535/53281594733_7d00fa2fa6_w.jpg",
-      "gradientColors": ["#00E7FF", "#000000"],
+      "gradientColors": [
+        "#00E7FF",
+        "#000000"
+      ],
       "songs": [
         {
           "idSong": 1,
@@ -706,7 +649,10 @@
       "name": "Gabriel",
       "artist": "Keshi",
       "image": "https://live.staticflickr.com/65535/53281779000_56aefe9836_w.jpg",
-      "gradientColors": ["#8B0000", "#000000"],
+      "gradientColors": [
+        "#8B0000",
+        "#000000"
+      ],
       "songs": [
         {
           "idSong": 1,
@@ -733,7 +679,10 @@
       "name": "Lalisa",
       "artist": "Lisa",
       "image": "https://live.staticflickr.com/65535/53281594743_77cc78d7f2_n.jpg",
-      "gradientColors": ["#8B8B8B", "#000000"],
+      "gradientColors": [
+        "#8B8B8B",
+        "#000000"
+      ],
       "songs": [
         {
           "idSong": 1,

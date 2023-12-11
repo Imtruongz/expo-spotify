@@ -14,6 +14,7 @@ import TextWhite from "../components/TextWhite";
 import PopularSong from "../components/PopularSong";
 import PopularArtists from "../components/PopularArtists";
 import PopularAlbum from "../components/PopularAlbum";
+import { Entypo } from "@expo/vector-icons";
 
 const HomeScreen = () => {
   const IPv4 = "192.168.0.9";
@@ -137,9 +138,7 @@ const HomeScreen = () => {
               </TextWhite>
             </Pressable>
             <Pressable className="bg-[#282828] p-2.5 mx-1 rounded-full">
-              <TextWhite className="text-sm font-bold">
-                Premium
-              </TextWhite>
+              <TextWhite className="text-sm font-bold">Premium</TextWhite>
             </Pressable>
           </View>
 
@@ -203,6 +202,26 @@ const HomeScreen = () => {
               <PopularArtists item={item} key={index} />
             )}
           />
+          <View className="justify-center items-center">
+            <TouchableOpacity className="flex-row  items-center">
+              <Image
+                className="w-12 h-10"
+                source={{
+                  uri: "https://taphoammo.net/img/spotify-premium-chinh-chu_505424362.png",
+                }}
+              ></Image>
+              <TextWhite className="text-2xl font-bold mx-4 my-5">
+                Spotify Premium
+              </TextWhite>
+              <Entypo name="chevron-thin-right" size={24} color="white" />
+            </TouchableOpacity>
+            <Image
+              className="w-40 h-40 rounded-2xl"
+              source={{
+                uri: "https://www.subbster.com/cdn/shop/files/PremiumSharing10usd_2000x.jpg?v=1688035656",
+              }}
+            ></Image>
+          </View>
           {/* Trending now */}
           <TextWhite className="text-2xl font-bold mx-4 my-2">
             Trending now
@@ -221,5 +240,4 @@ const HomeScreen = () => {
     </LinearGradient>
   );
 };
-
 export default HomeScreen;

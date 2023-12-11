@@ -12,6 +12,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from "react-native-animatable";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import TextWhite from "../components/TextWhite";
 import { Ionicons } from "@expo/vector-icons";
@@ -23,6 +24,70 @@ const ProfileScreen = () => {
   const [isLoading, setisLoading] = useState(true);
   const [playList, setplayList] = useState([]);
   const [menuVisibility, setMenuVisibility] = useState({});
+
+  const getPlaylist = async () => {
+    try {
+      const response = await fetch(`http://${IPv4}:5000/playlist`);
+      const json = await response.json();
+      setplayList(json);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setisLoading(false);
+    }
+  };
+
+  const deleteSong = async (id) => {
+    let urlAPI = `http://${IPv4}:5000/playlist/` + id;
+
+    try {
+      const response = await fetch(urlAPI, {
+        method: "DELETE",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        // Xóa thành công, cập nhật danh sách phát
+        const newPlaylist = playList.filter((song) => song.id !== id);
+        setplayList(newPlaylist); // Cập nhật trạng thái danh sách phát
+        await AsyncStorage.setItem("playlist", JSON.stringify(newPlaylist)); // Cập nhật AsyncStorage
+      } else {
+        // Xử lý lỗi từ server
+        console.error("Lỗi khi xóa bài hát từ server");
+      }
+    } catch (error) {
+      console.error("Lỗi khi xóa bài hát:", error);
+    }
+  };
+
+  const clearAsyncStorage = async () => {
+    try {
+      await AsyncStorage.clear();
+      console.log("Tất cả dữ liệu trong AsyncStorage đã được xóa.");
+    } catch (error) {
+      console.error("Lỗi khi xóa dữ liệu trong AsyncStorage:", error);
+    }
+  };
+
+  const toggleMenu = (itemId) => {
+    setMenuVisibility({
+      ...menuVisibility,
+      [itemId]: !menuVisibility[itemId],
+    });
+  };
+
+  function UpdatingButton() {
+    Alert.alert("Updating");
+  }
+
+  useFocusEffect(
+    React.useCallback(() => {
+      getPlaylist();
+    }, [])
+  );
 
   // const [page, setPage] = useState(1); // Trang hiện tại
   // const [isMoreData, setIsMoreData] = useState(true);
@@ -67,47 +132,6 @@ const ProfileScreen = () => {
   //   }
   // };
 
-  const getPlaylist = async () => {
-    try {
-      const response = await fetch(`http://${IPv4}:5000/playlist`);
-      const json = await response.json();
-      setplayList(json);
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setisLoading(false);
-    }
-  };
-
-  const deleteSong = (id) => {
-    let urlAPI = `http://${IPv4}:5000/playlist/` + id;
-    fetch(urlAPI, {
-      method: "DELETE",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    });
-    getPlaylist();
-  };
-
-  const toggleMenu = (itemId) => {
-    setMenuVisibility({
-      ...menuVisibility,
-      [itemId]: !menuVisibility[itemId],
-    });
-  };
-
-  function UpdatingButton() {
-    Alert.alert("Updating");
-  }
-
-  useFocusEffect(
-    React.useCallback(() => {
-      getPlaylist();
-    }, [])
-  );
-
   return (
     <>
       <LinearGradient colors={["#8B8B8B", "#000000"]} className="flex-[0.5]">
@@ -147,6 +171,7 @@ const ProfileScreen = () => {
           </View>
           <TouchableOpacity
             className="text-center w-14 mt-4 ml-14 p-[6px] font-bold rounded-3xl border-2 border-white border-solid justify-center items-center"
+            // onPress={clearAsyncStorage}
             onPress={UpdatingButton}
           >
             <TextWhite>Edit</TextWhite>

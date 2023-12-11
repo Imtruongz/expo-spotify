@@ -10,7 +10,9 @@ const PopularSong = ({ item }) => {
   return (
     <View>
       <TouchableOpacity
-        onPress={() => navigation.navigate("Info", { song: item })}
+        onPress={() =>
+          navigation.navigate("Info", { song: item, source: "songs" })
+        }
         style={{ padding: 10 }}
       >
         <Image

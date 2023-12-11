@@ -6,6 +6,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Audio } from "expo-av";
 
 import { Entypo, Feather, Ionicons, AntDesign } from "@expo/vector-icons";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const SongInfoScreen = ({ route }) => {
   const IPv4 = "192.168.0.9";
@@ -20,6 +21,37 @@ const SongInfoScreen = ({ route }) => {
   const [playing, setPlaying] = useState(false);
   const [currentSong, setCurrentSong] = useState(null);
   const [sound, setSound] = useState(null);
+
+  const [playlist, setPlaylist] = useState([]);
+
+  const isSongInPlaylist = (songId) => {
+    return playlist.some((item) => item.id === songId);
+  };
+
+  const loadPlaylist = async () => {
+    try {
+      const savedPlaylist = await AsyncStorage.getItem("playlist");
+      if (savedPlaylist !== null) {
+        setPlaylist(JSON.parse(savedPlaylist));
+      }
+    } catch (error) {
+      console.error("Lỗi khi tải danh sách phát:", error);
+    }
+  };
+
+  useEffect(() => {
+    loadPlaylist();
+  }, []);
+
+  const updatePlaylist = async (newSong) => {
+    try {
+      const updatedPlaylist = [...playlist, newSong];
+      setPlaylist(updatedPlaylist);
+      await AsyncStorage.setItem("playlist", JSON.stringify(updatedPlaylist));
+    } catch (error) {
+      console.error("Lỗi khi cập nhật danh sách phát:", error);
+    }
+  };
 
   const playMusic = async (url, id) => {
     if (sound && currentSong === id) {
@@ -58,6 +90,21 @@ const SongInfoScreen = ({ route }) => {
     }
   };
 
+  const fetchDataFromAsyncStorage = async () => {
+    try {
+      const storedData = await AsyncStorage.getItem("playlist");
+      if (storedData !== null) {
+        // Dữ liệu tồn tại
+        console.log(storedData);
+      } else {
+        // Không có dữ liệu
+        console.log("No data found");
+      }
+    } catch (error) {
+      console.error("Error fetching data from AsyncStorage:", error);
+    }
+  };
+
   useEffect(() => {
     return sound
       ? () => {
@@ -66,46 +113,66 @@ const SongInfoScreen = ({ route }) => {
       : undefined;
   }, [sound]);
 
-  const addSong = (song) => {
+  const addSong = async (songToAdd) => {
     let urlAPI = `http://${IPv4}:5000/playlist`;
 
     const payload = {
-      id: song.id,
-      name: song.name,
-      artist: song.artist,
-      image: song.image,
-      path: song.path,
+      id: songToAdd.id,
+      name: songToAdd.name,
+      artist: songToAdd.artist,
+      image: songToAdd.image,
+      path: songToAdd.path,
     };
 
-    console.log("Dữ liệu gửi lên server:", payload); // TEst
+    // Kiểm tra nếu bài hát đã có trong danh sách phát
+    if (!isSongInPlaylist(songToAdd.id)) {
+      console.log("Dữ liệu gửi lên server:", payload); // Log dữ liệu
 
-    fetch(urlAPI, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
-      .then((res) => {
-        if (res.ok && res.status === 201) {
-          alert("Added to your playlist");
-        } else {
-          // Thêm xử lý cho trường hợp server trả về lỗi
-          return res.json().then((data) => {
-            throw new Error("Lỗi từ server: " + data.message);
-          });
-        }
+      fetch(urlAPI, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       })
-      .catch((err) => {
-        alert("This songs has been added to your playlist.");
-      });
+        .then((res) => {
+          if (res.ok && res.status === 201) {
+            alert("Added to your playlist");
+            setPlaylist([...playlist, payload]); // Cập nhật danh sách phát trong trạng thái
+          } else {
+            // Xử lý cho trường hợp server trả về lỗi
+            return res.json().then((data) => {
+              throw new Error("Lỗi từ server: " + data.message);
+            });
+          }
+        })
+        .catch((err) => {
+          alert("An error occurred: " + err.message);
+        });
+      updatePlaylist(songToAdd);
+      fetchDataFromAsyncStorage();
+    } else {
+      alert("This song has already been added to your playlist.");
+    }
   };
 
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60000);
     const seconds = Math.floor((time % 60000) / 1000);
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
+
+  const playNextSong = async () => {
+    // if (!songs || songs.length === 0) {
+    //   console.log('No songs');
+    //   return;
+    // }
+    // const currentIndex = songs.findIndex(song => song.id === currentSong.id);
+    // const nextIndex = (currentIndex + 1) % songs.length;
+    // const nextSong = songs[nextIndex];
+    // // Phát bài hát tiếp theo
+    // await playMusic(nextSong.path, nextSong.id);
   };
 
   return (
@@ -136,7 +203,11 @@ const SongInfoScreen = ({ route }) => {
               </View>
               <View className="flex-row gap-4">
                 <TouchableOpacity onPress={() => addSong(song)}>
-                  <AntDesign name="hearto" size={24} color="white" />
+                  {isSongInPlaylist(song.id) ? (
+                    <AntDesign name="heart" size={24} color="red" />
+                  ) : (
+                    <AntDesign name="hearto" size={24} color="white" />
+                  )}
                 </TouchableOpacity>
                 <AntDesign name="sharealt" size={24} color="white" />
               </View>
@@ -190,7 +261,7 @@ const SongInfoScreen = ({ route }) => {
                 )}
               </TouchableOpacity>
 
-              <Pressable>
+              <Pressable onPress={playNextSong}>
                 <Ionicons name="play-skip-forward" size={30} color="white" />
               </Pressable>
               <Pressable>
