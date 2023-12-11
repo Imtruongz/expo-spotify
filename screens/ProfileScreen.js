@@ -17,7 +17,7 @@ import TextWhite from "../components/TextWhite";
 import { Ionicons } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
-  const IPv4 = "192.168.1.5";
+  const IPv4 = "192.168.0.9";
   const navigation = useNavigation();
 
   const [isLoading, setisLoading] = useState(true);

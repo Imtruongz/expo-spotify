@@ -15,7 +15,7 @@ import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
 import TextWhite from "../components/TextWhite";
 
 const AlbumDetail = ({ route }) => {
-  const IPv4 = "192.168.1.5";
+  const IPv4 = "192.168.0.9";
   const { artist } = route.params;
 
   const navigation = useNavigation();
