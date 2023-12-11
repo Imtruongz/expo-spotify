@@ -63,8 +63,8 @@ const SongInfoScreen = ({ route }) => {
       }
       const { sound: newSound } = await Audio.Sound.createAsync(
         { uri: url },
-        {}, // Các options khác (nếu có)
-        handlePlaybackStatusUpdate // Gán hàm lắng nghe ở đây
+        {},
+        handlePlaybackStatusUpdate
       );
       setSound(newSound);
       await newSound.playAsync();
@@ -87,21 +87,6 @@ const SongInfoScreen = ({ route }) => {
     if (playing) {
       await sound.pauseAsync();
       setPlaying(false);
-    }
-  };
-
-  const fetchDataFromAsyncStorage = async () => {
-    try {
-      const storedData = await AsyncStorage.getItem("playlist");
-      if (storedData !== null) {
-        // Dữ liệu tồn tại
-        console.log(storedData);
-      } else {
-        // Không có dữ liệu
-        console.log("No data found");
-      }
-    } catch (error) {
-      console.error("Error fetching data from AsyncStorage:", error);
     }
   };
 
@@ -151,7 +136,7 @@ const SongInfoScreen = ({ route }) => {
           alert("An error occurred: " + err.message);
         });
       updatePlaylist(songToAdd);
-      fetchDataFromAsyncStorage();
+      // fetchDataFromAsyncStorage();
     } else {
       alert("This song has already been added to your playlist.");
     }
@@ -163,17 +148,30 @@ const SongInfoScreen = ({ route }) => {
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
 
-  const playNextSong = async () => {
-    // if (!songs || songs.length === 0) {
-    //   console.log('No songs');
-    //   return;
-    // }
-    // const currentIndex = songs.findIndex(song => song.id === currentSong.id);
-    // const nextIndex = (currentIndex + 1) % songs.length;
-    // const nextSong = songs[nextIndex];
-    // // Phát bài hát tiếp theo
-    // await playMusic(nextSong.path, nextSong.id);
-  };
+  // const playNextSong = async () => {
+  //   if (!songs || songs.length === 0) {
+  //     console.log('No songs');
+  //     return;
+  //   }
+  //   const currentIndex = songs.findIndex(song => song.id === currentSong.id);
+  //   const nextIndex = (currentIndex + 1) % songs.length;
+  //   const nextSong = songs[nextIndex];
+  //   // Phát bài hát tiếp theo
+  //   await playMusic(nextSong.path, nextSong.id);
+  // };
+
+  // const fetchDataFromAsyncStorage = async () => {
+  //   try {
+  //     const storedData = await AsyncStorage.getItem("playlist");
+  //     if (storedData !== null) {
+  //       console.log(storedData);
+  //     } else {
+  //       console.log("No data found");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching data from AsyncStorage:", error);
+  //   }
+  // };
 
   return (
     <LinearGradient colors={["#131624", "#040306"]}>
@@ -261,7 +259,9 @@ const SongInfoScreen = ({ route }) => {
                 )}
               </TouchableOpacity>
 
-              <Pressable onPress={playNextSong}>
+              <Pressable
+              // onPress={playNextSong}
+              >
                 <Ionicons name="play-skip-forward" size={30} color="white" />
               </Pressable>
               <Pressable>

@@ -32,7 +32,7 @@ const LikedSongsScreen = () => {
   }
 
   return (
-    <LinearGradient colors={["#131624", "#040306"]} clasName="flex-1">
+    <LinearGradient colors={["#131624", "#040306"]}>
       <SafeAreaView>
         <ScrollView>
           <TextWhite className="mx-5 font-bold text-2xl mt-3">Search</TextWhite>
@@ -52,7 +52,7 @@ const LikedSongsScreen = () => {
             </TextWhite>
           </View>
 
-          <View className="flex-row flex-wrap justify-center mb-12">
+          <View className="flex-row flex-wrap justify-center h-[700px]">
             {searchResult.map((item) => (
               <TouchableOpacity
                 key={item.id}

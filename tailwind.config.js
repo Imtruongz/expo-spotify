@@ -5,6 +5,12 @@ module.exports = {
     "./screens/**/*.{js,jsx,ts,tsx}",
     "./components/**/*.{js,jsx,ts,tsx}",
   ],
-  theme: {},
+  theme: {
+    extend: {
+      backgroundColor: {
+        'overlay': 'rgba(0, 0, 0, 0.6)',
+      }
+    }
+  },
   plugins: [],
 };

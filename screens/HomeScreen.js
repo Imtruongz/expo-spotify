@@ -5,6 +5,7 @@ import {
   Pressable,
   FlatList,
   TouchableOpacity,
+  StyleSheet,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
@@ -15,6 +16,8 @@ import PopularSong from "../components/PopularSong";
 import PopularArtists from "../components/PopularArtists";
 import PopularAlbum from "../components/PopularAlbum";
 import { Entypo } from "@expo/vector-icons";
+import BannerAd from "../components/Banner";
+import { Modal } from "react-native";
 
 const HomeScreen = () => {
   const IPv4 = "192.168.0.9";
@@ -25,6 +28,11 @@ const HomeScreen = () => {
   const [albums, setAlbums] = useState([]);
   const [trend, setTrend] = useState([]);
   const [category, setCategory] = useState([]);
+  const [isAdVisible, setIsAdVisible] = useState(true);
+
+  const closeAd = () => {
+    setIsAdVisible(false);
+  };
 
   useEffect(() => {
     getSongs();
@@ -110,6 +118,21 @@ const HomeScreen = () => {
   return (
     <LinearGradient colors={["#131624", "#040306"]} className="flex-1">
       <SafeAreaView>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={isAdVisible}
+          onRequestClose={closeAd}
+        >
+          <View className="flex-1 justify-center items-center bg-overlay">
+            <BannerAd
+              isVisible={isAdVisible}
+              onClose={closeAd}
+              adLinkUrl="https://newsroom.spotify.com/2023-wrapped/"
+              adImageUrl="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/385774780_674713264753146_8854846531264018174_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeHQr8kAFyHixa5ADXtyGTmObKGkqSHjFFJsoaSpIeMUUkMElYmLhZ1GEJ6_7bJiStJx6qQ4WdTsXEBKrayoNfPn&_nc_ohc=zw1uZTDDRNgAX9kQyAf&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDfBQw4LNAeMU2wgbZCuBBimdu4i_jIOquMplQ47asqzQ&oe=657B342B"
+            />
+          </View>
+        </Modal>
         <ScrollView>
           {/* Header */}
           <View className="flex-row items-center justify-between mt-3">
@@ -165,7 +188,26 @@ const HomeScreen = () => {
               </TouchableOpacity>
             ))}
           </View>
-
+          <View className="justify-center items-center my-3">
+            <TouchableOpacity className="flex-row items-center">
+              <Image
+                className="w-12 h-10"
+                source={{
+                  uri: "https://taphoammo.net/img/spotify-premium-chinh-chu_505424362.png",
+                }}
+              ></Image>
+              <TextWhite className="text-2xl font-bold mx-4 my-5">
+                Spotify Premium
+              </TextWhite>
+              <Entypo name="chevron-thin-right" size={24} color="white" />
+            </TouchableOpacity>
+            <Image
+              className="w-[90%] h-40 rounded-2xl"
+              source={{
+                uri: "https://www.digitalmusicnews.com/wp-content/uploads/2021/02/times-square-premium.jpg",
+              }}
+            ></Image>
+          </View>
           {/* Top songs */}
           <TextWhite className="text-2xl font-bold mx-4 my-2">
             Popular songs
@@ -202,26 +244,7 @@ const HomeScreen = () => {
               <PopularArtists item={item} key={index} />
             )}
           />
-          <View className="justify-center items-center">
-            <TouchableOpacity className="flex-row  items-center">
-              <Image
-                className="w-12 h-10"
-                source={{
-                  uri: "https://taphoammo.net/img/spotify-premium-chinh-chu_505424362.png",
-                }}
-              ></Image>
-              <TextWhite className="text-2xl font-bold mx-4 my-5">
-                Spotify Premium
-              </TextWhite>
-              <Entypo name="chevron-thin-right" size={24} color="white" />
-            </TouchableOpacity>
-            <Image
-              className="w-40 h-40 rounded-2xl"
-              source={{
-                uri: "https://www.subbster.com/cdn/shop/files/PremiumSharing10usd_2000x.jpg?v=1688035656",
-              }}
-            ></Image>
-          </View>
+
           {/* Trending now */}
           <TextWhite className="text-2xl font-bold mx-4 my-2">
             Trending now

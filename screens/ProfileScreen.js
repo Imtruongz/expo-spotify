@@ -13,9 +13,10 @@ import * as Animatable from "react-native-animatable";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import Modal from "react-native-modal";
 
 import TextWhite from "../components/TextWhite";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, Entypo } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
   const IPv4 = "192.168.0.9";
@@ -24,6 +25,12 @@ const ProfileScreen = () => {
   const [isLoading, setisLoading] = useState(true);
   const [playList, setplayList] = useState([]);
   const [menuVisibility, setMenuVisibility] = useState({});
+
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
 
   const getPlaylist = async () => {
     try {
@@ -39,7 +46,6 @@ const ProfileScreen = () => {
 
   const deleteSong = async (id) => {
     let urlAPI = `http://${IPv4}:5000/playlist/` + id;
-
     try {
       const response = await fetch(urlAPI, {
         method: "DELETE",
@@ -50,25 +56,14 @@ const ProfileScreen = () => {
       });
 
       if (response.ok) {
-        // Xóa thành công, cập nhật danh sách phát
         const newPlaylist = playList.filter((song) => song.id !== id);
-        setplayList(newPlaylist); // Cập nhật trạng thái danh sách phát
-        await AsyncStorage.setItem("playlist", JSON.stringify(newPlaylist)); // Cập nhật AsyncStorage
+        setplayList(newPlaylist);
+        await AsyncStorage.setItem("playlist", JSON.stringify(newPlaylist));
       } else {
-        // Xử lý lỗi từ server
         console.error("Lỗi khi xóa bài hát từ server");
       }
     } catch (error) {
       console.error("Lỗi khi xóa bài hát:", error);
-    }
-  };
-
-  const clearAsyncStorage = async () => {
-    try {
-      await AsyncStorage.clear();
-      console.log("Tất cả dữ liệu trong AsyncStorage đã được xóa.");
-    } catch (error) {
-      console.error("Lỗi khi xóa dữ liệu trong AsyncStorage:", error);
     }
   };
 
@@ -132,6 +127,15 @@ const ProfileScreen = () => {
   //   }
   // };
 
+  // const clearAsyncStorage = async () => {
+  //   try {
+  //     await AsyncStorage.clear();
+  //     console.log("Tất cả dữ liệu trong AsyncStorage đã được xóa.");
+  //   } catch (error) {
+  //     console.error("Lỗi khi xóa dữ liệu trong AsyncStorage:", error);
+  //   }
+  // };
+
   return (
     <>
       <LinearGradient colors={["#8B8B8B", "#000000"]} className="flex-[0.5]">
@@ -142,7 +146,7 @@ const ProfileScreen = () => {
             </TouchableOpacity>
           </View>
 
-          <View className="flex-row w-1/2">
+          <View className="flex-row w-1/2 items-center">
             <Image
               className="w-32 h-32 rounded-[64px] ml-6"
               source={{
@@ -155,27 +159,41 @@ const ProfileScreen = () => {
               </TextWhite>
               <View className="flex-col flex-wrap gap-1 px-5 py-2">
                 <View className="flex-row gap-x-1">
-                  <TextWhite className="font-bold">0</TextWhite>
-                  <Text className="text-[#E0E0E0]">follower</Text>
-                </View>
-                <View className="flex-row gap-x-1">
-                  <TextWhite className="font-bold">0</TextWhite>
-                  <Text className="text-[#E0E0E0]">following</Text>
-                </View>
-                <View className="flex-row gap-x-1">
                   <TextWhite className="font-bold">{playList.length}</TextWhite>
                   <Text className="text-[#E0E0E0]">songs</Text>
                 </View>
               </View>
             </View>
           </View>
-          <TouchableOpacity
-            className="text-center w-14 mt-4 ml-14 p-[6px] font-bold rounded-3xl border-2 border-white border-solid justify-center items-center"
-            // onPress={clearAsyncStorage}
-            onPress={UpdatingButton}
-          >
-            <TextWhite>Edit</TextWhite>
-          </TouchableOpacity>
+          <View className="flex-row items-center mt-3 ml-14">
+            <TouchableOpacity
+              className="text-center mr-2 w-14 p-[6px] font-bold rounded-3xl border-2 border-white border-solid justify-center items-center"
+              // onPress={clearAsyncStorage}
+              onPress={UpdatingButton}
+            >
+              <TextWhite>Edit</TextWhite>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={toggleModal}>
+              <Entypo name="dots-three-vertical" size={24} color="white" />
+            </TouchableOpacity>
+            <Modal isVisible={isModalVisible} onBackdropPress={toggleModal}>
+              <View className="flex-1 justify-end">
+                <View
+                  style={{
+                    backgroundColor: "white",
+                    padding: 16,
+                    borderRadius: 4,
+                  }}
+                >
+                  <Text>Nội dung của Bottom Sheettttt</Text>
+                  {/* Thêm các nút hoặc thông tin bạn muốn hiển thị ở đây */}
+                  <TouchableOpacity onPress={toggleModal}>
+                    <Text>Đóng</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </Modal>
+          </View>
         </SafeAreaView>
       </LinearGradient>
       <View className="flex-1 bg-black">
@@ -231,9 +249,9 @@ const ProfileScreen = () => {
           keyExtractor={(item) => item.id.toString()}
           // onEndReached={loadMore}
           // onEndReachedThreshold={0.1}
-          // ListFooterComponent={
-          //   loadingMore ? <ActivityIndicator size="large" color="#fff" /> : null
-          // }
+          ListFooterComponent={
+            isLoading ? <ActivityIndicator size="large" color="#fff" /> : null
+          }
         />
         <View className="h-14" />
       </View>

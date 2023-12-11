@@ -1,5 +1,48 @@
 {
-  "playlist": [],
+  "playlist": [
+    {
+      "id": 1,
+      "name": "Shape of You",
+      "artist": "Ed Sheeran",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/shapeofyou.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=10-nyPxvwVpB-RtRq_X0-VuhUx4apue9p"
+    },
+    {
+      "id": 2,
+      "name": "Rolling in the Deep",
+      "artist": "Adele",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/rollinginthedeep.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1rtRuq8C2fo-dx7qI1kwTaeQDqgwj2Lax"
+    },
+    {
+      "id": 3,
+      "name": "Crazy in Love",
+      "artist": "Beyoncé",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/crazyinlove.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1cp-KRpM3IE5CZ3zzqCAxQg8NAozWCJ5p"
+    },
+    {
+      "name": "Right here",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 4
+    },
+    {
+      "name": "Less of you",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/besideyou.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
+      "id": 5
+    },
+    {
+      "name": "Somebody",
+      "artist": "Keshi",
+      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/lessofyou.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1UaH0GvqX2MLIjP-wGd9dQoOLnwtROBoO",
+      "id": 6
+    }
+  ],
   "songs": [
     {
       "id": 1,
