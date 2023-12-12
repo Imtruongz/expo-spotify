@@ -16,7 +16,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import Modal from "react-native-modal";
 
 import TextWhite from "../components/TextWhite";
-import { Ionicons, Entypo } from "@expo/vector-icons";
+import { Ionicons, Entypo, AntDesign } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
   const IPv4 = "192.168.0.9";
@@ -177,18 +177,32 @@ const ProfileScreen = () => {
               <Entypo name="dots-three-vertical" size={24} color="white" />
             </TouchableOpacity>
             <Modal isVisible={isModalVisible} onBackdropPress={toggleModal}>
-              <View className="flex-1 justify-end">
-                <View
-                  style={{
-                    backgroundColor: "white",
-                    padding: 16,
-                    borderRadius: 4,
-                  }}
-                >
-                  <Text>Nội dung của Bottom Sheettttt</Text>
-                  {/* Thêm các nút hoặc thông tin bạn muốn hiển thị ở đây */}
-                  <TouchableOpacity onPress={toggleModal}>
-                    <Text>Đóng</Text>
+              <View className="flex-1 justify-end items-center">
+                <View className="bg-slate-600 p-2 w-full rounded-2xl">
+                  <View className="flex-row  my-2 mx-2 items-center">
+                    <Image
+                      className="w-12 h-12 rounded-3xl"
+                      source={{
+                        uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
+                      }}
+                    />
+                    <TextWhite className="ml-4">Nguyễn Việt Trường</TextWhite>
+                  </View>
+                  <TouchableOpacity className="flex-row my-4 mx-2 items-center">
+                    <AntDesign name="adduser" size={24} color="white" />
+                    <TextWhite className="ml-4">Add friend</TextWhite>
+                  </TouchableOpacity>
+                  <TouchableOpacity className="flex-row my-4 mx-2 items-center">
+                    <AntDesign name="sharealt" size={24} color="white" />
+                    <TextWhite className="ml-4">Share</TextWhite>
+                  </TouchableOpacity>
+                  <TouchableOpacity className="flex-row my-4 mx-2 items-center">
+                    <AntDesign name="linechart" size={24} color="white" />
+                    <TextWhite className="ml-4">Share</TextWhite>
+                  </TouchableOpacity>
+                  <TouchableOpacity className="flex-row my-4 mx-2 items-center">
+                    <Entypo name="eye" size={24} color="white" />
+                    <TextWhite className="ml-4">Share</TextWhite>
                   </TouchableOpacity>
                 </View>
               </View>

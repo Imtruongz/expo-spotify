@@ -22,25 +22,11 @@
       "path": "https://drive.google.com/uc?export=download&id=1cp-KRpM3IE5CZ3zzqCAxQg8NAozWCJ5p"
     },
     {
-      "name": "Right here",
-      "artist": "Keshi",
-      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
-      "id": 4
-    },
-    {
-      "name": "Less of you",
-      "artist": "Keshi",
-      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/besideyou.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH",
-      "id": 5
-    },
-    {
-      "name": "Somebody",
-      "artist": "Keshi",
-      "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/lessofyou.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1UaH0GvqX2MLIjP-wGd9dQoOLnwtROBoO",
-      "id": 6
+      "id": 4,
+      "name": "HUMBLE.",
+      "artist": "Kendrick Lamar",
+      "image": "https://github.com/Imtruongz/assets/blob/main/songs/humble.jpg?raw=true",
+      "path": "https://drive.google.com/uc?export=download&id=1qWplzzJDppU-IlKsNl-0Q7uV1nRcwaIN"
     }
   ],
   "songs": [

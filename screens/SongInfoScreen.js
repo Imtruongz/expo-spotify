@@ -21,8 +21,8 @@ const SongInfoScreen = ({ route }) => {
   const [playing, setPlaying] = useState(false);
   const [currentSong, setCurrentSong] = useState(null);
   const [sound, setSound] = useState(null);
-
   const [playlist, setPlaylist] = useState([]);
+  const [playlistIndex, setPlaylistIndex] = useState(0);
 
   const isSongInPlaylist = (songId) => {
     return playlist.some((item) => item.id === songId);
@@ -42,6 +42,7 @@ const SongInfoScreen = ({ route }) => {
   useEffect(() => {
     loadPlaylist();
   }, []);
+
 
   const updatePlaylist = async (newSong) => {
     try {
@@ -89,6 +90,49 @@ const SongInfoScreen = ({ route }) => {
       setPlaying(false);
     }
   };
+
+
+  const playNextSong = async () => {
+    let nextIndex;
+    if (playlist.length > 0) {
+      nextIndex = (playlistIndex + 1) % playlist.length; 
+      const nextSong = playlist[nextIndex];
+      
+      // Update the displayed song information
+      route.params.song = nextSong;
+  
+      // Play the new song
+      await playMusic(nextSong.path, nextSong.id);
+      setPlaylistIndex(nextIndex);
+    } else {
+      console.log("Playlist is empty.");
+    }
+  };
+
+  const playPrevSong = async () => {
+    if (playlist.length === 0) {
+      console.log("Playlist is empty.");
+      return; // Dừng hàm nếu playlist rỗng
+    }
+  
+    let prevIndex = playlistIndex - 1;
+    if (prevIndex < 0) {
+      prevIndex = playlist.length - 1; // Xử lý chỉ mục âm
+    }
+  
+    const prevSong = playlist[prevIndex];
+  
+    if (!prevSong) {
+      console.error("Error: Previous song not found.");
+      return; // Dừng hàm nếu không tìm thấy bài hát
+    }
+  
+    // Cập nhật thông tin bài hát và phát nhạc
+    route.params.song = prevSong;
+    await playMusic(prevSong.path, prevSong.id);
+    setPlaylistIndex(prevIndex);
+  };
+  
 
   useEffect(() => {
     return sound
@@ -147,18 +191,6 @@ const SongInfoScreen = ({ route }) => {
     const seconds = Math.floor((time % 60000) / 1000);
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
-
-  // const playNextSong = async () => {
-  //   if (!songs || songs.length === 0) {
-  //     console.log('No songs');
-  //     return;
-  //   }
-  //   const currentIndex = songs.findIndex(song => song.id === currentSong.id);
-  //   const nextIndex = (currentIndex + 1) % songs.length;
-  //   const nextSong = songs[nextIndex];
-  //   // Phát bài hát tiếp theo
-  //   await playMusic(nextSong.path, nextSong.id);
-  // };
 
   // const fetchDataFromAsyncStorage = async () => {
   //   try {
@@ -244,9 +276,9 @@ const SongInfoScreen = ({ route }) => {
               <Pressable>
                 <Entypo name="shuffle" size={26} color="white" />
               </Pressable>
-              <Pressable>
+              <TouchableOpacity onPress={playPrevSong}>
                 <Ionicons name="play-skip-back" size={30} color="white" />
-              </Pressable>
+              </TouchableOpacity>
               <TouchableOpacity
                 onPress={() =>
                   playing ? pauseMusic() : playMusic(song.path, song.id)
@@ -259,11 +291,11 @@ const SongInfoScreen = ({ route }) => {
                 )}
               </TouchableOpacity>
 
-              <Pressable
-              // onPress={playNextSong}
+              <TouchableOpacity
+              onPress={playNextSong}
               >
                 <Ionicons name="play-skip-forward" size={30} color="white" />
-              </Pressable>
+              </TouchableOpacity>
               <Pressable>
                 <Feather name="repeat" size={26} color="white" />
               </Pressable>
