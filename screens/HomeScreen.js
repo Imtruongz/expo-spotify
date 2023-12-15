@@ -20,7 +20,7 @@ import BannerAd from "../components/Banner";
 import { Modal } from "react-native";
 
 const HomeScreen = () => {
-  const IPv4 = "192.168.0.9";
+  const IPv4 = "192.168.1.10";
 
   const [isLoading, setisLoading] = useState(true);
   const [songs, setSongs] = useState([]);
@@ -44,7 +44,7 @@ const HomeScreen = () => {
 
   const getSongs = async () => {
     try {
-      const response = await fetch(`http://${IPv4}:5000/songs`); //load data
+      const response = await fetch(`http://${IPv4}:3000/songs`); //load data
       const json = await response.json(); //change data to json
       setSongs(json);
     } catch (err) {
@@ -181,7 +181,7 @@ const HomeScreen = () => {
                   source={{ uri: item.image }}
                 />
                 <View>
-                  <TextWhite className="text-sm font-bold">
+                  <TextWhite className="font-bold text-sm">
                     {item.name}
                   </TextWhite>
                 </View>

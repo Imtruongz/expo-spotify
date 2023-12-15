@@ -1,34 +1,5 @@
 {
-  "playlist": [
-    {
-      "id": 1,
-      "name": "Shape of You",
-      "artist": "Ed Sheeran",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/shapeofyou.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=10-nyPxvwVpB-RtRq_X0-VuhUx4apue9p"
-    },
-    {
-      "id": 2,
-      "name": "Rolling in the Deep",
-      "artist": "Adele",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/rollinginthedeep.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1rtRuq8C2fo-dx7qI1kwTaeQDqgwj2Lax"
-    },
-    {
-      "id": 3,
-      "name": "Crazy in Love",
-      "artist": "Beyoncé",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/crazyinlove.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1cp-KRpM3IE5CZ3zzqCAxQg8NAozWCJ5p"
-    },
-    {
-      "id": 4,
-      "name": "HUMBLE.",
-      "artist": "Kendrick Lamar",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/humble.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1qWplzzJDppU-IlKsNl-0Q7uV1nRcwaIN"
-    }
-  ],
+  "playlist": [],
   "songs": [
     {
       "id": 1,
