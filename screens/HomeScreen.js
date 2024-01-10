@@ -20,7 +20,7 @@ import BannerAd from "../components/Banner";
 import { Modal } from "react-native";
 
 const HomeScreen = () => {
-  const IPv4 = "192.168.1.10";
+  const IPv4 = "192.168.43.57";
 
   const [isLoading, setisLoading] = useState(true);
   const [songs, setSongs] = useState([]);
@@ -44,7 +44,7 @@ const HomeScreen = () => {
 
   const getSongs = async () => {
     try {
-      const response = await fetch(`http://${IPv4}:3000/songs`); //load data
+      const response = await fetch(`http://${IPv4}:5000/songs`); //load data
       const json = await response.json(); //change data to json
       setSongs(json);
     } catch (err) {
@@ -129,7 +129,7 @@ const HomeScreen = () => {
               isVisible={isAdVisible}
               onClose={closeAd}
               adLinkUrl="https://newsroom.spotify.com/2023-wrapped/"
-              adImageUrl="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/385774780_674713264753146_8854846531264018174_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeHQr8kAFyHixa5ADXtyGTmObKGkqSHjFFJsoaSpIeMUUkMElYmLhZ1GEJ6_7bJiStJx6qQ4WdTsXEBKrayoNfPn&_nc_ohc=zw1uZTDDRNgAX9kQyAf&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDfBQw4LNAeMU2wgbZCuBBimdu4i_jIOquMplQ47asqzQ&oe=657B342B"
+              adImageUrl="https://github.com/Imtruongz/assets/blob/main/387659257_632065309123911_3861543218293514276_n.jpg?raw=true"
             />
           </View>
         </Modal>

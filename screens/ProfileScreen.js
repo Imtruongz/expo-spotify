@@ -19,7 +19,7 @@ import TextWhite from "../components/TextWhite";
 import { Ionicons, Entypo, AntDesign } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
-  const IPv4 = "192.168.0.9";
+  const IPv4 = "192.168.43.57";
   const navigation = useNavigation();
 
   const [isLoading, setisLoading] = useState(true);
@@ -178,7 +178,7 @@ const ProfileScreen = () => {
             </TouchableOpacity>
             <Modal isVisible={isModalVisible} onBackdropPress={toggleModal}>
               <View className="flex-1 justify-end items-center">
-                <View className="bg-slate-600 p-2 w-full rounded-2xl">
+                <View className="bg-slate-900 p-2 w-full rounded-2xl">
                   <View className="flex-row  my-2 mx-2 items-center">
                     <Image
                       className="w-12 h-12 rounded-3xl"
