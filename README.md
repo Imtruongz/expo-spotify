@@ -1,10 +1,22 @@
 # Spotify: UI Clone with React Native / Expo
 
+<p align="center">
+  <img src="assets/img/cef01de3ab20007e59311.jpg" alt="example1" />
+  <img src="assets/img/3fde9c312af281acd8e32.jpg" alt="example2" />
+</p>
+<p align="center">
+  <img src="assets/img/ccc842daf4195f4706084.jpg" alt="example3" />
+  <img src="assets/img/e383de926851c30f9a403.jpg" alt="example4" />
+</p>
+
+
 ## Table of Contents
 
-- [Install & Build](#install--build)
-- [Features](#features)
-- [Technologies](#technologies)
+- [Spotify: UI Clone with React Native / Expo](#spotify-ui-clone-with-react-native--expo)
+  - [Table of Contents](#table-of-contents)
+  - [Install \& Build](#install--build)
+  - [Features](#features)
+  - [Technologies](#technologies)
 
 ## Install & Build
 

@@ -20,7 +20,7 @@ import BannerAd from "../components/Banner";
 import { Modal } from "react-native";
 
 const HomeScreen = () => {
-  const IPv4 = "192.168.43.57";
+  const IPv4 = "192.168.4.101";
 
   const [isLoading, setisLoading] = useState(true);
   const [songs, setSongs] = useState([]);
