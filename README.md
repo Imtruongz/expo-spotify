@@ -10,18 +10,6 @@
 
 First, make sure you have Expo CLI installed: `npm install -g expo-cli`
 
-**Install:**
-
-```bash
-npm
-```
-
-**Run Project Locally:**
-
-```bash
-npm start
-```
-
 **Create a new React Native project**
 - Step 1: Open the terminal run command [`npx create-expo-app --template`]
 - Step 2: Run command [`npx expo start`] or [`npm start`]
