@@ -11,9 +11,6 @@
 
 
 ## Table of Contents
-
-- [Spotify: UI Clone with React Native / Expo](#spotify-ui-clone-with-react-native--expo)
-  - [Table of Contents](#table-of-contents)
   - [Install \& Build](#install--build)
   - [Features](#features)
   - [Technologies](#technologies)
