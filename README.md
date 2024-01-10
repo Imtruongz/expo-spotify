@@ -1,32 +1,36 @@
-Spotify: UI Clone with React Native / Expo
+# Spotify: UI Clone with React Native / Expo
 
-Tailwindcss
+## Table of Contents
 
-json-server
-npm install -g json-server
-npx json-server --host 0.0.0.0 --port 5000 --watch db.json
+- [Install & Build](#install--build)
+- [Features](#features)
+- [Technologies](#technologies)
 
-npx expo start
+## Install & Build
 
-Ipv4 : http://[Ipv4]:5000
+First, make sure you have Expo CLI installed: `npm install -g expo-cli`
 
-Cách tạo một app mobile rỗng
+**Create a new React Native project**
+- Step 1: Open the terminal run command [`npx create-expo-app --template`]
+- Step 2: Run command [`npx expo start`] or [`npm start`]
+- Step 3: Scan the QR code above with Expo Go (Android) or the Camera app (iOS)
 
-B1: Tạo thư mục
-B2: Mở Terminal, chạy lệnh npx create-expo-app --template 
-    --> Blank thứ nhất --> Đặt tên thư mục
-B3: cd tới thư mục cần chạy mobile
-B4: npx expo start
+**JSON-server**
+- Step 1: Install JSON-server with [`npm install json-server`]
+- Step 2: Run command [`npx json-server --host 0.0.0.0 --port 5000 --watch (json file)`]
+- Note: use your IPv4 Address and change variable IPv4 on source code to start JSON-server
 
-Cách vào một app mobile có sẵn 
+## Features
 
-B1: cd tới thư mục cần chạy mobile
-B2: npx expo start
+- Expo SDK 49
+- iOS, Android
+- React Navigation
+- React Context
+- PropTypes
 
-json-server
-npm install -g json-server
-npx json-server --host 0.0.0.0 --port 5000 --watch db.json
-*Lưu ý:
-2. Lưu ý địa chỉ IPv4 mà mình đang sử dụng, 
-đường dẫn để xem file json trên json viewer khi chạy là 
-http://[địa chỉ IP của bạn]:5000/....
+## Technologies
+- React Native
+- Expo
+- JSON-server(FAKE API)
+- TailwindCSS
+- Nodejs(developing)
