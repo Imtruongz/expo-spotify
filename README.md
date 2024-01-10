@@ -27,7 +27,7 @@ npm start
 - Step 2: Run command [`npx expo start`] or [`npm start`]
 - Step 3: Scan the QR code above with Expo Go (Android) or the Camera app (iOS)
 
-**Json-server**
+**JSON-server**
 - Step 1: Install JSON-server with [`npm install json-server`]
 - Step 2: Run command [`npx json-server --host 0.0.0.0 --port 5000 --watch (json file)`]
 - Note: use your IPv4 Address and change variable IPv4 on source code to start JSON-server
