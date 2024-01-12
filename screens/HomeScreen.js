@@ -20,7 +20,7 @@ import BannerAd from "../components/Banner";
 import { Modal } from "react-native";
 
 const HomeScreen = () => {
-  const IPv4 = "192.168.4.101";
+  const IPv4 = "192.168.1.10";
 
   const [isLoading, setisLoading] = useState(true);
   const [songs, setSongs] = useState([]);
@@ -129,7 +129,7 @@ const HomeScreen = () => {
               isVisible={isAdVisible}
               onClose={closeAd}
               adLinkUrl="https://newsroom.spotify.com/2023-wrapped/"
-              adImageUrl="https://github.com/Imtruongz/assets/blob/main/387659257_632065309123911_3861543218293514276_n.jpg?raw=true"
+              adImageUrl="https://live.staticflickr.com/65535/53412368219_af5e62a060_w.jpg"
             />
           </View>
         </Modal>
@@ -191,9 +191,9 @@ const HomeScreen = () => {
           <View className="justify-center items-center my-3">
             <TouchableOpacity className="flex-row items-center">
               <Image
-                className="w-12 h-10"
+                className="w-11 h-14"
                 source={{
-                  uri: "https://taphoammo.net/img/spotify-premium-chinh-chu_505424362.png",
+                  uri: "https://live.staticflickr.com/65535/53459594494_73ea25340c_w.jpg",
                 }}
               ></Image>
               <TextWhite className="text-2xl font-bold mx-4 my-5">
@@ -204,7 +204,7 @@ const HomeScreen = () => {
             <Image
               className="w-[90%] h-40 rounded-2xl"
               source={{
-                uri: "https://www.digitalmusicnews.com/wp-content/uploads/2021/02/times-square-premium.jpg",
+                uri: "https://live.staticflickr.com/65535/53458355397_86ee5613e2.jpg",
               }}
             ></Image>
           </View>

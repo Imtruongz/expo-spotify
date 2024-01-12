@@ -1,54 +1,39 @@
 {
-  "playlist": [
-    {
-      "id": 1,
-      "name": "Shape of You",
-      "artist": "Ed Sheeran",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/shapeofyou.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=10-nyPxvwVpB-RtRq_X0-VuhUx4apue9p"
-    },
-    {
-      "id": 2,
-      "name": "Rolling in the Deep",
-      "artist": "Adele",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/rollinginthedeep.jpg?raw=true",
-      "path": "https://drive.google.com/uc?export=download&id=1rtRuq8C2fo-dx7qI1kwTaeQDqgwj2Lax"
-    }
-  ],
+  "playlist": [],
   "songs": [
     {
       "id": 1,
       "name": "Shape of You",
       "artist": "Ed Sheeran",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/shapeofyou.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281310471_67a6f08805_z.jpg",
       "path": "https://drive.google.com/uc?export=download&id=10-nyPxvwVpB-RtRq_X0-VuhUx4apue9p"
     },
     {
       "id": 2,
       "name": "Rolling in the Deep",
       "artist": "Adele",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/rollinginthedeep.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281310511_291d8dd9d3_z.jpg",
       "path": "https://drive.google.com/uc?export=download&id=1rtRuq8C2fo-dx7qI1kwTaeQDqgwj2Lax"
     },
     {
       "id": 3,
       "name": "Crazy in Love",
       "artist": "Beyoncé",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/crazyinlove.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281310571_04dba4818a_n.jpg",
       "path": "https://drive.google.com/uc?export=download&id=1cp-KRpM3IE5CZ3zzqCAxQg8NAozWCJ5p"
     },
     {
       "id": 4,
       "name": "HUMBLE.",
       "artist": "Kendrick Lamar",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/humble.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281595323_6e0eae3f14_n.jpg",
       "path": "https://drive.google.com/uc?export=download&id=1qWplzzJDppU-IlKsNl-0Q7uV1nRcwaIN"
     },
     {
       "id": 5,
       "name": "Love Story",
       "artist": "Taylor Swift",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/lovesotry.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281664694_9408548401_c.jpg",
       "path": "https://drive.google.com/uc?export=download&id=1s6Q975GtPk5oMJnTbfujyizVFPBJnv3Q"
     },
     {
@@ -62,70 +47,70 @@
       "id": 7,
       "name": "Hotline Bling",
       "artist": "Drake",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/hotlinebling.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281779625_6ce84d42f9_n.jpg",
       "path": "https://drive.google.com/uc?export=download&id=1GD3wuBkhK_jFz_Ipdtu82Dt2NG6aDBx6"
     },
     {
       "id": 8,
       "name": "Bad Guy",
       "artist": "Billie Eilish",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/badguy.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281779685_923870f3c6_w.jpg",
       "path": "https://drive.google.com/uc?export=download&id=1SCOkcRACyGurHCwRnjpHsdzXqg401WFM"
     },
     {
       "id": 9,
       "name": "Just the Way You Are",
       "artist": "Bruno Mars",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/justthewayyouare.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281664699_22ab1dee85_z.jpg",
       "path": "https://drive.google.com/uc?export=download&id=1VX9TEPXpP8t6GbjxLanK-XLo_nBHMAlj"
     },
     {
       "id": 10,
       "name": "Into You",
       "artist": "Ariana Grande",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/intoyou.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281595318_a0f4252370_z.jpg",
       "path": "https://drive.google.com/uc?export=download&id=1w7UNS04NJXMJ0cD0Zp19XbLVECLvJ3c9"
     },
     {
       "id": 11,
       "name": "Blinding Lights",
       "artist": "The Weeknd",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/blindinglights.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281664774_b0d42bac31_n.jpg",
       "path": "https://drive.google.com/uc?export=download&id=192Sw6oOX6zmnec-YvuxSud7Sdvt7H675"
     },
     {
       "id": 12,
       "name": "Fix You",
       "artist": "Coldplay",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/fixyou.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281664739_3cf2fc5503_n.jpg",
       "path": "https://drive.google.com/uc?export=download&id=1U1ODNiYmgo1qZDTv4bEULbofDjV0Ovv_"
     },
     {
       "id": 13,
       "name": "Bad Romance",
       "artist": "Lady Gaga",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/badromance.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281779690_b678e6466c_n.jpg",
       "path": "https://drive.google.com/uc?export=download&id=1D52yFQ-EKgJLE5rviAi6dWKorWxgnrt6"
     },
     {
       "id": 14,
       "name": "Lose Yourself",
       "artist": "Eminem",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/loseyourself.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281664689_ce226486a8_n.jpg",
       "path": "https://drive.google.com/uc?export=download&id=1v93H_PknddDP7aYTazXM_Cw7QEC7K6L7"
     },
     {
       "id": 15,
       "name": "Dance Monkey",
       "artist": "Tones and I",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/dancemonkey.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281310566_eb46351242_n.jpg",
       "path": "https://drive.google.com/uc?export=download&id=1Y9lqTmGOgq6ZIZBXSlDYyTPYP60BOBMG"
     },
     {
       "id": 16,
       "name": "Happy",
       "artist": "Pharrell Williams",
-      "image": "https://github.com/Imtruongz/assets/blob/main/songs/happy.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281664729_7ac9703063_n.jpg",
       "path": "https://drive.google.com/uc?export=download&id=1epgpERCFuMIkR-pFDLhsZ9m_bwaNSMSd"
     }
   ],
@@ -150,42 +135,42 @@
           "idSong": 1,
           "name": "Right here",
           "artist": "Keshi",
-          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+          "image": "https://live.staticflickr.com/65535/53459716785_3fa9506c27_w.jpg",
           "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH"
         },
         {
           "idSong": 2,
           "name": "Less of you",
           "artist": "Keshi",
-          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/besideyou.jpg?raw=true",
+          "image": "https://live.staticflickr.com/65535/53459716820_a6c3ce93a8_n.jpg",
           "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH"
         },
         {
           "idSong": 3,
           "name": "Somebody",
           "artist": "Keshi",
-          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/lessofyou.jpg?raw=true",
+          "image": "https://live.staticflickr.com/65535/53459615789_eed33a1234.jpg",
           "path": "https://drive.google.com/uc?export=download&id=1UaH0GvqX2MLIjP-wGd9dQoOLnwtROBoO"
         },
         {
           "idSong": 4,
           "name": "Blue",
           "artist": "Keshi",
-          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/limbo.jpg?raw=true",
+          "image": "https://live.staticflickr.com/65535/53459436733_bb0bd46f0e_n.jpg",
           "path": "https://drive.google.com/uc?export=download&id=1qsOBDeLlvtAs_vjFvql5rNabowZ63-wg"
         },
         {
           "idSong": 5,
           "name": "Beside you",
           "artist": "Keshi",
-          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/righthere.jpg?raw=true",
+          "image": "https://live.staticflickr.com/65535/53459615819_aa1bf2cb80_n.jpg",
           "path": "https://drive.google.com/uc?export=download&id=11cPwC8znyW7nMfM8UnkPGSUIl3JW-xuG"
         },
         {
           "idSong": 6,
           "name": "Limbo",
           "artist": "Keshi",
-          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/somebody.jpg?raw=true",
+          "image": "https://live.staticflickr.com/65535/53459716790_d338551591_w.jpg",
           "path": "https://drive.google.com/uc?export=download&id=1ELlnnoPmMwHGBbTIDkUARCM6uAdPKiKr"
         }
       ]
@@ -398,118 +383,118 @@
     {
       "id": 1,
       "name": "Hiphop",
-      "image": "https://github.com/Imtruongz/assets/blob/main/edm/hiphop.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281595338_0b66c7369f_w.jpg",
       "songs": [
         {
           "idSong": 1,
           "nameSong": "Hiphop Song 1",
           "artist": "Artist 1",
-          "image": "https://github.com/Imtruongz/assets/blob/main/edm/hiphop.jpg?raw=true"
+          "image": "https://live.staticflickr.com/65535/53281595338_0b66c7369f_w.jpg"
         },
         {
           "idSong": 2,
           "nameSong": "Hiphop Song 2",
           "artist": "Artist 2",
-          "image": "https://github.com/Imtruongz/assets/blob/main/edm/hiphop.jpg?raw=true"
+          "image": "https://live.staticflickr.com/65535/53281595338_0b66c7369f_w.jpg"
         },
         {
           "idSong": 3,
           "nameSong": "Hiphop Song 3",
           "artist": "Artist 3",
-          "image": "https://github.com/Imtruongz/assets/blob/main/edm/hiphop.jpg?raw=true"
+          "image": "https://live.staticflickr.com/65535/53281595338_0b66c7369f_w.jpg"
         },
         {
           "idSong": 4,
           "nameSong": "Hiphop Song 4",
           "artist": "Artist 4",
-          "image": "https://github.com/Imtruongz/assets/blob/main/edm/hiphop.jpg?raw=true"
+          "image": "https://live.staticflickr.com/65535/53281595338_0b66c7369f_w.jpg"
         }
       ]
     },
     {
       "id": 2,
       "name": "Pop",
-      "image": "https://github.com/Imtruongz/assets/blob/main/edm/pop.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281664809_37d265cdf7_w.jpg",
       "songs": [
         {
           "idSong": 1,
           "nameSong": "Pop Song 1",
           "artist": "Artist 1",
-          "image": "https://github.com/Imtruongz/assets/blob/main/edm/pop.jpg?raw=true"
+          "image": "https://live.staticflickr.com/65535/53281664809_37d265cdf7_w.jpg"
         },
         {
           "idSong": 2,
           "nameSong": "Pop Song 2",
           "artist": "Artist 2",
-          "image": "https://github.com/Imtruongz/assets/blob/main/edm/pop.jpg?raw=true"
+          "image": "https://live.staticflickr.com/65535/53281664809_37d265cdf7_w.jpg"
         },
         {
           "idSong": 3,
           "nameSong": "Pop Song 3",
           "artist": "Artist 3",
-          "image": "https://github.com/Imtruongz/assets/blob/main/edm/pop.jpg?raw=true"
+          "image": "https://live.staticflickr.com/65535/53281664809_37d265cdf7_w.jpg"
         }
       ]
     },
     {
       "id": 3,
       "name": "Rap",
-      "image": "https://github.com/Imtruongz/assets/blob/main/edm/rap.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53280421457_c986ca1682_n.jpg",
       "songs": [
         {
           "idSong": 1,
           "nameSong": "Rap Song 1",
           "artist": "Artist 1",
-          "image": "https://github.com/Imtruongz/assets/blob/main/edm/rap.jpg?raw=true"
+          "image": "https://live.staticflickr.com/65535/53280421457_c986ca1682_n.jpg"
         },
         {
           "idSong": 2,
           "nameSong": "Rap Song 2",
           "artist": "Artist 2",
-          "image": "https://github.com/Imtruongz/assets/blob/main/edm/rap.jpg?raw=true"
+          "image": "https://live.staticflickr.com/65535/53280421457_c986ca1682_n.jpg"
         },
         {
           "idSong": 3,
           "nameSong": "Rap Song 3",
           "artist": "Artist 3",
-          "image": "https://github.com/Imtruongz/assets/blob/main/edm/rap.jpg?raw=true"
+          "image": "https://live.staticflickr.com/65535/53280421457_c986ca1682_n.jpg"
         },
         {
           "idSong": 4,
           "nameSong": "Rap Song 4",
           "artist": "Artist 4",
-          "image": "https://github.com/Imtruongz/assets/blob/main/edm/rap.jpg?raw=true"
+          "image": "https://live.staticflickr.com/65535/53280421457_c986ca1682_n.jpg"
         },
         {
           "idSong": 5,
           "nameSong": "Rap Song 5",
           "artist": "Artist 5",
-          "image": "https://github.com/Imtruongz/assets/blob/main/edm/rap.jpg?raw=true"
+          "image": "https://live.staticflickr.com/65535/53280421457_c986ca1682_n.jpg"
         }
       ]
     },
     {
       "id": 4,
       "name": "EDM",
-      "image": "https://github.com/Imtruongz/assets/blob/main/edm/edm.jpg?raw=true",
+      "image": "https://live.staticflickr.com/65535/53281779665_4c29639bac_z.jpg",
       "songs": [
         {
           "idSong": 1,
           "nameSong": "EDM Song 1",
           "artist": "Artist 1",
-          "image": "https://github.com/Imtruongz/assets/blob/main/edm/edm.jpg?raw=true"
+          "image": "https://live.staticflickr.com/65535/53281779665_4c29639bac_z.jpg"
         },
         {
           "idSong": 2,
           "nameSong": "EDM Song 2",
           "artist": "Artist 2",
-          "image": "https://github.com/Imtruongz/assets/blob/main/edm/edm.jpg?raw=true"
+          "image": "https://live.staticflickr.com/65535/53281779665_4c29639bac_z.jpg"
         },
         {
           "idSong": 3,
           "nameSong": "EDM Song 3",
           "artist": "Artist 3",
-          "image": "https://github.com/Imtruongz/assets/blob/main/edm/edm.jpg?raw=true"
+          "image": "https://live.staticflickr.com/65535/53281779665_4c29639bac_z.jpg"
         }
       ]
     }
@@ -529,42 +514,42 @@
           "idSong": 1,
           "name": "Right here",
           "artist": "Keshi",
-          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/Blue.jpg?raw=true",
+          "image": "https://live.staticflickr.com/65535/53459716785_3fa9506c27_w.jpg",
           "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH"
         },
         {
           "idSong": 2,
           "name": "Less of you",
           "artist": "Keshi",
-          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/besideyou.jpg?raw=true",
+          "image": "https://live.staticflickr.com/65535/53459716820_a6c3ce93a8_n.jpg",
           "path": "https://drive.google.com/uc?export=download&id=1EUhT1lZ-zjODny9ZlhnK3WpnPu44ITDH"
         },
         {
           "idSong": 3,
           "name": "Somebody",
           "artist": "Keshi",
-          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/lessofyou.jpg?raw=true",
+          "image": "https://live.staticflickr.com/65535/53459615789_eed33a1234.jpg",
           "path": "https://drive.google.com/uc?export=download&id=1UaH0GvqX2MLIjP-wGd9dQoOLnwtROBoO"
         },
         {
           "idSong": 4,
           "name": "Blue",
           "artist": "Keshi",
-          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/limbo.jpg?raw=true",
+          "image": "https://live.staticflickr.com/65535/53459436733_bb0bd46f0e_n.jpg",
           "path": "https://drive.google.com/uc?export=download&id=1qsOBDeLlvtAs_vjFvql5rNabowZ63-wg"
         },
         {
           "idSong": 5,
           "name": "Beside you",
           "artist": "Keshi",
-          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/righthere.jpg?raw=true",
+          "image": "https://live.staticflickr.com/65535/53459615819_aa1bf2cb80_n.jpg",
           "path": "https://drive.google.com/uc?export=download&id=11cPwC8znyW7nMfM8UnkPGSUIl3JW-xuG"
         },
         {
           "idSong": 6,
           "name": "Limbo",
           "artist": "Keshi",
-          "image": "https://github.com/Imtruongz/assets/blob/main/bandaids/somebody.jpg?raw=true",
+          "image": "https://live.staticflickr.com/65535/53459716790_d338551591_w.jpg",
           "path": "https://drive.google.com/uc?export=download&id=1ELlnnoPmMwHGBbTIDkUARCM6uAdPKiKr"
         }
       ]

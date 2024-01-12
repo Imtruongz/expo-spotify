@@ -9,7 +9,7 @@ import { Entypo, Feather, Ionicons, AntDesign } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const SongInfoScreen = ({ route }) => {
-  const IPv4 = "192.168.4.101";
+  const IPv4 = "192.168.1.10";
   const { song } = route.params;
 
   const circleSize = 12;
