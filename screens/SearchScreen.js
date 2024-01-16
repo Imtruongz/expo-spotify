@@ -10,7 +10,7 @@ import {
 import React, { useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { AntDesign } from "@expo/vector-icons";
-import SearchItem from "/searchItem.json";
+import SearchItem from "../searchItem.json";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import TextWhite from "../components/TextWhite";
