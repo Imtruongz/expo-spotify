@@ -11,6 +11,8 @@
 
 
 ## Table of Contents
+- [Spotify: UI Clone with React Native / Expo](#spotify-ui-clone-with-react-native--expo)
+  - [Table of Contents](#table-of-contents)
   - [Install \& Build](#install--build)
   - [Features](#features)
   - [Technologies](#technologies)
@@ -18,6 +20,10 @@
 ## Install & Build
 
 First, make sure you have Expo CLI installed: `npm install -g expo-cli`
+Install Node.js
+Download Expo from App Store or Google Play Store
+
+Run command `npx expo start`
 
 **Create a new React Native project**
 - Step 1: Open the terminal run command [`npx create-expo-app --template`]

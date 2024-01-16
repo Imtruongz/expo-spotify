@@ -19,7 +19,7 @@ const LoginScreen = () => {
           size={100}
           color="#1DB954"
         />
-        <TextWhite className="text-4xl font-bold text-center mt-10">
+        <TextWhite className="mt-10 text-center text-4xl font-bold">
           Millions of Songs Free on spotify!
         </TextWhite>
 
@@ -27,37 +27,37 @@ const LoginScreen = () => {
 
         <Pressable
           onPress={() => navigation.navigate("Main")}
-          className="bg-[#1DB954] p-3 ml-auto mr-auto w-80 rounded-3xl items-center justify-center my-3"
+          className="my-3 ml-auto mr-auto w-80 items-center justify-center rounded-3xl bg-[#1DB954] p-3"
         >
           <TextWhite className="font-bold">Sign In with Spotify</TextWhite>
         </Pressable>
 
         <Pressable
           onPress={() => navigation.navigate("Main")}
-          className="bg-[#131624] p-2 ml-auto mr-auto w-80 flex-row rounded-3xl items-center justify-center my-3 border-2 border-[#C0C0C0] border-solid"
+          className="my-3 ml-auto mr-auto w-80 flex-row items-center justify-center rounded-3xl border-2 border-solid border-[#C0C0C0] bg-[#131624] p-2"
         >
           <MaterialIcons name="phone-android" size={24} color="white" />
-          <TextWhite className="font-semibold text-center flex-1">
+          <TextWhite className="flex-1 text-center font-semibold">
             Continue with phone number
           </TextWhite>
         </Pressable>
 
         <Pressable
           onPress={() => navigation.navigate("Main")}
-          className="bg-[#131624] p-2 ml-auto mr-auto w-80 flex-row rounded-3xl items-center justify-center my-3 border-2 border-[#C0C0C0] border-solid"
+          className="my-3 ml-auto mr-auto w-80 flex-row items-center justify-center rounded-3xl border-2 border-solid border-[#C0C0C0] bg-[#131624] p-2"
         >
           <AntDesign name="google" size={24} color="white" />
-          <TextWhite className="font-semibold text-center flex-1">
+          <TextWhite className="flex-1 text-center font-semibold">
             Continue with Google
           </TextWhite>
         </Pressable>
 
         <Pressable
           onPress={() => navigation.navigate("Main")}
-          className="bg-[#131624] p-2 ml-auto mr-auto w-80 flex-row rounded-3xl items-center justify-center my-3 border-2 border-[#C0C0C0] border-solid"
+          className="my-3 ml-auto mr-auto w-80 flex-row items-center justify-center rounded-3xl border-2 border-solid border-[#C0C0C0] bg-[#131624] p-2"
         >
           <Entypo name="facebook" size={24} color="white" />
-          <TextWhite className="font-semibold text-center flex-1">
+          <TextWhite className="flex-1 text-center font-semibold">
             Sign In with Facebook
           </TextWhite>
         </Pressable>

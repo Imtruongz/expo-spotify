@@ -81,7 +81,7 @@ const ProfileScreen = () => {
   useFocusEffect(
     React.useCallback(() => {
       getPlaylist();
-    }, [])
+    }, []),
   );
 
   // const [page, setPage] = useState(1); // Trang hiện tại
@@ -140,21 +140,21 @@ const ProfileScreen = () => {
     <>
       <LinearGradient colors={["#8B8B8B", "#000000"]} className="flex-[0.5]">
         <SafeAreaView>
-          <View className="flex-row justify-end mt-3">
+          <View className="mt-3 flex-row justify-end">
             <TouchableOpacity onPress={UpdatingButton} className="mr-4">
               <Ionicons name="settings-outline" size={24} color="white" />
             </TouchableOpacity>
           </View>
 
-          <View className="flex-row w-1/2 items-center">
+          <View className="w-1/2 flex-row items-center">
             <Image
-              className="w-32 h-32 rounded-[64px] ml-6"
+              className="ml-6 h-32 w-32 rounded-[64px]"
               source={{
                 uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
               }}
             />
             <View>
-              <TextWhite className="font-bold text-2xl ml-5">
+              <TextWhite className="ml-5 text-2xl font-bold">
                 Nguyễn Việt Trường
               </TextWhite>
               <View className="flex-col flex-wrap gap-1 px-5 py-2">
@@ -165,9 +165,9 @@ const ProfileScreen = () => {
               </View>
             </View>
           </View>
-          <View className="flex-row items-center mt-3 ml-14">
+          <View className="ml-14 mt-3 flex-row items-center">
             <TouchableOpacity
-              className="text-center mr-2 w-14 p-[6px] font-bold rounded-3xl border-2 border-white border-solid justify-center items-center"
+              className="mr-2 w-14 items-center justify-center rounded-3xl border-2 border-solid border-white p-[6px] text-center font-bold"
               // onPress={clearAsyncStorage}
               onPress={UpdatingButton}
             >
@@ -177,30 +177,30 @@ const ProfileScreen = () => {
               <Entypo name="dots-three-vertical" size={24} color="white" />
             </TouchableOpacity>
             <Modal isVisible={isModalVisible} onBackdropPress={toggleModal}>
-              <View className="flex-1 justify-end items-center">
-                <View className="bg-slate-900 p-2 w-full rounded-2xl">
-                  <View className="flex-row  my-2 mx-2 items-center">
+              <View className="flex-1 items-center justify-end">
+                <View className="w-full rounded-2xl bg-slate-900 p-2">
+                  <View className="mx-2  my-2 flex-row items-center">
                     <Image
-                      className="w-12 h-12 rounded-3xl"
+                      className="h-12 w-12 rounded-3xl"
                       source={{
                         uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
                       }}
                     />
                     <TextWhite className="ml-4">Nguyễn Việt Trường</TextWhite>
                   </View>
-                  <TouchableOpacity className="flex-row my-4 mx-2 items-center">
+                  <TouchableOpacity className="mx-2 my-4 flex-row items-center">
                     <AntDesign name="adduser" size={24} color="white" />
                     <TextWhite className="ml-4">Add friend</TextWhite>
                   </TouchableOpacity>
-                  <TouchableOpacity className="flex-row my-4 mx-2 items-center">
+                  <TouchableOpacity className="mx-2 my-4 flex-row items-center">
                     <AntDesign name="sharealt" size={24} color="white" />
                     <TextWhite className="ml-4">Share</TextWhite>
                   </TouchableOpacity>
-                  <TouchableOpacity className="flex-row my-4 mx-2 items-center">
+                  <TouchableOpacity className="mx-2 my-4 flex-row items-center">
                     <AntDesign name="linechart" size={24} color="white" />
                     <TextWhite className="ml-4">Share</TextWhite>
                   </TouchableOpacity>
-                  <TouchableOpacity className="flex-row my-4 mx-2 items-center">
+                  <TouchableOpacity className="mx-2 my-4 flex-row items-center">
                     <Entypo name="eye" size={24} color="white" />
                     <TextWhite className="ml-4">Share</TextWhite>
                   </TouchableOpacity>
@@ -211,7 +211,7 @@ const ProfileScreen = () => {
         </SafeAreaView>
       </LinearGradient>
       <View className="flex-1 bg-black">
-        <TextWhite className="text-center text-xl font-bold mb-4">
+        <TextWhite className="mb-4 text-center text-xl font-bold">
           Your playlist
         </TextWhite>
         <FlatList
@@ -223,16 +223,16 @@ const ProfileScreen = () => {
               className=" flex-row items-center justify-between"
               onPress={() => navigation.navigate("Info", { song: item })}
             >
-              <View className="p-3 flex-row items-center justify-between gap-3">
+              <View className="flex-row items-center justify-between gap-3 p-3">
                 <Image
-                  className="w-14 h-14 rounded"
+                  className="h-14 w-14 rounded"
                   source={{ uri: item.image }}
                 />
                 <View>
                   <TextWhite className="text-sm font-bold text-[#E0E0E0]">
                     {item.name}
                   </TextWhite>
-                  <Text className="text-xs font-semibold text-[#E0E0E0] mt-1">
+                  <Text className="mt-1 text-xs font-semibold text-[#E0E0E0]">
                     {item.artist}
                   </Text>
                 </View>
@@ -251,7 +251,7 @@ const ProfileScreen = () => {
                 {menuVisibility[item.id] && (
                   <Animatable.View animation="slideInRight" duration={400}>
                     <TouchableOpacity onPress={() => deleteSong(item.id)}>
-                      <TextWhite className="font-bold text-sm mr-2 py-2">
+                      <TextWhite className="mr-2 py-2 text-sm font-bold">
                         Remove to playlist
                       </TextWhite>
                     </TouchableOpacity>

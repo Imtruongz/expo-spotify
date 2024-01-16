@@ -43,7 +43,6 @@ const SongInfoScreen = ({ route }) => {
     loadPlaylist();
   }, []);
 
-
   const updatePlaylist = async (newSong) => {
     try {
       const updatedPlaylist = [...playlist, newSong];
@@ -65,7 +64,7 @@ const SongInfoScreen = ({ route }) => {
       const { sound: newSound } = await Audio.Sound.createAsync(
         { uri: url },
         {},
-        handlePlaybackStatusUpdate
+        handlePlaybackStatusUpdate,
       );
       setSound(newSound);
       await newSound.playAsync();
@@ -79,7 +78,7 @@ const SongInfoScreen = ({ route }) => {
       setCurrentTime(playbackStatus.positionMillis);
       setTotalDuration(playbackStatus.durationMillis);
       setProgress(
-        playbackStatus.positionMillis / playbackStatus.durationMillis
+        playbackStatus.positionMillis / playbackStatus.durationMillis,
       );
     }
   };
@@ -91,16 +90,15 @@ const SongInfoScreen = ({ route }) => {
     }
   };
 
-
   const playNextSong = async () => {
     let nextIndex;
     if (playlist.length > 0) {
-      nextIndex = (playlistIndex + 1) % playlist.length; 
+      nextIndex = (playlistIndex + 1) % playlist.length;
       const nextSong = playlist[nextIndex];
-      
+
       // Update the displayed song information
       route.params.song = nextSong;
-  
+
       // Play the new song
       await playMusic(nextSong.path, nextSong.id);
       setPlaylistIndex(nextIndex);
@@ -114,25 +112,24 @@ const SongInfoScreen = ({ route }) => {
       console.log("Playlist is empty.");
       return; // Dừng hàm nếu playlist rỗng
     }
-  
+
     let prevIndex = playlistIndex - 1;
     if (prevIndex < 0) {
       prevIndex = playlist.length - 1; // Xử lý chỉ mục âm
     }
-  
+
     const prevSong = playlist[prevIndex];
-  
+
     if (!prevSong) {
       console.error("Error: Previous song not found.");
       return; // Dừng hàm nếu không tìm thấy bài hát
     }
-  
+
     // Cập nhật thông tin bài hát và phát nhạc
     route.params.song = prevSong;
     await playMusic(prevSong.path, prevSong.id);
     setPlaylistIndex(prevIndex);
   };
-  
 
   useEffect(() => {
     return sound
@@ -208,7 +205,7 @@ const SongInfoScreen = ({ route }) => {
   return (
     <LinearGradient colors={["#131624", "#040306"]}>
       <SafeAreaView>
-        <View className="h-full w-full px-4 mt-3">
+        <View className="mt-3 h-full w-full px-4">
           <View className="flex-row items-center justify-between">
             <Pressable onPress={() => navigation.goBack()}>
               <AntDesign name="down" size={24} color="white" />
@@ -220,16 +217,16 @@ const SongInfoScreen = ({ route }) => {
           <View className="p-2">
             <View className="items-center">
               <Image
-                className="w-[310px] h-[310px] rounded-[155px] my-[60px]"
+                className="my-[60px] h-[310px] w-[310px] rounded-[155px]"
                 source={{ uri: song.image }}
               />
             </View>
-            <View className="flex-row justify-between items-center">
+            <View className="flex-row items-center justify-between">
               <View>
                 <Text className="text-2xl font-bold text-white">
                   {song.name}
                 </Text>
-                <Text className="text-[#D3D3D3] mt-1">{song.artist}</Text>
+                <Text className="mt-1 text-[#D3D3D3]">{song.artist}</Text>
               </View>
               <View className="flex-row gap-4">
                 <TouchableOpacity onPress={() => addSong(song)}>
@@ -244,7 +241,7 @@ const SongInfoScreen = ({ route }) => {
             </View>
 
             <View className="mt-4">
-              <View className="w-full mt-2 h-1 bg-gray-700 rounded-md">
+              <View className="mt-2 h-1 w-full rounded-md bg-gray-700">
                 <View
                   style={[
                     {
@@ -272,7 +269,7 @@ const SongInfoScreen = ({ route }) => {
                 </Text>
               </View>
             </View>
-            <View className="flex-row items-center justify-between mt-4">
+            <View className="mt-4 flex-row items-center justify-between">
               <Pressable>
                 <Entypo name="shuffle" size={26} color="white" />
               </Pressable>
@@ -291,9 +288,7 @@ const SongInfoScreen = ({ route }) => {
                 )}
               </TouchableOpacity>
 
-              <TouchableOpacity
-              onPress={playNextSong}
-              >
+              <TouchableOpacity onPress={playNextSong}>
                 <Ionicons name="play-skip-forward" size={30} color="white" />
               </TouchableOpacity>
               <Pressable>

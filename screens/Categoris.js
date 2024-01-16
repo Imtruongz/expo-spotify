@@ -44,13 +44,13 @@ const CategoriScreen = ({ route }) => {
             <AntDesign name="left" size={22} color="white" />
           </Pressable>
 
-          <Pressable className="flex-row items-center p-2 rounded-md border-[2px] border-[#979593] mx-3">
+          <Pressable className="mx-3 flex-row items-center rounded-md border-[2px] border-[#979593] p-2">
             <AntDesign name="search1" size={24} color="#979593" />
             <TextInput
               onChangeText={(text) => handleSearch(text)}
               placeholder="What do you want to listen to?"
               placeholderTextColor={"#979593"}
-              className="font-semibold text-base w-full text-[#979593] ml-2"
+              className="ml-2 w-full text-base font-semibold text-[#979593]"
             />
           </Pressable>
 
@@ -60,7 +60,7 @@ const CategoriScreen = ({ route }) => {
             </TextWhite>
           </View>
 
-          <Pressable className="flex-row items-center justify-between ml-4 mr-1">
+          <Pressable className="ml-4 mr-1 flex-row items-center justify-between">
             <View className="flex-row items-center gap-x-5">
               <AntDesign name="hearto" size={24} color="white" />
               <AntDesign name="download" size={24} color="white" />
@@ -82,18 +82,18 @@ const CategoriScreen = ({ route }) => {
             renderItem={({ item }) => (
               <View
                 key={item.id}
-                className="p-2 flex-row items-center justify-between "
+                className="flex-row items-center justify-between p-2 "
               >
                 <View className="flex-row items-center gap-3">
                   <Image
-                    className="w-14 h-14 rounded-md"
+                    className="h-14 w-14 rounded-md"
                     source={{ uri: item.image }}
                   />
                   <View>
                     <TextWhite className="text-sm font-bold text-[#E0E0E0]">
                       {item.nameSong}
                     </TextWhite>
-                    <Text className="text-xs font-semibold text-[#E0E0E0] mt-1">
+                    <Text className="mt-1 text-xs font-semibold text-[#E0E0E0]">
                       {item.artist}
                     </Text>
                   </View>

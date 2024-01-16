@@ -124,7 +124,7 @@ const HomeScreen = () => {
           visible={isAdVisible}
           onRequestClose={closeAd}
         >
-          <View className="flex-1 justify-center items-center bg-overlay">
+          <View className="flex-1 items-center justify-center bg-overlay">
             <BannerAd
               isVisible={isAdVisible}
               onClose={closeAd}
@@ -135,12 +135,12 @@ const HomeScreen = () => {
         </Modal>
         <ScrollView>
           {/* Header */}
-          <View className="flex-row items-center justify-between mt-3">
+          <View className="mt-3 flex-row items-center justify-between">
             <TextWhite className="ml-6 text-xl font-bold">{message}</TextWhite>
             <View className="flex-row items-center">
               <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
                 <Image
-                  className="w-10 h-10 mr-6 rounded-3xl"
+                  className="mr-6 h-10 w-10 rounded-3xl"
                   source={{
                     uri: "https://live.staticflickr.com/65535/53280456787_5b57ceca8e_s.jpg",
                   }}
@@ -150,17 +150,17 @@ const HomeScreen = () => {
           </View>
 
           {/* navbar */}
-          <View className="ml-3 my-3 flex-row items-center">
-            <Pressable className="bg-[#282828] p-2.5 mx-1 rounded-full">
+          <View className="my-3 ml-3 flex-row items-center">
+            <Pressable className="mx-1 rounded-full bg-[#282828] p-2.5">
               <TextWhite className="text-sm font-bold">Music</TextWhite>
             </Pressable>
 
-            <Pressable className="bg-[#282828] p-2.5 mx-1 rounded-full">
+            <Pressable className="mx-1 rounded-full bg-[#282828] p-2.5">
               <TextWhite className="text-sm font-bold">
                 Podcasts & Shows
               </TextWhite>
             </Pressable>
-            <Pressable className="bg-[#282828] p-2.5 mx-1 rounded-full">
+            <Pressable className="mx-1 rounded-full bg-[#282828] p-2.5">
               <TextWhite className="text-sm font-bold">Premium</TextWhite>
             </Pressable>
           </View>
@@ -174,42 +174,42 @@ const HomeScreen = () => {
                 onPress={() =>
                   navigation.navigate("Categori", { categoris: item })
                 }
-                className="flex-row items-center mx-2 my-2 bg-[#202020] rounded-md w-[44%]"
+                className="mx-2 my-2 w-[44%] flex-row items-center rounded-md bg-[#202020]"
               >
                 <Image
-                  className="w-14 h-14 mr-3 rounded-md"
+                  className="mr-3 h-14 w-14 rounded-md"
                   source={{ uri: item.image }}
                 />
                 <View>
-                  <TextWhite className="font-bold text-sm">
+                  <TextWhite className="text-sm font-bold">
                     {item.name}
                   </TextWhite>
                 </View>
               </TouchableOpacity>
             ))}
           </View>
-          <View className="justify-center items-center my-3">
+          <View className="my-3 items-center justify-center">
             <TouchableOpacity className="flex-row items-center">
               <Image
-                className="w-11 h-14"
+                className="h-14 w-11"
                 source={{
                   uri: "https://live.staticflickr.com/65535/53459594494_73ea25340c_w.jpg",
                 }}
               ></Image>
-              <TextWhite className="text-2xl font-bold mx-4 my-5">
+              <TextWhite className="mx-4 my-5 text-2xl font-bold">
                 Spotify Premium
               </TextWhite>
               <Entypo name="chevron-thin-right" size={24} color="white" />
             </TouchableOpacity>
             <Image
-              className="w-[90%] h-40 rounded-2xl"
+              className="h-40 w-[90%] rounded-2xl"
               source={{
                 uri: "https://live.staticflickr.com/65535/53458355397_86ee5613e2.jpg",
               }}
             ></Image>
           </View>
           {/* Top songs */}
-          <TextWhite className="text-2xl font-bold mx-4 my-2">
+          <TextWhite className="mx-4 my-2 text-2xl font-bold">
             Popular songs
           </TextWhite>
           <FlatList
@@ -221,7 +221,7 @@ const HomeScreen = () => {
             )}
           />
           {/* Top albums */}
-          <TextWhite className="text-2xl font-bold mx-4 my-2">
+          <TextWhite className="mx-4 my-2 text-2xl font-bold">
             Popular Album
           </TextWhite>
           <FlatList
@@ -233,7 +233,7 @@ const HomeScreen = () => {
             )}
           />
           {/* Top artists */}
-          <TextWhite className="text-2xl font-bold mx-4 my-2">
+          <TextWhite className="mx-4 my-2 text-2xl font-bold">
             Popular Artists
           </TextWhite>
           <FlatList
@@ -246,7 +246,7 @@ const HomeScreen = () => {
           />
 
           {/* Trending now */}
-          <TextWhite className="text-2xl font-bold mx-4 my-2">
+          <TextWhite className="mx-4 my-2 text-2xl font-bold">
             Trending now
           </TextWhite>
           <FlatList

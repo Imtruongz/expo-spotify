@@ -71,12 +71,12 @@ const AlbumDetail = ({ route }) => {
           <Pressable onPress={() => navigation.goBack()} className="mx-4 mt-3">
             <AntDesign name="left" size={22} color="white" />
           </Pressable>
-          <View className="justify-center items-center">
+          <View className="items-center justify-center">
             <Image
-              className="w-44 h-44 rounded-xl"
+              className="h-44 w-44 rounded-xl"
               source={{ uri: album.image }}
             />
-            <TextWhite className="text-center text-xl font-bold my-3">
+            <TextWhite className="my-3 text-center text-xl font-bold">
               {album.name}
             </TextWhite>
           </View>
@@ -84,7 +84,7 @@ const AlbumDetail = ({ route }) => {
             <TextWhite className="text-lg font-bold">{album.artist}</TextWhite>
           </View>
 
-          <Pressable className="flex-row items-center justify-between ml-4 mr-1">
+          <Pressable className="ml-4 mr-1 flex-row items-center justify-between">
             <View className="flex-row items-center gap-7">
               <AntDesign name="hearto" size={24} color="white" />
               <AntDesign name="download" size={24} color="white" />
@@ -108,13 +108,13 @@ const AlbumDetail = ({ route }) => {
           renderItem={({ item }) => (
             <TouchableOpacity
               onPress={() => navigation.navigate("Info", { song: item })}
-              className="p-3 flex-row items-center justify-between"
+              className="flex-row items-center justify-between p-3"
             >
               <View className="items-start">
-                <TextWhite className="text-base font-bold mt-1">
+                <TextWhite className="mt-1 text-base font-bold">
                   {item.name}
                 </TextWhite>
-                <Text className="text-xs font-semibold text-[#E0E0E0] mt-2">
+                <Text className="mt-2 text-xs font-semibold text-[#E0E0E0]">
                   {item.artist}
                 </Text>
               </View>
@@ -132,7 +132,7 @@ const AlbumDetail = ({ route }) => {
                 {menuVisibility[item.idSong] && (
                   <Animatable.View animation="slideInRight" duration={400}>
                     <TouchableOpacity onPress={() => addSong(item)}>
-                      <TextWhite className="font-bold py-2">
+                      <TextWhite className="py-2 font-bold">
                         Add to playlist
                       </TextWhite>
                     </TouchableOpacity>

@@ -1,5 +1,13 @@
 {
-  "playlist": [],
+  "playlist": [
+    {
+      "id": 1,
+      "name": "Shape of You",
+      "artist": "Ed Sheeran",
+      "image": "https://live.staticflickr.com/65535/53281310471_67a6f08805_z.jpg",
+      "path": "https://drive.google.com/uc?export=download&id=10-nyPxvwVpB-RtRq_X0-VuhUx4apue9p"
+    }
+  ],
   "songs": [
     {
       "id": 1,
