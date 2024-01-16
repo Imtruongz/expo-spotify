@@ -20,7 +20,7 @@ import BannerAd from "../components/Banner";
 import { Modal } from "react-native";
 
 const HomeScreen = () => {
-  const IPv4 = "192.168.1.10";
+  const IPv4 = "192.168.43.57"; //Thay đổi địa chỉ IP ở đây
 
   const [isLoading, setisLoading] = useState(true);
   const [songs, setSongs] = useState([]);
